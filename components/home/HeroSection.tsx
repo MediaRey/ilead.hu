@@ -45,7 +45,7 @@ export default function HeroSection() {
               <div className="flex flex-wrap gap-4 mt-10">
                 {/* Primary Button (Orange) */}
                 <Button
-                    href="/kontakt"
+                    href="/kontakt123"
                     className="font-semibold px-8 py-3 rounded-md transition-colors"
                 >
                   Rezervujte si místo
@@ -53,7 +53,7 @@ export default function HeroSection() {
 
                 {/* Secondary Button (Orange) - Assuming similar style based on image */}
                 <Button
-                    href="/subscription"
+                    href="/subscription123"
                     variant="secondary"
                     className="font-semibold px-8 py-3 rounded-md transition-colors "
                 >
