@@ -44,7 +44,7 @@ export default function CombinedInformationSection() {
                         <p className="mb-6 text-gray-300">
                             Našim cílem je rozvíjet schopnosti manažerů tak, aby nejen reagovali na změny, ale dokázali je i předvídat a strategicky řídit. Součástí programu jsou témata doporučená MIT, <strong className="text-white">nejnovější trendy v oblasti managementu</strong> a praktické nástroje, které podporují lídry v efektivním vedení týmů. Program přináší <strong className="text-white">mezinárodní pohled</strong> na leadership a propojuje účastníky v inspirativní komunitě lídrů budoucnosti.
                         </p>
-                        <Button href="/future-ready-executive-program" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
+                        <Button href="/future-ready-executive-program123" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
                             Staňte se součástí Future Ready Executives
                         </Button>
                     </div>
@@ -67,7 +67,7 @@ export default function CombinedInformationSection() {
                         <p className="text-lg mb-4 text-gray-200">
                             Získejte přístup k <strong className="text-white">exkluzivnímu obsahu</strong> o managementu, inovacích a leadershipu. Přinášíme <strong className="text-white">odborné články</strong> z prestižního MIT Sloan, které vám pomohou růst osobně i profesně.
                         </p>
-                        <Button href="/subscription" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
+                        <Button href="/subscription123" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
                             Registrujte se
                         </Button>
                     </div>
