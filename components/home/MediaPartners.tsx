@@ -1,0 +1,41 @@
+import Image from 'next/image';
+
+export default function MediaPartners() {
+  return (
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          {/* Заголовок секции */}
+          <h2 className="text-lg font-bold text-black uppercase tracking-wider mb-8">
+            MEDIÁLNÍ PARTNEŘI
+          </h2>
+
+          {/* Контейнер для логотипов */}
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+
+            {/* Логотип Forbes */}
+            {/* Убедитесь, что файл forbes.png лежит в папке /public */}
+            <div className="relative h-8 w-24 md:h-10 md:w-32 grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                  src="/forbes-logo.png"
+                  alt="Forbes"
+                  fill
+                  className="object-contain"
+              />
+            </div>
+
+            {/* Логотип MIT Sloan */}
+            {/* Убедитесь, что файл mit-sloan.png лежит в папке /public */}
+            <div className="relative h-10 w-40 md:h-12 md:w-56 grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                  src="/mitsloan_logo.png"
+                  alt="MIT Sloan Management Review"
+                  fill
+                  className="object-contain"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+  );
+}
