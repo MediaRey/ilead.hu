@@ -42,7 +42,7 @@ export default function Header() {
               <a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 MIT
               </a>
-              <Link href="/#faq123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
+              <Link href="/#faq" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 FAQ
               </Link>
               <Link href="/kontakt123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
@@ -72,7 +72,7 @@ export default function Header() {
                   <Link href="/about" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
                     O nás
                   </Link>
-                  <Link href="/future-ready-executive-program" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
+                  <Link href="/future-ready-executive-program123" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
                     Future Ready Executive Program
                   </Link>
                   <Link href="/subscription" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
@@ -84,7 +84,7 @@ export default function Header() {
                   <Link href="/#faq" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
                     FAQ
                   </Link>
-                  <Link href="/kontakt" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
+                  <Link href="/kontakt123" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
                     Kontakt
                   </Link>
                 </div>
