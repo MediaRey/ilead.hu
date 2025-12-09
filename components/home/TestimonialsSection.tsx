@@ -80,14 +80,14 @@ export default function TestimonialsSection() {
   const arrowColor = "text-[#0E2738]";
 
   return (
-    <section className={`${bgColor} text-white py-20 px-4`}>
+    <section className={`${bgColor} text-white py-20 px-6 lg:px-16`}>
       <div className="max-w-5xl mx-auto">
         {/* Заголовок */}
         <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
-          Proč má smysl se <span className={accentColor}>neustále učit?</span>
+          Miért érdemes <span className={accentColor}>folyamatosan tanulni?</span>
         </h2>
         <p className="text-center mb-12 text-gray-300">
-          Odpovídají přední lídři českých firem a institucí.
+          Válaszolnak a magyar vállalatok és intézmények vezető vezetői.
         </p>
 
         {/* Контейнер карусели */}

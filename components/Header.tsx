@@ -10,7 +10,7 @@ export default function Header() {
   return (
       // Used specific dark color #08121e to match the previous Hero section
       <header className="fixed top-0 left-0 right-0 bg-[#0E2738] z-50 shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
           <div className="flex justify-between items-center h-24"> {/* Increased height slightly for better spacing */}
 
             {/* LOGO SECTION */}
@@ -31,22 +31,22 @@ export default function Header() {
             {/* DESKTOP NAVIGATION */}
             <div className="hidden lg:flex items-center gap-8">
               <Link href="/about123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
-                O nás
+                Rólunk
               </Link>
               <Link href="/future-ready-executive-program123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 Future Ready Executive Program
               </Link>
               <Link href="/subscription123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
-                Předplatné magazínu
+                Magazin előfizetés
               </Link>
               <a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 MIT
               </a>
               <Link href="/#faq" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
-                FAQ
+                GYIK
               </Link>
-              <Link href="/kontakt123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
-                Kontakt
+              <Link href="/#kontakt" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
+                Kapcsolat
               </Link>
             </div>
 
@@ -70,22 +70,22 @@ export default function Header() {
               <div className="lg:hidden pb-6 pt-2 bg-[#08121e]">
                 <div className="flex flex-col space-y-4 px-2">
                   <Link href="/about" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
-                    O nás
+                    Rólunk
                   </Link>
                   <Link href="/future-ready-executive-program123" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
                     Future Ready Executive Program
                   </Link>
                   <Link href="/subscription" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
-                    Předplatné magazínu
+                    Magazin előfizetés
                   </Link>
                   <a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener noreferrer" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
                     MIT
                   </a>
                   <Link href="/#faq" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
-                    FAQ
+                    GYIK
                   </Link>
-                  <Link href="/kontakt123" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
-                    Kontakt
+                  <Link href="/#kontakt" className="text-white font-bold text-lg hover:text-[#ea8d32] transition-colors">
+                    Kapcsolat
                   </Link>
                 </div>
               </div>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Footer() {
   return (
     <footer className="bg-gray-100 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <Link href="/" className="inline-block">
@@ -19,11 +19,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">Linky</h3>
+            <h3 className="font-bold mb-4">Linkek</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/about123" className="text-gray-700 hover:text-orange transition-colors">
-                  O nás
+                  Rólunk
                 </Link>
               </li>
               <li>
@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">Sociální sítě</h3>
+            <h3 className="font-bold mb-4">Közösségi média</h3>
             <div className="flex space-x-4">
               <a href="#" className="text-burgundy hover:text-orange transition-colors">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-300 text-center text-gray-600 text-sm">
-          <p>&copy; {new Date().getFullYear()} iLead Institute. Všechna práva vyhrazena.</p>
+          <p>&copy; {new Date().getFullYear()} iLead Institute. Minden jog fenntartva.</p>
         </div>
       </div>
     </footer>

@@ -28,39 +28,39 @@ export default function ContactFormSection() {
   };
 
   return (
-      <section className="w-full">
+      <section id="kontakt" className="w-full">
         {/* Top burgundy bar with title */}
         <div className="bg-[#A00230] text-white py-10 text-center">
           <h2 className="text-4xl font-bold">
-            Zjistěte více o Future Ready Executive Programu!
+            Tudjon meg többet a Future Ready Executive Programról!
           </h2>
         </div>
 
         {/* Main content */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-6 lg:px-0 gap-16 py-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 px-6 lg:px-16 gap-16 py-16">
 
           {/* Left text column */}
           <div className="text-black text-lg leading-relaxed">
-            <h3 className="font-bold mb-2">Máte dotazy ohledně programu?</h3>
+            <h3 className="font-bold mb-2">Kérdései vannak a programmal kapcsolatban?</h3>
             <p className="mb-6">
               <span className="text-blue-600 mr-2">→</span>
-              Kontaktujte nás a rádi vám poskytneme podrobnější informace.
+              Lépjen kapcsolatba velünk, és szívesen nyújtunk részletesebb információkat.
             </p>
 
-            <h3 className="font-bold mb-2">Rezervujte si své místo</h3>
+            <h3 className="font-bold mb-2">Foglalja le helyét</h3>
             <p className="mb-6">
               <span className="text-blue-600 mr-2">→</span>
-              Na nejbližší edici programu – kapacita je omezená.
+              A program legközelebbi kiadására – a kapacitás korlátozott.
             </p>
 
-            <h3 className="font-bold mb-2">Buďte v obraze!</h3>
+            <h3 className="font-bold mb-2">Legyen naprakész!</h3>
             <p className="mb-6">
               <span className="text-blue-600 mr-2">→</span>
-              Nechte nám své kontaktní údaje a získejte exkluzivní aktualizace o
-              nových termínech, speciálních akcích a trendech ve vzdělávání lídrů.
+              Hagyja nálunk elérhetőségeit, és kapjon exkluzív frissítéseket az
+              új időpontokról, különleges akciókról és a vezetők képzésének trendjeiről.
             </p>
 
-            <p className="italic">Vyplňte formulář a my se vám brzy ozveme!</p>
+            <p className="italic">Töltse ki az űrlapot, és hamarosan jelentkezünk!</p>
           </div>
 
           {/* Form – no background, soft borders like on screenshot */}
@@ -70,7 +70,7 @@ export default function ContactFormSection() {
               <input
                   type="text"
                   name="firstName"
-                  placeholder="Jméno *"
+                  placeholder="Keresztnév *"
                   required
                   className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none"
                   value={formData.firstName}
@@ -80,7 +80,7 @@ export default function ContactFormSection() {
               <input
                   type="text"
                   name="lastName"
-                  placeholder="Příjmení *"
+                  placeholder="Vezetéknév *"
                   required
                   className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none"
                   value={formData.lastName}
@@ -91,7 +91,7 @@ export default function ContactFormSection() {
             <input
                 type="email"
                 name="email"
-                placeholder="E-mailová adresa *"
+                placeholder="E-mail cím *"
                 required
                 className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none"
                 value={formData.email}
@@ -111,7 +111,7 @@ export default function ContactFormSection() {
               <input
                   type="text"
                   name="company"
-                  placeholder="Název firmy *"
+                  placeholder="Cég neve *"
                   required
                   className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none"
                   value={formData.company}
@@ -121,7 +121,7 @@ export default function ContactFormSection() {
 
             <input
                 name="note"
-                placeholder="Pozice *"
+                placeholder="Pozíció *"
                 required
                 className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none"
                 value={formData.note}
@@ -132,7 +132,7 @@ export default function ContactFormSection() {
                 type="submit"
                 className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-lg"
             >
-              Odeslat
+              Küldés
             </Button>
           </form>
         </div>

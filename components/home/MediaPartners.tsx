@@ -3,10 +3,10 @@ import Image from 'next/image';
 export default function MediaPartners() {
   return (
       <section className="py-12 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
           {/* Заголовок секции */}
           <h2 className="text-lg font-bold text-black uppercase tracking-wider mb-8">
-            MEDIÁLNÍ PARTNEŘI
+            MÉDIA PARTNEREK
           </h2>
 
           {/* Контейнер для логотипов */}

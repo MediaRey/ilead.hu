@@ -12,7 +12,7 @@ export default function CombinedInformationSection() {
     // but the Button component handles its own color here.
 
     return (
-        <section className={`${darkBackground} text-white py-20 px-4`}>
+        <section className={`${darkBackground} text-white py-20 px-6 lg:px-16`}>
             <div className="max-w-7xl mx-auto space-y-24">
 
                 {/* ======================================================= */}
@@ -39,13 +39,13 @@ export default function CombinedInformationSection() {
                             Executive Program
                         </h2>
                         <p className="text-lg mb-4 text-gray-200">
-                            Klíč k modernímu leadershipu – <strong className="text-white">praktická a flexibilní alternativa MBA</strong>, která propojuje <strong className="text-white">vědecké poznatky s byznysovou praxí</strong>.
+                            A modern vezetés kulcsa – <strong className="text-white">gyakorlati és rugalmas MBA alternatíva</strong>, amely összeköti a <strong className="text-white">tudományos ismereteket az üzleti gyakorlattal</strong>.
                         </p>
                         <p className="mb-6 text-gray-300">
-                            Našim cílem je rozvíjet schopnosti manažerů tak, aby nejen reagovali na změny, ale dokázali je i předvídat a strategicky řídit. Součástí programu jsou témata doporučená MIT, <strong className="text-white">nejnovější trendy v oblasti managementu</strong> a praktické nástroje, které podporují lídry v efektivním vedení týmů. Program přináší <strong className="text-white">mezinárodní pohled</strong> na leadership a propojuje účastníky v inspirativní komunitě lídrů budoucnosti.
+                            Célunk a menedzserek képességeinek fejlesztése úgy, hogy ne csak reagáljanak a változásokra, hanem előre lássák és stratégiailag irányítsák azokat. A program része az MIT által ajánlott témák, a <strong className="text-white">legújabb menedzsment trendek</strong> és gyakorlati eszközök, amelyek támogatják a vezetőket a csapatok hatékony irányításában. A program <strong className="text-white">nemzetközi perspektívát</strong> nyújt a vezetésről, és a résztvevőket a jövő vezetőinek inspiráló közösségében köti össze.
                         </p>
                         <Button href="/future-ready-executive-program123" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
-                            Staňte se součástí Future Ready Executives
+                            Legyen része a Future Ready Executives programnak
                         </Button>
                     </div>
                 </div>
@@ -61,14 +61,14 @@ export default function CombinedInformationSection() {
                     {/* Text Content (Left) */}
                     <div>
                         <h2 className="text-4xl font-bold mb-6">
-                            Předplatné MIT Sloan<br />
-                            Management Review
+                            MIT Sloan<br />
+                            Management Review előfizetés
                         </h2>
                         <p className="text-lg mb-4 text-gray-200">
-                            Získejte přístup k <strong className="text-white">exkluzivnímu obsahu</strong> o managementu, inovacích a leadershipu. Přinášíme <strong className="text-white">odborné články</strong> z prestižního MIT Sloan, které vám pomohou růst osobně i profesně.
+                            Szerezzen hozzáférést <strong className="text-white">exkluzív tartalmakhoz</strong> a menedzsmentről, innovációról és vezetésről. <strong className="text-white">Szakmai cikkeket</strong> hozunk a rangos MIT Sloan-tól, amelyek segítenek személyesen és szakmailag fejlődni.
                         </p>
                         <Button href="/subscription123" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
-                            Registrujte se
+                            Regisztráljon
                         </Button>
                     </div>
 

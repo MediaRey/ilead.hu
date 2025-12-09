@@ -21,24 +21,24 @@ export default function HeroSection() {
         </div>
 
         {/* --- CONTENT LAYER --- */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full py-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16  w-full py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
             {/* Left Column: Text content */}
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-[1.15] tracking-tight">
-                Posouváme lídry<br />
-                a manažery<br />
-                na vyšší úroveň
+                Vezetőket és<br />
+                menedzsereket viszünk<br />
+                magasabb szintre
               </h1>
 
               <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
                 <p>
-                  <strong className="text-white">iLead Institute je centrum excelence v oblasti leadershipu a strategického řízení.</strong> Propojujeme vědecké poznatky s praxí a pomáháme firmám dosahovat reálných, měřitelných výsledků.
+                  <strong className="text-white">Az iLead Institute a vezetői készségek és stratégiai menedzsment kiválósági központja.</strong> Összekapcsoljuk a tudományos ismereteket a gyakorlattal, és segítjük a vállalatokat valódi, mérhető eredmények elérésében.
                 </p>
 
                 <p>
-                  Náš rozvojový program <strong className="text-white">Be Future Ready Executive</strong> není jen o školení – nabízí konkrétní a praktické nástroje pro moderní lídry, kteří chtějí být vždy o krok napřed.
+                  Fejlesztési programunk, a <strong className="text-white">Be Future Ready Executive</strong> nem csupán képzésről szól – konkrét és gyakorlati eszközöket kínál a modern vezetők számára, akik mindig egy lépéssel előrébb akarnak járni.
                 </p>
               </div>
 
@@ -48,7 +48,7 @@ export default function HeroSection() {
                     href="/kontakt123"
                     className="font-semibold px-8 py-3 rounded-md transition-colors"
                 >
-                  Rezervujte si místo
+                  Foglaljon helyet
                 </Button>
 
                 {/* Secondary Button (Orange) - Assuming similar style based on image */}
@@ -57,7 +57,7 @@ export default function HeroSection() {
                     variant="secondary"
                     className="font-semibold px-8 py-3 rounded-md transition-colors "
                 >
-                  Stáhněte si brožuru
+                  Töltse le a prospektust
                 </Button>
               </div>
             </div>

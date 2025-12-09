@@ -6,42 +6,42 @@ export default function BenefitsSection() {
   const benefits = [
     {
       icon: Lightbulb,
-      title: "Spojení vědy a praxe",
+      title: "A tudomány és a gyakorlat összekapcsolása",
       details: [
-        "Spolupracujeme s prestižními institucemi, jako je MIT, a přinášíme nejnovější manažerské trendy a strategie.",
-        "Všechny poznatky jsou okamžitě aplikovatelné v praxi.",
+        "Együttműködünk rangos intézményekkel, mint az MIT, és hozzuk a legújabb menedzsment trendeket és stratégiákat.",
+        "Minden ismeret azonnal alkalmazható a gyakorlatban.",
       ],
     },
     {
       icon: Network,
-      title: "Výjimečný networking a byznysové vztahy",
+      title: "Kivételes networking és üzleti kapcsolatok",
       details: [
-        "Staňte se součástí exkluzivní komunity lídrů a top manažerů.",
-        "Onboarding session a networking už od prvního dne programu.",
-        "Pravidelná setkání absolventů, strategické diskuse a inspirativní eventy.",
+        "Legyen része a vezetők és top menedzserek exkluzív közösségének.",
+        "Onboarding ülés és networking már a program első napjától.",
+        "Rendszeres alumni találkozók, stratégiai megbeszélések és inspiráló események.",
       ],
     },
     {
       icon: Star,
-      title: "Učíte se od nejlepších",
+      title: "Tanuljon a legjobbaktól",
       details: [
-        "Program vedou zkušení lídři a odborníci s reálnou zkušeností z teorie, ale ověřené strategie.",
-        "Konkrétní nástroje a strategie, které vám pomohou okamžitě zlepšit řízení týmu a firmy.",
+        "A programot tapasztalt vezetők és szakértők vezetik, akik valós tapasztalattal rendelkeznek az elméletből, de bizonyított stratégiákkal.",
+        "Konkrét eszközök és stratégiák, amelyek azonnal segítenek javítani a csapat és a vállalat irányítását.",
       ],
     },
   ];
 
   return (
-      <section className="py-20 bg-white px-4">
+      <section className="py-20 bg-white px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
 
           {/* Заголовок и подзаголовок центрированы по умолчанию */}
           <h2 className="text-4xl font-bold text-center mb-4 text-black">
-            Chcete víc než jen školení?
+            Többet szeretne, mint csak képzést?
           </h2>
           <p className="text-center text-lg mb-12 text-gray-700">
-            Připojte se k Future Ready Executive Programu a staňte se součástí<br />
-            exkluzivní komunity lídrů!
+            Csatlakozzon a Future Ready Executive Programhoz és legyen része<br />
+            a vezetők exkluzív közösségének!
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

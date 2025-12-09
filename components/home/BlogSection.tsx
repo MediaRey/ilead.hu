@@ -55,7 +55,7 @@ export default function BlogSection() {
   }, [emblaApi]);
 
   return (
-    <section className="py-20 bg-white px-4">
+    <section className="py-20 bg-white px-6 lg:px-16">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-black">Blog</h2>
 
@@ -97,7 +97,7 @@ export default function BlogSection() {
                             variant="third"
                             className="font-semibold px-16 py-4 rounded-md transition-colors "
                         >
-                          Číst více
+                          Tovább olvasom
                         </Button>
                       </div>
                     </div>
