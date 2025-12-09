@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Send, MessageCircle, Sparkles } from 'lucide-react';
 
 interface Message {
@@ -13,13 +13,6 @@ export default function ChatbotSection() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  useEffect(scrollToBottom, [messages]);
 
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
@@ -39,7 +32,7 @@ export default function ChatbotSection() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Něco se pokazilo');
+        throw new Error(data.error || 'Valami hiba történt');
       }
 
       const assistantMessage: Message = {
@@ -55,7 +48,7 @@ export default function ChatbotSection() {
         ...prev,
         {
           role: 'assistant',
-          content: error.message || 'Omlouváme se, došlo k chybě. Zkuste to prosím znovu.',
+          content: error.message || 'Elnézést, hiba történt. Kérjük, próbálja újra.',
         },
       ]);
     } finally {
@@ -139,7 +132,7 @@ export default function ChatbotSection() {
                       <div className="flex items-start gap-2">
                         <Sparkles className="w-4 h-4 text-orange flex-shrink-0 mt-0.5" />
                         <div className="text-xs text-gray-600">
-                          <p className="font-semibold mb-1">Související FAQ:</p>
+                          <p className="font-semibold mb-1">Kapcsolódó GYIK:</p>
                           <ul className="list-disc list-inside space-y-0.5">
                             {msg.sources.slice(0, 2).map((source, i) => (
                               <li key={i} className="text-gray-700">{source}</li>
@@ -164,8 +157,6 @@ export default function ChatbotSection() {
                 </div>
               </div>
             )}
-
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Input Area */}

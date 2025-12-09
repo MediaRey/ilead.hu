@@ -1,19 +1,20 @@
 import Button from '@/components/Button';
+import ProgramHeroSection from '@/components/program/ProgramHeroSection';
+import ProgramTopicsSection from '@/components/program/ProgramTopicsSection';
+import BeFutureReadySection from '@/components/program/BeFutureReadySection';
+import TargetAudienceSection from '@/components/program/TargetAudienceSection';
+import InstructorsSection from '@/components/program/InstructorsSection';
+import DownloadBrochureSection from '@/components/program/DownloadBrochureSection';
 
 export default function FutureReadyPage() {
   return (
     <main>
-      <section className="bg-navy-blue text-white py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-5xl font-bold mb-8">Future Ready Executive Program</h1>
-          <p className="text-2xl mb-4">
-            Klíč k modernímu leadershipu – praktická a flexibilní alternativa MBA
-          </p>
-          <p className="text-xl leading-relaxed">
-            která propojuje vědecké poznatky s byznysovou praxí.
-          </p>
-        </div>
-      </section>
+      <ProgramHeroSection />
+      <ProgramTopicsSection />
+      <BeFutureReadySection />
+      <TargetAudienceSection />
+      <InstructorsSection />
+      <DownloadBrochureSection />
 
       <section className="py-16 px-4">
         <div className="max-w-5xl mx-auto">
