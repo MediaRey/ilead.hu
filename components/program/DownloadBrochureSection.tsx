@@ -15,8 +15,7 @@ export default function DownloadBrochureSection() {
               Töltse le a prospektust, és tudjon meg többet a programról, annak fő elveiről és arról, hogy mit jelent felkészült vezetőnek lenni a jövőre.
             </p>
             <Button
-              href="/prospektus.pdf"
-              download
+              href="/something"
               className="bg-orange hover:bg-orange/90 text-white px-8 py-3 text-base font-semibold"
             >
               Töltse le a prospektust
