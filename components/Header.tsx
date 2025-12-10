@@ -39,9 +39,9 @@ export default function Header() {
               <Link href="/subscription123" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 Magazin előfizetés
               </Link>
-              <a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
+              <Link href="/#mit" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 MIT
-              </a>
+              </Link>
               <Link href="/#faq" className="text-white font-bold hover:text-[#ea8d32] transition-colors whitespace-nowrap">
                 GYIK
               </Link>

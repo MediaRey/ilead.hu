@@ -91,11 +91,11 @@ export default function TestimonialsSection() {
         </p>
 
         {/* Контейнер карусели */}
-        <div className="flex items-center justify-center space-x-4">
-          {/* Кнопка "Назад" */}
+        <div className="flex items-center justify-center space-x-2 md:space-x-4">
+          {/* Кнопка "Назад" - скрыта на мобильных */}
           <button
             onClick={scrollPrev}
-            className={`flex-shrink-0 bg-white ${arrowColor} rounded-md w-12 h-12 flex items-center justify-center shadow-lg hover:bg-gray-200 transition-colors z-20`}
+            className={`hidden md:flex flex-shrink-0 bg-white ${arrowColor} rounded-md w-12 h-12 items-center justify-center shadow-lg hover:bg-gray-200 transition-colors z-20`}
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -107,33 +107,33 @@ export default function TestimonialsSection() {
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0">
                   {/* Testimonial Card */}
-                  <div className={`${cardColor} rounded-xl p-8 md:p-12 min-h-[400px] flex items-center shadow-2xl`}>
-                    <div className="flex w-full items-start gap-12 flex-col md:flex-row">
+                  <div className={`${cardColor} rounded-xl p-6 md:p-12 min-h-[350px] md:min-h-[400px] flex items-center shadow-2xl`}>
+                    <div className="flex w-full items-center md:items-start gap-6 md:gap-12 flex-col md:flex-row">
                       {/* Цитата и Информация */}
-                      <div className="flex-1 order-2 md:order-1">
-                        <div className="pr-4 md:pr-0">
-                          <p className="text-xl md:text-2xl font-normal italic mb-6 leading-relaxed text-white">
+                      <div className="flex-1 order-2 md:order-1 text-center md:text-left">
+                        <div className="md:pr-4">
+                          <p className="text-base md:text-2xl font-normal italic mb-4 md:mb-6 leading-relaxed text-white">
                             &#34;{testimonial.quote}&#34;
                           </p>
                         </div>
 
                         <div className="pt-2">
-                          <p className="font-bold text-lg text-white">
+                          <p className="font-bold text-base md:text-lg text-white">
                             {testimonial.name}
                           </p>
-                          <p className="text-base text-gray-200">
+                          <p className="text-sm md:text-base text-gray-200">
                             {testimonial.position}
                           </p>
                         </div>
                       </div>
 
                       {/* Фото человека */}
-                      <div className="flex-shrink-0 w-40 h-40 md:w-56 md:h-56 relative rounded-full overflow-hidden shadow-2xl order-1 md:order-2 mx-auto md:mx-0">
+                      <div className="flex-shrink-0 w-32 h-32 md:w-56 md:h-56 relative rounded-full overflow-hidden shadow-2xl order-1 md:order-2">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.name}
                           fill
-                          sizes="224px"
+                          sizes="(max-width: 768px) 128px, 224px"
                           className="object-cover"
                         />
                       </div>
@@ -144,10 +144,10 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Кнопка "Вперед" */}
+          {/* Кнопка "Вперед" - скрыта на мобильных */}
           <button
             onClick={scrollNext}
-            className={`flex-shrink-0 bg-white ${arrowColor} rounded-md w-12 h-12 flex items-center justify-center shadow-lg hover:bg-gray-200 transition-colors z-20`}
+            className={`hidden md:flex flex-shrink-0 bg-white ${arrowColor} rounded-md w-12 h-12 items-center justify-center shadow-lg hover:bg-gray-200 transition-colors z-20`}
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6" />

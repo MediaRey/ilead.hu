@@ -59,11 +59,11 @@ export default function BlogSection() {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-black">Blog</h2>
 
-        <div className="flex items-center space-x-4">
-          {/* Кнопка "Назад" */}
+        <div className="flex items-center space-x-2 md:space-x-4">
+          {/* Кнопка "Назад" - скрыта на мобильных */}
           <button
             onClick={scrollPrev}
-            className="flex-shrink-0 bg-black text-white w-10 h-10 flex items-center justify-center hover:bg-gray-800 transition-colors rounded"
+            className="hidden md:flex flex-shrink-0 bg-black text-white w-10 h-10 items-center justify-center hover:bg-gray-800 transition-colors rounded"
             aria-label="Previous posts"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -71,13 +71,13 @@ export default function BlogSection() {
 
           {/* Embla Carousel Container */}
           <div className="overflow-hidden flex-1" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6">
               {blogPosts.map((post, index) => (
-                <div key={index} className="flex-[0_0_calc(33.333%-1rem)] min-w-0">
+                <div key={index} className="flex-[0_0_100%] md:flex-[0_0_calc(33.333%-1rem)] min-w-0">
                   {/* Карточка блога */}
                   <div className="bg-gray-50 rounded-lg overflow-hidden shadow-lg border border-gray-100 h-full flex flex-col">
                     {/* Изображение */}
-                    <div className="h-48 relative w-full">
+                    <div className="h-40 md:h-48 relative w-full">
                       <Image
                         src={post.image}
                         alt={post.alt}
@@ -88,14 +88,14 @@ export default function BlogSection() {
                     </div>
 
                     {/* Текстовый блок */}
-                    <div className="px-4 py-7 flex-1 flex flex-col">
-                      <h3 className="text-xl font-bold mb-3 text-black line-clamp-2">{post.title}</h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                    <div className="px-4 py-5 md:py-7 flex-1 flex flex-col">
+                      <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 text-black line-clamp-2">{post.title}</h3>
+                      <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 line-clamp-3">{post.excerpt}</p>
                       <div>
                         <Button
                             href={`/blog/${post.slug}`}
                             variant="third"
-                            className="font-semibold px-16 py-4 rounded-md transition-colors "
+                            className="font-semibold px-8 md:px-16 py-3 md:py-4 rounded-md transition-colors text-sm md:text-base w-full md:w-auto text-center"
                         >
                           Tovább olvasom
                         </Button>
@@ -107,10 +107,10 @@ export default function BlogSection() {
             </div>
           </div>
 
-          {/* Кнопка "Вперед" */}
+          {/* Кнопка "Вперед" - скрыта на мобильных */}
           <button
             onClick={scrollNext}
-            className="flex-shrink-0 bg-black text-white w-10 h-10 flex items-center justify-center hover:bg-gray-800 transition-colors rounded"
+            className="hidden md:flex flex-shrink-0 bg-black text-white w-10 h-10 items-center justify-center hover:bg-gray-800 transition-colors rounded"
             aria-label="Next posts"
           >
             <ChevronRight className="w-5 h-5" />
