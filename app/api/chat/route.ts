@@ -5,7 +5,7 @@ import faqEmbeddings from '@/data/faq-embeddings.json';
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
-// Simple cosine similarity function
+// Cosine similarity function
 function cosineSimilarity(a: number[], b: number[]): number {
   if (a.length !== b.length) {
     throw new Error('Vectors must have the same length');
@@ -22,96 +22,237 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct / (magnitudeA * magnitudeB);
 }
 
+// Keyword matching with Hungarian synonyms and related terms
+const KEYWORD_MAPPINGS: Record<string, string[]> = {
+  // Duration related
+  'időtartam': ['időtartam', 'időtartama', 'tart', 'hónap', 'hosszú', 'meddig', 'mennyi ideig', 'hossza'],
+  'meddig': ['időtartam', 'időtartama', 'tart', 'hónap', 'hosszú', 'meddig', 'mennyi ideig'],
+
+  // Price related
+  'ár': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'czk'],
+  'mennyibe': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'czk'],
+
+  // Location related
+  'hol': ['prága', 'prágában', 'helyszín', 'személyesen', 'online', 'hol'],
+  'helyszín': ['prága', 'prágában', 'helyszín', 'személyesen', 'online'],
+
+  // Start date related
+  'mikor': ['mikor', 'kezd', 'április', '2026', 'indulás', 'kezdődik', 'indul'],
+  'kezd': ['mikor', 'kezd', 'április', '2026', 'indulás', 'kezdődik', 'indul', 'kezdete'],
+
+  // Language related
+  'nyelv': ['nyelv', 'csehül', 'angol', 'magyarul', 'nyelven', 'fordít'],
+
+  // Certificate related
+  'tanúsítvány': ['tanúsítvány', 'oklevél', 'bizonyítvány', 'igazolás', 'certifikát'],
+  'oklevél': ['tanúsítvány', 'oklevél', 'bizonyítvány', 'igazolás', 'certifikát'],
+
+  // Content/topics related
+  'téma': ['téma', 'blokk', 'modul', 'tartalom', 'tananyag', 'tematikus'],
+  'mit': ['téma', 'blokk', 'tartalom', 'tanul', 'tanít'],
+
+  // Target audience
+  'kinek': ['vezető', 'vezetők', 'kinek', 'számára', 'célcsoport', 'ajánlott'],
+  'ki': ['vezető', 'vezetők', 'kinek', 'számára', 'részt', 'vehet'],
+
+  // Requirements
+  'követelmény': ['követelmény', 'feltétel', 'szükség', 'kell', 'vizsga', 'mba'],
+  'feltétel': ['követelmény', 'feltétel', 'szükség', 'kell'],
+
+  // Format
+  'hogyan': ['workshop', 'prezentáció', 'gyakorlat', 'szimuláció', 'interaktív'],
+  'formátum': ['workshop', 'prezentáció', 'gyakorlat', 'online', 'személyesen'],
+
+  // Contact
+  'kapcsolat': ['kapcsolat', 'email', 'telefon', 'érdeklődni', 'info'],
+  'jelentkez': ['jelentkez', 'regisztrál', 'kapcsolat', 'email'],
+};
+
+// Calculate keyword match score
+function calculateKeywordScore(query: string, text: string): number {
+  const queryLower = query.toLowerCase();
+  const textLower = text.toLowerCase();
+
+  let score = 0;
+  const matchedTerms = new Set<string>();
+
+  // Check each keyword mapping
+  for (const [trigger, relatedTerms] of Object.entries(KEYWORD_MAPPINGS)) {
+    // If query contains trigger word
+    if (queryLower.includes(trigger)) {
+      // Check if text contains any related terms
+      for (const term of relatedTerms) {
+        if (textLower.includes(term) && !matchedTerms.has(term)) {
+          score += 0.15; // Boost for each matched related term
+          matchedTerms.add(term);
+        }
+      }
+    }
+  }
+
+  // Direct word overlap bonus
+  const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
+  for (const word of queryWords) {
+    if (textLower.includes(word)) {
+      score += 0.05;
+    }
+  }
+
+  // Cap the keyword score
+  return Math.min(score, 0.5);
+}
+
+// Configuration
+const CONFIG = {
+  SIMILARITY_THRESHOLD: 0.40,
+  TOP_K_RESULTS: 6,
+  MIN_RESULTS: 2,
+  SEMANTIC_WEIGHT: 0.6,        // Weight for embedding similarity
+  KEYWORD_WEIGHT: 0.4,         // Weight for keyword matching
+  DEBUG: process.env.NODE_ENV === 'development'
+};
+
 export async function POST(req: NextRequest) {
   try {
-    // Parse request body
     const { message } = await req.json();
 
     if (!message || typeof message !== 'string') {
       return NextResponse.json(
-        { error: 'Az üzenet kötelező' },
-        { status: 400 }
+          { error: 'Az üzenet kötelező' },
+          { status: 400 }
       );
     }
 
-    // Check API key
     if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'your_api_key_here') {
       console.error('GEMINI_API_KEY not configured');
       return NextResponse.json(
-        { error: 'A szerver nincs megfelelően konfigurálva. Kérjük, lépjen kapcsolatba az adminisztrátorral.' },
-        { status: 500 }
+          { error: 'A szerver nincs megfelelően konfigurálva. Kérjük, lépjen kapcsolatba az adminisztrátorral.' },
+          { status: 500 }
       );
     }
 
-    // 1. Generate embedding for user question
+    // 1. Generate embedding for user's question
     const embeddingModel = genAI.getGenerativeModel({
       model: 'text-embedding-004'
     });
 
     const queryEmbedding = await embeddingModel.embedContent(message);
 
-    // 2. Find most similar FAQs (top 3)
-    const similarities = faqEmbeddings.map((faq: any) => ({
-      question: faq.question,
-      answer: faq.answer,
-      similarity: cosineSimilarity(
-        queryEmbedding.embedding.values,
-        faq.embedding
-      )
-    }));
+    // 2. Calculate hybrid scores (semantic + keyword)
+    const scoredResults = faqEmbeddings.map((item: any, index: number) => {
+      const semanticScore = cosineSimilarity(
+          queryEmbedding.embedding.values,
+          item.embedding
+      );
+      const keywordScore = calculateKeywordScore(message, item.text);
 
-    const topResults = similarities
-      .sort((a, b) => b.similarity - a.similarity)
-      .slice(0, 3);
+      // Hybrid score: weighted combination
+      const hybridScore = (semanticScore * CONFIG.SEMANTIC_WEIGHT) +
+          (keywordScore * CONFIG.KEYWORD_WEIGHT);
 
-    // 3. Build context from retrieved FAQs
-    const context = topResults
-      .map((r) => `Kérdés: ${r.question}\nVálasz: ${r.answer}`)
-      .join('\n\n');
-
-    // 4. Generate response using Gemini with context
-    const chatModel = genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash'
+      return {
+        text: item.text,
+        semanticScore,
+        keywordScore,
+        hybridScore,
+        index
+      };
     });
 
-    const prompt = `Az iLead Institute AI asszisztense vagy, aki segít válaszolni a "(be) Future Ready Executive" programmal kapcsolatos kérdésekre. Válaszolj magyarul, professzionálisan és barátságosan.
+    // Sort by hybrid score
+    const sortedResults = scoredResults.sort((a, b) => b.hybridScore - a.hybridScore);
 
-Kontextus a GYIK-ből (relevancia szerint rendezve):
-${context}
+    // Filter and limit results
+    let topResults = sortedResults.filter(r => r.hybridScore >= CONFIG.SIMILARITY_THRESHOLD);
 
-Felhasználó kérdése: ${message}
+    if (topResults.length < CONFIG.MIN_RESULTS) {
+      topResults = sortedResults.slice(0, CONFIG.MIN_RESULTS);
+    }
 
-UTASÍTÁSOK:
-1. Ha megtalálod a választ a fenti kontextusban, válaszolj ezen információk alapján
-2. A válasznak rövidnek (2-4 mondat) de hasznosnak kell lennie
-3. Ha az információ nincs a kontextusban, mondd: "Ezt az információt nem találom a GYIK-ben. Részletesebb információkért ajánlom, hogy lépjen kapcsolatba az info@ilead.cz címmel vagy töltse ki a kapcsolatfelvételi űrlapot weboldalunkon."
-4. Ne válaszolj olyan kérdésekre, amelyek nem kapcsolódnak az iLead Institute-hoz vagy a Future Ready Executive programhoz
-5. Őrizd meg a professzionális és barátságos hangnemet
+    topResults = topResults.slice(0, CONFIG.TOP_K_RESULTS);
 
-Válasz:`;
+    // Debug logging
+    if (CONFIG.DEBUG) {
+      console.log('\n--- RAG Debug (Hybrid Search) ---');
+      console.log('Question:', message);
+      console.log('Top matches:');
+      topResults.forEach((r, i) => {
+        console.log(`  ${i + 1}. [hybrid: ${r.hybridScore.toFixed(3)} | semantic: ${r.semanticScore.toFixed(3)} | keyword: ${r.keywordScore.toFixed(3)}]`);
+        console.log(`     ${r.text.substring(0, 80)}...`);
+      });
+      console.log('---------------------------------\n');
+    }
 
-    const result = await chatModel.generateContent(prompt);
+    // 3. Build structured context
+    const contextBlocks = topResults
+        .map((r, i) => `[${i + 1}] ${r.text}`)
+        .join('\n\n');
+
+    // 4. Generate response with improved prompt
+    const chatModel = genAI.getGenerativeModel({
+      model: 'gemini-2.5-flash-lite'
+    });
+
+    const systemPrompt = `Te az iLead Institute AI asszisztense vagy. A Future Ready Executive programról adsz információkat.
+
+SZEREPED:
+- Barátságos, professzionális asszisztens
+- Pontos, tömör válaszokat adsz
+- Magyarul válaszolsz
+
+TUDÁSBÁZIS:
+${contextBlocks}
+
+SZABÁLYOK:
+1. CSAK a fenti tudásbázis alapján válaszolj
+2. Ha a kérdésre nincs információ a tudásbázisban, mondd: "Sajnos erre a kérdésre nem találok információt. Kérem, lépjen kapcsolatba velünk az info@ilead.cz címen vagy hagyja el elérhetőségét."
+3. Válaszolj közvetlenül, ne hivatkozz a "tudásbázisra" vagy "információkra"
+4. Legyél tömör: 1-4 mondat elegendő
+5. Ha több releváns információ is van, foglald össze őket logikusan
+
+KÉRDÉS: ${message}
+
+VÁLASZ:`;
+
+    const result = await chatModel.generateContent({
+      contents: [{ role: 'user', parts: [{ text: systemPrompt }] }],
+      generationConfig: {
+        temperature: 0.3,
+        topP: 0.8,
+        topK: 40,
+        maxOutputTokens: 500,
+      }
+    });
+
     const response = result.response.text();
 
     return NextResponse.json({
       response,
-      sources: topResults.slice(0, 2).map(r => r.question)
+      ...(CONFIG.DEBUG && {
+        debug: {
+          topMatches: topResults.map(r => ({
+            hybridScore: r.hybridScore.toFixed(3),
+            semanticScore: r.semanticScore.toFixed(3),
+            keywordScore: r.keywordScore.toFixed(3),
+            preview: r.text.substring(0, 60) + '...'
+          }))
+        }
+      })
     });
 
   } catch (error: any) {
     console.error('Chat API error:', error);
 
-    // Handle specific error types
     if (error?.status === 429) {
       return NextResponse.json(
-        { error: 'Túl sok kérés. Kérjük, próbálja meg egy kis idő múlva.' },
-        { status: 429 }
+          { error: 'Túl sok kérés. Kérjük, próbálja meg egy kis idő múlva.' },
+          { status: 429 }
       );
     }
 
     return NextResponse.json(
-      { error: 'Elnézést, hiba történt. Kérjük, próbálja újra.' },
-      { status: 500 }
+        { error: 'Elnézést, hiba történt. Kérjük, próbálja újra.' },
+        { status: 500 }
     );
   }
 }
@@ -123,8 +264,10 @@ export async function GET() {
   return NextResponse.json({
     status: 'ok',
     configured: isConfigured,
+    embeddingsLoaded: faqEmbeddings.length,
+    searchType: 'hybrid (semantic + keyword)',
     message: isConfigured
-      ? 'Chat API is ready'
-      : 'GEMINI_API_KEY not configured'
+        ? `Chat API ready with ${faqEmbeddings.length} knowledge blocks`
+        : 'GEMINI_API_KEY not configured'
   });
 }

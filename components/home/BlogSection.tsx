@@ -8,32 +8,32 @@ import Button from "@/components/Button";
 
 const blogPosts = [
   {
-    title: "Organizace připravená na budoucnost: flexibilní,...",
-    excerpt: "Dokáže vaše firma obstát v době, kdy se realita mění každý týden? Být připraven na budoucnost už...",
+    title: "A jövőre felkészült szervezet: rugalmas,...",
+    excerpt: "Képes a cége megállni a helyét egy olyan korban, amikor a valóság hetente változik? A jövőre való felkészültség már...",
     image: "/organizace.jpg",
     slug: "organizace-pripravena",
-    alt: "Схема города с сетевыми соединениями"
+    alt: "Városi séma hálózati kapcsolatokkal"
   },
   {
-    title: "Kompetence budoucnosti: co bude rozhodovat o...",
-    excerpt: "Svět práce se rychle mění – jaké dovednosti budou klíčové? Technologie, automatizace a...",
+    title: "A jövő kompetenciái: mi fog dönteni a...",
+    excerpt: "A munka világa gyorsan változik – mely készségek lesznek kulcsontosak? A technológia, automatizáció és...",
     image: "/kompetence.png",
     slug: "kompetence-budoucnosti",
-    alt: "Робот с текстом 'АНАЛИТИЧЕСКОЕ МЫШЛЕНИЕ'"
+    alt: "Robot 'ANALITIKUS GONDOLKODÁS' felirattal"
   },
   {
-    title: "Manažerská školení: klíč k úspěchu v moderním...",
-    excerpt: "V dnešní dynamické době v podnikání nestačí pouze teoretické znalosti. Manažerská...",
+    title: "Vezetői képzések: a siker kulcsa a modern...",
+    excerpt: "A mai dinamikus üzleti környezetben nem elegendő csupán az elméleti tudás. A vezetői...",
     image: "/skoleni.png",
     slug: "manazerska-skoleni",
-    alt: "Книги и ноутбук с графиками"
+    alt: "Könyvek és laptop grafikonokkal"
   },
   {
-    title: "Leadership připravený na budoucnost: rozhodování v čase nejistoty...",
-    excerpt: "Kam směřuje vaše firma – a kdo ji tam vede? Ve světě, kde je změna novou konstantou, se role lídra zásadně mění. Nestačí být odborníkem ani...",
+    title: "Jövőre felkészült vezetés: döntéshozatal a bizonytalanság idején...",
+    excerpt: "Hová tart a cége – és ki vezeti oda? Egy olyan világban, ahol a változás az új állandó, a vezető szerepe alapvetően változik. Nem elég szakértőnek lenni...",
     image: "/leadership.jpg",
     slug: "celozivotni-vzdelavani",
-    alt: "Изображение книг"
+    alt: "Könyvek képe"
   }
 ];
 
