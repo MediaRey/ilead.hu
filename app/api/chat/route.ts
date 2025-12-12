@@ -2,6 +2,12 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextRequest, NextResponse } from 'next/server';
 import faqEmbeddings from '@/data/faq-embeddings.json';
 
+// Type definitions
+interface EmbeddingItem {
+  text: string;
+  embedding: number[];
+}
+
 // Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -139,7 +145,7 @@ export async function POST(req: NextRequest) {
     const queryEmbedding = await embeddingModel.embedContent(message);
 
     // 2. Calculate hybrid scores (semantic + keyword)
-    const scoredResults = faqEmbeddings.map((item: any, index: number) => {
+    const scoredResults = faqEmbeddings.map((item: EmbeddingItem, index: number) => {
       const semanticScore = cosineSimilarity(
           queryEmbedding.embedding.values,
           item.embedding
@@ -240,10 +246,10 @@ VÁLASZ:`;
       })
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Chat API error:', error);
 
-    if (error?.status === 429) {
+    if (error && typeof error === 'object' && 'status' in error && error.status === 429) {
       return NextResponse.json(
           { error: 'Túl sok kérés. Kérjük, próbálja meg egy kis idő múlva.' },
           { status: 429 }

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Button from '../Button';
 
 export default function HeroSection() {
@@ -8,10 +9,12 @@ export default function HeroSection() {
         {/* --- BACKGROUND IMAGE LAYER --- */}
         <div className="absolute inset-0 z-0">
           {/* Replace '/path/to/tiger-bg.jpg' with your actual image file */}
-          <img
+          <Image
               src="/hero-bg.jpg"
               alt="Background"
-              className="w-full h-full object-cover object-right"
+              fill
+              priority
+              className="object-cover object-right"
           />
 
           {/* Gradient Overlay:
