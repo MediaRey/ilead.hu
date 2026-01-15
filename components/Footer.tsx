@@ -22,17 +22,17 @@ export default function Footer() {
             <h3 className="font-bold mb-4">Linkek</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about123" className="text-gray-700 hover:text-orange transition-colors">
+                <Link href="/about" className="text-gray-700 hover:text-orange transition-colors">
                   Rólunk
                 </Link>
               </li>
               <li>
-                <Link href="/future-ready-executive-program123" className="text-gray-700 hover:text-orange transition-colors">
-                  Future Ready Executive Program
+                <Link href="/be-future-ready-executive-program" className="text-gray-700 hover:text-orange transition-colors">
+                  Be Future Ready Executive Program
                 </Link>
               </li>
               <li>
-                <Link href="/subscription123" className="text-gray-700 hover:text-orange transition-colors">
+                <Link href="/subscription" className="text-gray-700 hover:text-orange transition-colors">
                   MIT
                 </Link>
               </li>

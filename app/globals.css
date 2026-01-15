@@ -10,7 +10,7 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Компенсация высоты header при скроллинге к секциям */
+/* Scroll */
 section[id] {
   scroll-margin-top: 100px;
 }

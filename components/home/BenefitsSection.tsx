@@ -35,12 +35,12 @@ export default function BenefitsSection() {
       <section className="py-20 bg-white px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
 
-          {/* Заголовок и подзаголовок центрированы по умолчанию */}
+          {/* Title and subtitle */}
           <h2 className="text-4xl font-bold text-center mb-4 text-black">
             Többet szeretne, mint csak képzést?
           </h2>
           <p className="text-center text-lg mb-12 text-gray-700">
-            Csatlakozzon a Future Ready Executive Programhoz és legyen része<br />
+            Csatlakozzon a Be Future Ready Executive Programhoz és legyen része<br />
             a vezetők exkluzív közösségének!
           </p>
 
@@ -48,11 +48,11 @@ export default function BenefitsSection() {
             {benefits.map((benefit, index) => (
                 <div
                     key={index}
-                    className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 text-center" // Добавлен text-center для центрирования всего содержимого карточки
+                    className="bg-white p-8 rounded-xl shadow-lg border border-gray-100 text-center"
                 >
-                  {/* Icon Container с центрированием */}
+                  {/* Icon Container */}
                   <div
-                      className={`bg-orange text-white w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-2xl mx-auto`} // <<< Добавлен класс mx-auto
+                      className={`bg-orange text-white w-14 h-14 rounded-lg flex items-center justify-center mb-6 text-2xl mx-auto`}
                   >
                     <benefit.icon className="w-7 h-7" />
                   </div>
@@ -62,7 +62,7 @@ export default function BenefitsSection() {
                     {benefit.title}
                   </h3>
 
-                  {/* List of Details - Выравнивание текста по центру, но сохранение структуры списка */}
+                  {/* List of Details  */}
                   <ul className="space-y-2 text-gray-700 text-left inline-block">
                     {benefit.details.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-start">

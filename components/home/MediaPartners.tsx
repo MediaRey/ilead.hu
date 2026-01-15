@@ -4,16 +4,15 @@ export default function MediaPartners() {
   return (
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-16 text-center">
-          {/* Заголовок секции */}
+          {/* Title */}
           <h2 className="text-lg font-bold text-black uppercase tracking-wider mb-8">
             MÉDIA PARTNEREK
           </h2>
 
-          {/* Контейнер для логотипов */}
+          {/* Container */}
           <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
 
-            {/* Логотип Forbes */}
-            {/* Убедитесь, что файл forbes.png лежит в папке /public */}
+            {/* Logo Forbes */}
             <div className="relative h-8 w-24 md:h-10 md:w-32 grayscale hover:grayscale-0 transition-all duration-300">
               <Image
                   src="/forbes-logo.png"
@@ -23,8 +22,7 @@ export default function MediaPartners() {
               />
             </div>
 
-            {/* Логотип MIT Sloan */}
-            {/* Убедитесь, что файл mit-sloan.png лежит в папке /public */}
+            {/* Logo MIT Sloan */}
             <div className="relative h-10 w-40 md:h-12 md:w-56 grayscale hover:grayscale-0 transition-all duration-300">
               <Image
                   src="/mitsloan_logo.png"

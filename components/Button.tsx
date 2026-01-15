@@ -7,6 +7,7 @@ interface ButtonProps {
   className?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -15,7 +16,8 @@ export default function Button({
   variant = 'primary',
   className = '',
   onClick,
-  type = 'button'
+  type = 'button',
+  disabled = false
 }: ButtonProps) {
   const baseStyles = 'rounded-full font-medium transition-all duration-300 inline-block';
 
@@ -36,7 +38,7 @@ export default function Button({
   }
 
   return (
-    <button type={type} onClick={onClick} className={combinedClassName}>
+    <button type={type} onClick={onClick} className={combinedClassName} disabled={disabled}>
       {children}
     </button>
   );

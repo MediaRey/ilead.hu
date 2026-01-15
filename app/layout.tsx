@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "iLead Institute - Centrum excelence v oblasti leadershipu",
-  description: "Posouváme lídry a manažery na vyšší úroveň. Propojujeme vědecké poznatky s praxí.",
+  title: "iLead Institute - A vezetésfejlesztés kiválósági központja",
+  description: "Vezetőket és menedzsereket viszünk magasabb szintre. A tudományos ismereteket a gyakorlattal kapcsoljuk össze.",
 };
 
 export default function RootLayout({

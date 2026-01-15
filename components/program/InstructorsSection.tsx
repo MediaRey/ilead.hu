@@ -1,96 +1,113 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { Linkedin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function InstructorsSection() {
-  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+  const [expandedCards, setExpandedCards] = useState<string[]>([]);
+  const [showAll, setShowAll] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const toggleCard = (index: number) => {
+  const toggleCard = (name: string) => {
     setExpandedCards(prev =>
-      prev.includes(index)
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
+      prev.includes(name)
+        ? prev.filter(i => i !== name)
+        : [...prev, name]
     );
+  };
+
+  const handleToggleShowAll = () => {
+    setShowAll(!showAll);
+    // Scroll to section top
+    setTimeout(() => {
+      sectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   };
   const instructors = [
     {
-      name: "Vít Šubert",
-      image: "/instructors/subert.jpg",
+      name: "Lencsés Gergő",
+      title: "Az iLead Institute Head of Faculty-ja, a ZEL-Group ügyvezető partnere, a GE egykori globális alelnöke",
+      image: "/instructors/lencses.jpg",
       linkedin: "https://www.linkedin.com/in/vitsubert/",
-      bio: "Vít stratéga és a transzformációs projektek vezetője, több mint 25 év tapasztalattal a nemzetközi üzletben Európa-szerte, elsősorban a technológia, távközlés és innováció területén. Cége az Unicorn Attacks segíti a vállalatokat és startupokat a diszruptív üzleti modellek megtalálásában, új bevételi források azonosításában és a régi modellek elhagyásában, hogy elkerüljék az ügyfelek státusz quo modelljeit.",
+      bio: "Villamosmérnök, globális felsővezető és operációs szakértő, aki több mint 25 évet töltött a GE-nél, ahol a gázturbinagyártás globális operációját vezette. A ZEL Group társalapítójaként és tanácsadójaként az innováció, az adatelemzés és a mesterséges intelligencia eszközeivel forradalmasítja a szervezet- és vezetőfejlesztést, hogy a vállalatok és vezetők valódi, tartós fejlődést érhessenek el.",
     },
     {
-      name: "Radek Špicar",
-      image: "/instructors/spicar.jpg",
-      linkedin: "https://www.linkedin.com/in/radekspicar/",
-      bio: "Radek Špicar az Ipari Szövetség alelnöke és a BusinessEurope korábbi alelnöke. A múltban az Aspen Institute Prague igazgatója, a Škoda Auto cég vezetésének társulási tagja volt, ahol számos bel- és külgazdasági pozíciót töltött be. Gazdasági tanulmányokat végzett a Társadalomtudományok Karán a Károly Egyetemen és a diplomáciai területen.",
+      name: "Gauder Milán",
+      title: "Az MIT SMR főszerkesztője, Az Év Filantrópja 2024, sorozatvállalkozó, a Mastercard korábbi globális alelnöke",
+      image: "/instructors/gauder.jpeg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Több mint húsz év nemzetközi tapasztalattal rendelkező pénzügyi technológiai szakember, aki a Mastercard globális vezetőjeként vált a fintech szektor egyik legelismertebb magyar szereplőjévé. Gauder Milán ma angyalbefektetőként és tanácsadóként segíti az innovatív fintech vállalkozásokat, miközben társadalmi hatású projekteken és kulturális kezdeményezéseken is aktívan dolgozik.",
     },
     {
-      name: "Pavlína Louženská",
-      image: "/instructors/louzenska.jpg",
-      linkedin: "https://www.linkedin.com/in/pavlinalouzenska/",
-      bio: "Pavlína a trendeknek szenteli magát - ő trendkutató szakértő. Trendkutató ügynökségeket vezetett a Tatra Banknál vagy az IKEA-nál. Pavlína a nemzetközi trendkutatók Culture Connectors közösségének tagja. Főként a Startupy pro Evropu, Afrikát és a Közel-Keletet veszi figyelembe, sok más akcelerátoron dolgozik, amelyek különböző technológiai startupok fejlesztésére összpontosítanak.",
+      name: "Pistyur Veronika",
+      title: "Bridge Budapest ügyvezető alapító, Oktogon Ventures partner",
+      image: "/instructors/pistyur.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Vezető, befektető és kulturális szakember, aki a Bridge Budapest és az Oktogon Ventures befektetési cég társalapítójaként a tudatos vállalkozói kultúra és az innováció elkötelezett támogatója. Pistyur Veronika több hazai és nemzetközi startupprogram mentora, a Startup Hungary kuratóriumi tagja, és rendszeresen szerepel a legbefolyásosabb magyar nők listáján.",
     },
     {
-      name: "Martin Gajdoš",
-      image: "/instructors/gajdos.jpg",
-      linkedin: "https://www.linkedin.com/in/martingajdos/",
-      bio: "Martin vezetője és stratégiai tanácsadó, aki segít vállalatoknak potenciáljuk kiaknázásában, növekedésében és sikerében gyorsan változó környezetben. A Stellars Ventures vállalat alapítója, amely a vállalatok fejlesztésére és átalakulására összpontosít, és olyan határokat kíván túllépni, amelyeket ma neheznek tartanak.",
+      name: "Lakatos Péter",
+      title: "MGYOSZ elnök, Videoton Holding Zrt. társ-vezérigazgató, Bravogroup társtulajdonos",
+      image: "/instructors/lakatos.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Villamosmérnök, üzletember, a Munkaadók és Gyáriparosok Országos Szövetségének elnöke, a Bravogroup társtulajdonosa és a VIDEOTON Holding társ-vezérigazgatója, aki több mint három évtizede elkötelezetten dolgozik a hazai ipar és innováció erősítésén.",
     },
     {
-      name: "Paulina Mazur",
-      image: "/instructors/mazur.jpg",
-      linkedin: "https://www.linkedin.com/in/paulinamazur/",
-      bio: "Paulina HR, vállalati kultúra és kommunikáció területén szaktanácsadó több generációra kiterjedően. Több mint 20 éve vezet emberi kapcsolatokat - ezért tiszta kommunikáció és kultúra nélkül nem lehet sikeres üzletet építeni. Fő fókusza a vállalati kultúra és az igazi munkahelyi elkötelezettség építése. Segíti a vállalatokat a párbeszéd fejlesztésében, a visszajelzés erősítésében és az egymás megértésében.",
+      name: "Vinnai Balázs",
+      title: "IVSZ elnök, Finshape elnök, sorozatvállalkozó",
+      image: "/instructors/vinnai.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Technológiai vállalkozó és befektető, az IND Group és a Codecool alapítója, aki az innováció, a digitális pénzügy és az IT-oktatás területén épít nemzetközi sikertörténeteket, a magyar tech szektor meghatározó alakjaként.",
     },
     {
-      name: "Jakub Kolesa",
-      image: "/instructors/kolesa.jpg",
-      linkedin: "https://www.linkedin.com/in/jakubkolesa/",
-      bio: "Jakub a Fortuna Entertainment Group általános igazgatója, közép-európai sázó vállalat, és tapasztalt vezetője több mint 30 év nemzetközi üzleti gyakorlattal. Több mint egy évtizede működik együtt a Mars/Royal Caninnel, 15 évig Csehországban, a Nagy-Britanniában, Írországban és Oroszországban, valamint a Mars Petcare globális stratégiai igazgatójaként.",
+      name: "Németh Kinga",
+      title: "Az Audi Hungaria személyügyért és szervezetért felelős igazgatósági tagja",
+      image: "/instructors/nemeth.jpg",
+      linkedin: "https://www.linkedin.com/in/kinga-n%C3%A9meth-2043aa1b9/",
+      bio: "Több mint 25 éve dolgozik az Audi Hungariánál, ahol pénzügyi, kontrolling és személyügyi területeken szerzett vezetői tapasztalatot. Németh Kinga meghatározó szerepet játszik a vállalat hosszú távú HR- stratégiájának alakításában és a munkavállalói elkötelezettség erősítésében, miközben elkötelezett a tehetségek fejlesztése és a vállalati kultúra folyamatos megújítása iránt.",
     },
     {
-      name: "Ivana Šedivá",
-      image: "/instructors/sediva.jpg",
-      linkedin: "https://www.linkedin.com/in/ivanasediva/",
-      bio: "Ivana több mint 30 év tapasztalattal rendelkezik nagyméretű nemzetközi vállalatok vezetői területén. Dolgozott Johnson & Johnson, McDonald's, Tesco, Ahold Delhaize és OBI Group cégekben, ahol átfogó transzformációs projekteket és marketing stratégiákat irányított. Szerepe cseh, szlovák és nemzetközi szinten is megvolt. Az elmúlt években független tagja a közigazgatási tanácsoknak.",
+      name: "Benkő Vilmos",
+      title: "Az Amerikai Kereskedelmi Kamara egykori elnöke, üzletember, befektető, coach",
+      image: "/instructors/benko.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Az Amerikai Kereskedelmi Kamara volt elnökeként, a Toastmasters Hungary és a Speak Academy alapítójaként hisz abban, hogy a kommunikáció az egyik legerősebb eszköz az önbizalom és a siker építésében. Küldetésének tekinti, hogy a retorikai készségek fejlesztésével segítse az embereket abban, hogy magabiztosabban és tudatosabban formálják saját életüket.",
     },
     {
-      name: "Matej Bošňák",
-      image: "/instructors/bosnak.jpg",
-      linkedin: "https://www.linkedin.com/in/matejbosnak/",
-      bio: "Matej tapasztalt vezető pénzügy és audit területén, több mint 25 év nemzetközi tanácsadói cégeknél és vállalatoknál szerzett tapasztalattal. Mióta informatikai kibernetikai képzést végzett a Zsilina Egyetemen, 1994-ben a világban kezdett dolgozni a Coopers & Lybrand (később PwC) cégnél, majd az Ernst & Young (EY) cégnél, ahol 2006-ban partner lett.",
+      name: "Karafiáth Balázs",
+      title: "A Transpersonal Coaching Academy alapítója, coach, szervezetfejlesztő",
+      image: "/instructors/karafiath.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Továbbá a Sziget Fesztivál, a Carnation és a Darwin's Marketing Evolution társalapítója, a Neumann Society kezdeményezője. Több mint 25 év vezetői és nemzetközi tapasztalatával, valamint az agy- és viselkedéstudományok eredményeit ötvöző módszertanával segíti a vezetőket abban, hogy felfedezzék valódi erejüket és küldetésüket.",
     },
     {
-      name: "Petr Šmíd",
-      image: "/instructors/smid.jpg",
-      linkedin: "https://www.linkedin.com/in/petrsmid/",
-      bio: "Petr befektetési partner a Rockaway Ventures-nél, egy befektetési részleg, amely a Rockaway Capital alatt működik, és transzformatív technológiák területén fektet be célja az AI. Munkája ambiciózus alapítóknak segít a vállalatot a seed fázistól a Series A-ig és tovább, célja az, hogy CEE régióból globális színtérre jussanak startupok.",
+      name: "Lénárt Viktor",
+      title: "A ZEL Group alapítója és vezérigazgatója, a GROW Group korábbi elnöke és vezérigazgatója",
+      image: "/instructors/lenart.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Szervezetfejlesztési szakember és vezetői tanácsadó, aki a tudatos vezetés és a fenntartható növekedés elkötelezett híve. A ZEL Group alapítójaként és a GROW Group korábbi vezérigazgatójaként több mint húsz éve segíti vezetők és szervezetek fejlődését.",
     },
     {
-      name: "David Vrba",
-      image: "/instructors/vrba.jpg",
-      linkedin: "https://www.linkedin.com/in/davidvrba/",
-      bio: "David üzenetét az embereknek ihleti, hogy a leggyakrabban csináljanak tudatos döntéseket. Kiterjedt nemzetközi üzleti tapasztalattal rendelkezik - 3M vagy ERSTE Group cégekben dolgozott, ahol vezetői szerepeket töltött be CHRO és CEO pozíciókban. Vezet start-up és oktatási projekteket is. Ma transzformációs coach és mentor, valamint nagyvállalati vezető propagátora.",
+      name: "Kapitány István",
+      title: "A Shell korábbi globális executive alelnöke, a Menedzserszövetség elnöke",
+      image: "/instructors/kapitany.jpg",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Nemzetközi felsővezető, aki 37 évet töltött a Shellnél, ahol globális executive alelnökként a vállalat kiskereskedelmi üzletágát vezette világszerte. Magyarországról induló karrierje során Európában, Amerikában és Dél-Afrikában töltött be vezetői pozíciókat, 80 országban irányítva komplex, nagy léptékű működést. Több évtizedes tapasztalatával a globális növekedés, az ügyfélközpontú működés és a vezetői kiválóság meghatározó alakja.",
     },
     {
-      name: "Tomáš Braverman",
-      image: "/instructors/braverman.jpg",
-      linkedin: "https://www.linkedin.com/in/tomasbraverman/",
-      bio: "Több mint 15 éve él az e-commerce és online üzlettel. Miután az Internet Retail területén szerzett tapasztalatot, 2013-ban a Heureky vezérigazgatója lett, amely 10 évig volt vezető e-commerce cég a CEE-ben. Szlovák csapatot alapított - a legnagyobb piactér Slevomát Group - amely exkluzív ajánlatokat és utazási ajánlatokat nyújt Csehországban és Szlovákiában.",
-    },
-    {
-      name: "Kristin LaRonca Parpel",
-      image: "/instructors/parpel.jpg",
-      linkedin: "https://www.linkedin.com/in/kristinlaronca/",
-      bio: "Kristin executive coach és leadership tanácsadó több mint 25 év üzleti tapasztalattal. Saját cégét, a KLP Coaching-ot vezeti, amely egyedi coaching és csoportprogramokat kínál vezetőknek, csapat dinamikára és mentorálásra összpontosítva. Kristin konferenciákon is fellép, panelbeszélgetéseket moderál és podcastokat vezet. Üzenete az, hogy segítsen az embereknek felfedezni, mi motiválja őket igazán.",
+      name: "Dr. Varga Eszter",
+      title: "PannonHitel Zrt. társtulajdonos, vezérigazgató; bankár; befektető; executive coach",
+      image: "/instructors/varga.png",
+      linkedin: "https://www.linkedin.com/in/vitsubert/",
+      bio: "Pénzügyi szakember és felsővezető, a PannonHitel Zrt. cégcsoport alapító tulajdonosa és vezérigazgatója. Karrierjét a Lombard Lízingnél kezdte, majd a Raiffeisen Banknál a nagyvállalati hitelezés igazgatójaként, később az FHB Kereskedelmi Bank vezérigazgató-helyetteseként szerzett meghatározó vezetői tapasztalatot. Saját vállalkozásait társaival a pénzügyi és szolgáltató szektorban építette fel, több sikeres exitet megvalósítva. Vezetőként és coachként a tudatos, felelős üzleti működés és a vezetői fejlődés elkötelezett támogatója.",
     },
   ];
 
+
   return (
-    <section className="py-20 bg-white px-6 lg:px-16">
+    <section ref={sectionRef} className="py-20 bg-white px-6 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="text-4xl font-bold text-center mb-4 text-black">
@@ -102,9 +119,13 @@ export default function InstructorsSection() {
 
         {/* Instructors Grid - Using CSS columns for masonry layout */}
         <div className="block md:columns-2 lg:columns-3 gap-8">
-          {instructors.map((instructor, index) => (
-            <div
-              key={index}
+          {instructors.slice(0, showAll ? instructors.length : 6).map((instructor, index) => (
+            <motion.div
+              key={instructor.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
               className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow mb-8 break-inside-avoid"
             >
               {/* Header with circular photo, name and LinkedIn */}
@@ -119,11 +140,14 @@ export default function InstructorsSection() {
                   />
                 </div>
 
-                {/* Name and LinkedIn */}
+                {/* Name, Title and LinkedIn */}
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-black mb-1">
+                  <h3 className="text-xl font-bold text-black">
                     {instructor.name}
                   </h3>
+                  <p className="text-sm text-gray-600 mb-1">
+                    {instructor.title}
+                  </p>
                   <a
                     href={instructor.linkedin}
                     target="_blank"
@@ -138,21 +162,40 @@ export default function InstructorsSection() {
 
               {/* Bio */}
               <p className={`text-gray-700 text-sm leading-relaxed mb-4 transition-all ${
-                expandedCards.includes(index) ? '' : 'line-clamp-6'
+                expandedCards.includes(instructor.name) ? '' : 'line-clamp-3'
               }`}>
                 {instructor.bio}
               </p>
 
               {/* Show More/Less Link */}
               <button
-                onClick={() => toggleCard(index)}
+                onClick={() => toggleCard(instructor.name)}
                 className="text-orange font-semibold text-sm hover:text-orange/80 transition-colors"
               >
-                {expandedCards.includes(index) ? '- Kevesebbet mutat' : '+ Többet mutat'}
+                {expandedCards.includes(instructor.name) ? '- Kevesebbet mutat' : '+ Többet mutat'}
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Show All / Show Less Button */}
+        {instructors.length > 6 && (
+          <motion.div
+            className="flex justify-center mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <motion.button
+              onClick={handleToggleShowAll}
+              className="bg-orange text-white font-semibold px-8 py-3 rounded-md transition-colors hover:bg-orange/90"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {showAll ? 'Kevesebb oktató megtekintése' : 'Összes oktató megtekintése'}
+            </motion.button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

@@ -3,7 +3,6 @@ import MediaPartners from '@/components/home/MediaPartners';
 import BenefitsSection from '@/components/home/BenefitsSection';
 import MITPartnershipSection from '@/components/home/MITPartnershipSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
-import BlogSection from '@/components/home/BlogSection';
 import ChatbotSection from '@/components/home/ChatbotSection';
 import ContactFormSection from '@/components/home/ContactFormSection';
 import CombinedInformationSection from "@/components/home/CombinedInformationSection";
@@ -18,7 +17,6 @@ export default function Home() {
       <BenefitsSection />
       <MITPartnershipSection />
       <TestimonialsSection />
-      <BlogSection />
       <ChatbotSection />
       <ContactFormSection />
       <SocialSidebar />

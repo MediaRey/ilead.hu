@@ -8,7 +8,6 @@ export default function HeroSection() {
 
         {/* --- BACKGROUND IMAGE LAYER --- */}
         <div className="absolute inset-0 z-0">
-          {/* Replace '/path/to/tiger-bg.jpg' with your actual image file */}
           <Image
               src="/hero-bg.jpg"
               alt="Background"
@@ -17,9 +16,7 @@ export default function HeroSection() {
               className="object-cover object-right"
           />
 
-          {/* Gradient Overlay:
-            Creates a solid dark fade on the left for text readability,
-            transparent on the right to show the tiger. */}
+          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#08121e] via-[#08121e]/90 to-transparent lg:via-[#08121e]/70"></div>
         </div>
 
@@ -48,19 +45,19 @@ export default function HeroSection() {
               <div className="flex flex-wrap gap-4 mt-10">
                 {/* Primary Button (Orange) */}
                 <Button
-                    href="/kontakt123"
+                    href="/be-future-ready-executive-program"
                     className="font-semibold px-8 py-3 rounded-md transition-colors"
                 >
-                  Foglaljon helyet
+                  A programról
                 </Button>
 
                 {/* Secondary Button (Orange) - Assuming similar style based on image */}
                 <Button
-                    href="/subscription123"
+                    href="/subscription"
                     variant="secondary"
                     className="font-semibold px-8 py-3 rounded-md transition-colors "
                 >
-                  Töltse le a prospektust
+                  A folyóiratról
                 </Button>
               </div>
             </div>

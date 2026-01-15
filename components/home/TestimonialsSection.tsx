@@ -7,45 +7,43 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const testimonials = [
   {
-    quote: "Za klíčové dovednosti manažerů a lídrů považuji zejména schopnost jasně definovat cíle napříč všemi úrovněmi organizace a také schopnost chápat a vyvažovat dlouhodobé strategické vize s každodenní realitou dynamicky se měnícího trhu.",
-    name: "Dr. Zdeněk Kaufmann",
-    position: "Managing Partner Amrop, Dr. Kaufmann & Partner Inc.",
-    image: "/kaufmann.jpg"
+    quote: "Mert a világ állandóan új nyelven kezd el beszélni, és aki nem tanul, egy idő után nem tud bekapcsolódni a párbeszédbe. A tanulás nem házi feladat, hanem egy elképesztően izgalmas kaland. Fenntartja a kíváncsiságot, ami a 21. század egyik legfontosabb szuperkompetenciája. Tartós versenyelőnyt jelenthet: aki nemcsak reagál a változásra, hanem élvezettel tanul benne, az kevésbé sodródik, és tudatosabban alakítja a saját világát.",
+    name: "Pistyur Veronika",
+    position: "Bridge Budapest ügyvezető alapító, Oktogon Ventures partner",
+    image: "/pistyur.jpg"
   },
   {
-    quote: "V byznysu jde o konkrétní akce, nikoli o teorii. Future Ready Executive Program přináší praktické nástroje a strategické dovednosti, které lídrům pomáhají okamžitě reagovat na změny a posilovat svou pozici.",
-    name: "Tomasz Wiatrak",
-    position: "Co-founder iLead Institute, Executive Advisor and Investor",
-    image: "/wiatrak.jpeg"
+    quote: "A digitális technológiai forradalom új sebességre gyorsította a világunk változását. Ebben a környezetben az alkalmazkodóképesség vált a legnagyobb versenyelőnnyé, amihez gyors ciklusú, ugyanakkor folyamatos tanulásra van szükség.",
+    name: "Vinnai Balázs",
+    position: "IVSZ elnök, Finshape elnök, sorozatvállalkozó",
+    image: "/vinnai.jpg"
   },
   {
-    quote: "Vzdělávání je pro mě nejlepší investicí – posiluje sebevědomí, udržuje mysl v kondici a přináší nadhled i rovnováhu. Umožnilo mi založit vlastní firmu a potkat lidi, kteří mě hodnotově obohatili.",
-    name: "Jiřina Nepalová",
-    position: "ředitelka RENOMIA GROUP",
-    image: "/nepalova.png"
+    quote: "Az AI korszakában reális veszély, hogy azt is elfelejtjük használni, amit már tudunk. Az élethosszig tartó tanulás segít megőrizni a kíváncsiságot, a gondolati önállóságot és a rendszerszintű gondolkodást – miközben azt is megtanuljuk, mi az, amit már nyugodtan elengedhetünk.",
+    name: "Lénárt Viktor",
+    position: "ZEL Group ügyvezető alapító, a Grow Group korábbi ügyvezetője",
+    image: "/lenart.jpg"
   },
   {
-    quote: "Celoživotní vzdělávání je nezbytné. Otvírá nám to nové perspektivy, buduje vztahy, zvyšuje naši hodnotu, přináší nápady a řešení. A někdy nás to může i posunout mimo naši komfortní zónu. Takové vzdělávání mám nejradši.",
-    name: "Pavla Nýdrle",
-    position: "česká podnikatelka a manažerka, ředitelka volební kampaně prezidenta Petra Pavla",
-    image: "/nydrie.png"
+    quote: "Önmagunk és a világ felfedezése talán az egyik legizgalmasabb dolog az életben. Ha a kíváncsiságunkat és a figyelmünket a megfelelő irányba tereljük, az nemcsak a karrierünkben segít, hanem abban is, hogy az életünket méltóbban és gazdagabban éljük.",
+    name: "Lencsés Gergő",
+    position: "iLead Institute - Head of Faculty, a GE gázturbina operációjának korábbi globális vezetője",
+    image: "/lencses.jpg"
   },
   {
-    quote: "Celoživotní vzdělávání je nezbytné nejen proto, že nám umožňuje držet krok s neustálými změnami, ale také proto, že nás vede k růstu jako jednotlivce i lídry.",
-    name: "Marcel Gajdoš",
-    position: "General Manager Czechia, Hungary & Slovakia, Visa",
-    image: "/gajdos.jpg"
+    quote: "A fejlődés – és az ehhez szükséges önfejlesztés, kísérletezés, olvasás, tanácsok elfogadása és utánajárás – elengedhetetlen ahhoz, hogy ne csak a csúcson maradjunk, hanem egyáltalán a felszínen bármely gyorsan fejlődő tudományos vagy üzleti területen.",
+    name: "Gauder Milán",
+    position: "Mastercard korábbi globális alelnöke, sorozatvállalkozó, MIT SMR főszerkesztő",
+    image: "/gauder.jpeg"
   },
 ];
 
 export default function TestimonialsSection() {
-  // Инициализация Embla Carousel
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
-    duration: 30, // Длительность анимации в мс
+    duration: 30,
   });
 
-  // Функции для навигации
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -54,10 +52,8 @@ export default function TestimonialsSection() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  // Состояние для индикаторов
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Обновление выбранного индекса
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -73,7 +69,6 @@ export default function TestimonialsSection() {
     };
   }, [emblaApi]);
 
-  // Цветовые константы
   const bgColor = "bg-[#0E2738]";
   const cardColor = "bg-[#A00230]";
   const accentColor = "text-[#A00230]";
@@ -82,7 +77,7 @@ export default function TestimonialsSection() {
   return (
     <section className={`${bgColor} text-white py-20 px-6 lg:px-16`}>
       <div className="max-w-5xl mx-auto">
-        {/* Заголовок */}
+        {/* Title */}
         <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
           Miért érdemes <span className={accentColor}>folyamatosan tanulni?</span>
         </h2>
@@ -90,9 +85,8 @@ export default function TestimonialsSection() {
           Válaszolnak a magyar vállalatok és intézmények vezető vezetői.
         </p>
 
-        {/* Контейнер карусели */}
+        {/* Carousel container */}
         <div className="flex items-center justify-center space-x-2 md:space-x-4">
-          {/* Кнопка "Назад" - скрыта на мобильных */}
           <button
             onClick={scrollPrev}
             className={`hidden md:flex flex-shrink-0 bg-white ${arrowColor} rounded-md w-12 h-12 items-center justify-center shadow-lg hover:bg-gray-200 transition-colors z-20`}
@@ -127,7 +121,7 @@ export default function TestimonialsSection() {
                         </div>
                       </div>
 
-                      {/* Фото человека */}
+                      {/* Photo*/}
                       <div className="flex-shrink-0 w-32 h-32 md:w-56 md:h-56 relative rounded-full overflow-hidden shadow-2xl order-1 md:order-2">
                         <Image
                           src={testimonial.image}
@@ -144,7 +138,6 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          {/* Кнопка "Вперед" - скрыта на мобильных */}
           <button
             onClick={scrollNext}
             className={`hidden md:flex flex-shrink-0 bg-white ${arrowColor} rounded-md w-12 h-12 items-center justify-center shadow-lg hover:bg-gray-200 transition-colors z-20`}
@@ -154,7 +147,6 @@ export default function TestimonialsSection() {
           </button>
         </div>
 
-        {/* Индикаторы (точки) */}
         <div className="flex justify-center gap-2 mt-8">
           {testimonials.map((_, index) => (
             <button

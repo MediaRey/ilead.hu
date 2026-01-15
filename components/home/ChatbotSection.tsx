@@ -70,7 +70,7 @@ export default function ChatbotSection() {
         {/* Header */}
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
-            Kérdezzen a <span className="text-burgundy">(be) Future Ready Executive</span> programról
+            Kérdezzen a <span className="text-burgundy">Be Future Ready Executive</span> programról
           </h2>
           <p className="text-gray-600 text-lg">
             Használja AI asszisztensünket a programmal kapcsolatos kérdéseire
@@ -89,7 +89,7 @@ export default function ChatbotSection() {
                   </div>
                 </div>
                 <p className="text-xl font-semibold text-gray-700 mb-2">Üdvözöljük az AI asszisztensben!</p>
-                <p className="text-gray-600">Kérdezzen bármit a Future Ready Executive programról</p>
+                <p className="text-gray-600">Kérdezzen bármit a Be Future Ready Executive programról</p>
                 <div className="mt-6 flex flex-wrap justify-center gap-2">
                   <button
                     onClick={() => setInput('Meddig tart a program?')}

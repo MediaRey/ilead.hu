@@ -199,7 +199,7 @@ export async function POST(req: NextRequest) {
       model: 'gemini-2.5-flash-lite'
     });
 
-    const systemPrompt = `Te az iLead Institute AI asszisztense vagy. A Future Ready Executive programról adsz információkat.
+    const systemPrompt = `Te az iLead Institute AI asszisztense vagy. A Be Future Ready Executive programról adsz információkat.
 
 SZEREPED:
 - Barátságos, professzionális asszisztens
