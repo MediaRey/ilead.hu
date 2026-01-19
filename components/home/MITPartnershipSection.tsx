@@ -34,7 +34,7 @@ export default function MITPartnershipSection() {
 
             <div className="mt-8">
               <a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener noreferrer">
-                <Button className="font-semibold px-8 py-3 rounded-md transition-colors">
+                <Button className="font-semibold px-4 sm:px-8 py-3 rounded-md transition-colors">
                   Látogassa meg az MIT Sloan Review-t
                 </Button>
               </a>

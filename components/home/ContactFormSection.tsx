@@ -73,7 +73,7 @@ export default function ContactFormSection() {
       <section id="kontakt" className="w-full">
         {/* Top burgundy bar with title */}
         <div className="bg-[#A00230] text-white py-10 text-center">
-          <h2 className="text-4xl font-bold">
+          <h2 className="px-4 text-4xl font-bold">
             Tudjon meg többet a Be Future Ready Executive Programról!
           </h2>
         </div>

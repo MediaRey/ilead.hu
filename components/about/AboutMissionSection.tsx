@@ -16,8 +16,8 @@ export default function AboutMissionSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Column 1 */}
           <div className="flex flex-col items-center">
-            <div className="bg-orange rounded-lg p-4 mb-6">
-              <GraduationCap className="w-12 h-12 text-white" strokeWidth={1.5} />
+            <div className="bg-orange rounded-lg p-3 md:p-4 mb-6">
+              <GraduationCap className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed">
               Hozzuk a legújabb globális ismereteket a vezetés, stratégiai irányítás és innováció területén.
@@ -26,8 +26,8 @@ export default function AboutMissionSection() {
 
           {/* Column 2 */}
           <div className="flex flex-col items-center">
-            <div className="bg-orange rounded-lg p-4 mb-6">
-              <CheckCircle className="w-12 h-12 text-white" strokeWidth={1.5} />
+            <div className="bg-orange rounded-lg p-3 md:p-4 mb-6">
+              <CheckCircle className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed">
               Segítjük a menedzsereket kulcsfontosságú kompetenciák fejlesztésében és csapataik hatékony vezetésében, még bizonytalan időkben is.
@@ -36,8 +36,8 @@ export default function AboutMissionSection() {
 
           {/* Column 3 */}
           <div className="flex flex-col items-center">
-            <div className="bg-orange rounded-lg p-4 mb-6">
-              <BookOpen className="w-12 h-12 text-white" strokeWidth={1.5} />
+            <div className="bg-orange rounded-lg p-3 md:p-4 mb-6">
+              <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed">
               Igazítjuk az oktatást a magyar üzleti környezet sajátosságaihoz.

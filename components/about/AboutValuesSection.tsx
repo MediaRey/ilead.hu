@@ -14,7 +14,7 @@ export default function AboutValuesSection() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left - Tiger Image */}
-          <div className="relative w-full h-[400px] lg:h-[600px]">
+          <div className="relative w-full h-[200px] lg:h-[600px]">
             <Image
               src="/values-image.png"
               alt="iLead Institute Values - Polygonal Tiger"
@@ -33,7 +33,7 @@ export default function AboutValuesSection() {
             <div className="space-y-6">
               {values.map((value, index) => (
                 <div key={index} className="flex items-start gap-4">
-                  <span className="text-black text-2xl font-bold flex-shrink-0 mt-1">—</span>
+                  <span className="text-black text-lg sm:text-2xl font-bold flex-shrink-0 mt-1">—</span>
                   <p className="text-lg text-gray-700 leading-relaxed">
                     {value}
                   </p>

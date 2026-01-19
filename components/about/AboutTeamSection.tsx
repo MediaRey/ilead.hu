@@ -48,7 +48,7 @@ export default function AboutTeamSection() {
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-16 bg-white">
+    <section className="py-20 px-4 lg:px-16 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-black">

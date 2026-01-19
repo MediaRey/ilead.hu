@@ -43,8 +43,8 @@ export default function CombinedInformationSection() {
                         <p className="mb-6 text-gray-300">
                             Célunk a menedzserek képességeinek fejlesztése úgy, hogy ne csak reagáljanak a változásokra, hanem előre lássák és stratégiailag irányítsák azokat. A program része az MIT által ajánlott témák, a <strong className="text-white">legújabb menedzsment trendek</strong> és gyakorlati eszközök, amelyek támogatják a vezetőket a csapatok hatékony irányításában. A program <strong className="text-white">nemzetközi perspektívát</strong> nyújt a vezetésről, és a résztvevőket a jövő vezetőinek inspiráló közösségében köti össze.
                         </p>
-                        <Button href="/be-future-ready-executive-program" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
-                            Legyen része a Be Future Ready Executives programnak
+                        <Button href="/be-future-ready-executive-program" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold  px-4 sm:px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
+                            Legyen része a Future Ready Executives
                         </Button>
                     </div>
                 </div>
@@ -66,19 +66,19 @@ export default function CombinedInformationSection() {
                         <p className="text-lg mb-4 text-gray-200">
                             Szerezzen hozzáférést <strong className="text-white">exkluzív tartalmakhoz</strong> a menedzsmentről, innovációról és vezetésről. <strong className="text-white">Szakmai cikkeket</strong> hozunk a rangos MIT Sloan-tól, amelyek segítenek személyesen és szakmailag fejlődni.
                         </p>
-                        <Button href="/subscription" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
+                        <Button href="/subscription" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-4 sm:px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
                             Regisztráljon
                         </Button>
                     </div>
 
                     {/* Image Container (Right) */}
-                    <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl flex justify-center items-center">
+                    <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
                         {/* Replace '/magazine-cover.png' with your actual image file path */}
                         <Image
                             src="/magazine-cover.png"
                             alt="Magazín MIT Sloan Management Review"
                             fill
-                            className="object-contain p-4" // Use padding/smaller image size to prevent the cover from being cut off if needed
+                            className="object-cover"
                             sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                     </div>

@@ -7,7 +7,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const testimonials = [
   {
-    quote: "Mert a világ állandóan új nyelven kezd el beszélni, és aki nem tanul, egy idő után nem tud bekapcsolódni a párbeszédbe. A tanulás nem házi feladat, hanem egy elképesztően izgalmas kaland. Fenntartja a kíváncsiságot, ami a 21. század egyik legfontosabb szuperkompetenciája. Tartós versenyelőnyt jelenthet: aki nemcsak reagál a változásra, hanem élvezettel tanul benne, az kevésbé sodródik, és tudatosabban alakítja a saját világát.",
+    quote: "A tanulás nem házi feladat, hanem egy izgalmas kaland. Fenntartja a kíváncsiságot, ami a 21. század egyik legfontosabb szuperkompetenciája. Tartós versenyelőnyt jelenthet: aki nemcsak reagál a változásra, hanem élvezettel tanul benne, az kevésbé sodródik, és tudatosabban alakítja a saját világát.",
     name: "Pistyur Veronika",
     position: "Bridge Budapest ügyvezető alapító, Oktogon Ventures partner",
     image: "/pistyur.jpg"
@@ -101,17 +101,17 @@ export default function TestimonialsSection() {
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="flex-[0_0_100%] min-w-0">
                   {/* Testimonial Card */}
-                  <div className={`${cardColor} rounded-xl p-6 md:p-12 min-h-[350px] md:min-h-[400px] flex items-center shadow-2xl`}>
-                    <div className="flex w-full items-center md:items-start gap-6 md:gap-12 flex-col md:flex-row">
+                  <div className={`${cardColor} rounded-xl p-6 md:p-12 h-[500px] md:h-[450px] flex items-center shadow-2xl`}>
+                    <div className="flex w-full items-center md:items-start gap-6 md:gap-12 flex-col md:flex-row h-full">
                       {/* Цитата и Информация */}
-                      <div className="flex-1 order-2 md:order-1 text-center md:text-left">
-                        <div className="md:pr-4">
-                          <p className="text-base md:text-2xl font-normal italic mb-4 md:mb-6 leading-relaxed text-white">
+                      <div className="flex-1 order-2 md:order-1 text-center md:text-left flex flex-col justify-between h-full">
+                        <div className="md:pr-4 flex-1 flex items-center">
+                          <p className="text-base md:text-xl font-normal italic leading-relaxed text-white">
                             &#34;{testimonial.quote}&#34;
                           </p>
                         </div>
 
-                        <div className="pt-2">
+                        <div className="pt-4 mt-auto">
                           <p className="font-bold text-base md:text-lg text-white">
                             {testimonial.name}
                           </p>

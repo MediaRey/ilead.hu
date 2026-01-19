@@ -8,67 +8,67 @@ dotenv.config({ path: '.env.local' });
 
 const informationBlocks = [
   {
-    text: "A Future Ready Executive program időtartama 10 hónap, amelyet egy ünnepélyes megnyitó és inspiráló találkozó előz meg onboarding-gal. A program befejezését követően ünnepélyes záró rendezvényre kerül sor az iLead Institute kezdeményezéséhez kapcsolódó oktatók, szakértők és résztvevők jelenlétében. A program lezárása után networking találkozókat és kiegészítő eseményeket is tervezünk."
+    text: "A Be Future Ready Executive program időtartama 10 hónap. A program egy ünnepélyes indítással és inspiráló onboarding üléssel kezdődik. Az időbeosztás tartalmaz nyári szünetet és karácsonyi szünetet is. A program befejezésekor formális diplomaátadó ünnepséget tartanak az oktatók, szakértők és az iLead Institute kezdeményezés társrésztvevőinek jelenlétében. A program lezárását követően networking alkalmakat és további follow-up eseményeket is tervezünk."
   },
   {
-    text: "Az onboarding szekció kivételes lehetőség a csapat megismerésére, a program részletes bemutatására és értékes üzleti kapcsolatok kialakítására egy speciális networking során. A találkozó kizárólag a modern leadership eszméje köré tömörült résztvevők, oktatók és szakértők számára szól. A hivatalos rész mellett egyedülálló networking eseményt is tervezünk."
+    text: "Az ülések havonta egyszer kerülnek megrendezésre kétnapos képzési blokkok formájában, pénteken és szombaton, szombaton korábbi kezdéssel és befejezéssel."
   },
   {
-    text: "A programban a találkozók havonta egyszer zajlanak kétnapos képzési blokkok formájában."
+    text: "A Be Future Ready Executive program indítását 2026 áprilisára tervezzük, az onboarding üléssel kezdve."
   },
   {
-    text: "A Future Ready Executive program 25 éves európai piaci tapasztalatra épül, amelyet az MIT által ajánlott témák inspiráltak. A workshopok gyakorlati eseteket, aktuális trendeket és a legjobb egyetemek által használt eszközöket tartalmaznak. A helyi és globális nézőpontot úgy kapcsoljuk össze, hogy vezető cseh és szlovák szakértők szerepelnek oktatóként és trénerként. Ez egy egyedülálló program, ahol találkozhat a cseh és szlovák üzleti élet és az akadémiai világ élvonalával. Az akadémiai tudást globális trendekkel és helyi megoldásokkal kombináljuk. Egyetlen konferencia vagy fejlesztési program sem kínál ilyen széles kapcsolatrendszert és vezetési szemléletet."
+    text: "Minden ülés személyesen kerül megrendezésre Budapesten. Ezen felül az egyes képzési blokkok között online kapcsolat is elérhető az oktatókkal és az iLead Institute szakértői csapatával."
   },
   {
-    text: "A program megkezdését 2026 áprilisára tervezzük, kezdve az onboarding találkozóval."
+    text: "A program elvégzése után a résztvevők az iLead Institute által kiállított tanúsítványt kapnak a formális diplomaátadó ünnepség során."
   },
   {
-    text: "A program 10 kétnapos tematikus blokkot tartalmaz: Győztes stratégiák új modell a gyors és turbulens világban eszközökkel és kulcselemekkel, Mesterséges intelligencia a stratégiai vezetésben, A stratégia operacionalizálása és megvalósítása, Jövőre felkészült vezetés szervezeti és egyéni dimenzióval, A vezetők embereket építenek hogyan vezessünk fejlesszünk és inspiráljunk tehetségeket, Ügyfélközpontú szervezet építése hogyan irányítsuk a profitot az ügyfél megértésén keresztül, Gazdaságtan vezetők számára értékteremtés eszközkezelés és befektetési döntéshozatal, A győztes szervezet kultúra elkötelezettség és változáskezelés, Mesterség az árképzésben és költségekben hogyan növeljük a bevételt és csökkentsük egyszerre a kiadásokat, A vezető mint kommunikátor és tárgyaló a párbeszéd befolyás és értékteremtés mestere."
+    text: "A képzést vezető szintű üzleti vezetők és gyakorlati szakemberek vezetik, minden ülés magyarul zajlik. Az inspiráló keynote előadásokat és workshopokat egyaránt kiemelkedő üzleti személyiségek tartják, akik közül sokan kiterjedt nemzetközi felsővezetői tapasztalattal rendelkeznek, és magasan sikeres vállalkozók. Az iLead Institute oktatói és szakértői Magyarországon többek között Pistyur Veronika, Lakatos Péter, Kapitány István és mások."
   },
   {
-    text: "Minden találkozó személyesen zajlik Prágában. Az egyes blokkok között ezen felül online kapcsolattartás is lehetséges az oktatókkal és az iLead Institute szakértői csapatával."
+    text: "A Be Future Ready Executive program felső vezetők és felsővezetők számára készült (C és C-1 szint), akik kiterjedt vezetői tapasztalattal rendelkeznek, és szeretnék jövőbiztossá tenni készségeiket és erősíteni piaci hatásukat. Üdvözöljük a különböző háttérrel rendelkező vezetőket, akik nemcsak az új kihívásokkal való megbirkózásra vágynak, hanem piaci trendeket formálni és innovációt vezetni szeretnének. A program családi vállalkozások és utódlástervezés számára is rendkívül releváns, átfogó, glocal üzleti perspektívát kínálva a résztvevők számára. A gondosan összeállított tartalom támogatja a funkciók közötti vezetőket, segítve még a szakembereket is kompetenciáik bővítésében, stratégiai gondolkodásuk fejlesztésében és szervezeteik magabiztos és látásmód vezérlésében."
   },
   {
-    text: "A programban való részvétel ára tartalmazza a részvételt 10 kétnapos helyszíni képzési blokkon Prágában kávészünetekkel és nyomtatott anyagokkal, részvételt 2 speciális találkozón az onboarding formális és informális résszel gálavacsorával valamint a program ünnepélyes zárása, egyéves előfizetést a nyomtatott MIT Sloan Review és Forbes Česko magazinokra, egyéves online hozzáférést a Forbes.cz és MIT Sloan anyagaihoz és cikkeihez, valamint meghívókat a Forbes és az iLead Institute által szervezett kiválasztott eseményekre."
+    text: "A Be Future Ready Executive program kis, fókuszált csoporttal működik a maximális személyes fejlődés és a csúcs oktatókhoz való közvetlen hozzáférés biztosítása érdekében. A formátum ösztönzi a valós esetek, tapasztalatok és kihívások megosztását, jelentős tanulást és együttműködést elősegítve a csoporton belül."
   },
   {
-    text: "A program elvégzése után az ünnepélyes ceremónia során a résztvevők megkapják az iLead Institute által kiállított tanúsítványt."
+    text: "A workshopok során a résztvevők interaktív gyakorlatokban, vitákban, szimulációkban és gyakorlati tevékenységekben vesznek részt modern eszközök és formátumok használatával, beleértve a kártyákat, szimulációs játékokat, személyiségvizsgálatokat és AI-alapú tevékenységeket. A program magyarországi, a közép-kelet-európai régió és a világ minden tájáról származó esettanulmányokat tartalmaz, amelyeket mélyreható megbeszéléseken és gyakorlati gyakorlatokon keresztül vizsgálnak meg. Ez a formátum lehetővé teszi a résztvevők számára, hogy valós kihívásokat és betekintéseket osszanak meg, erősítsék stratégiai gondolkodásukat, gyakorlati készségeket építsenek és értékes szakmai kapcsolatokat alakítsanak ki, minden ülést rendkívül vonzóvá, interaktívvá és közvetlenül relevánsá téve vezetői gyakorlatukhoz."
   },
   {
-    text: "A program ára 230 000 CZK, a fizetés számla alapján történik."
+    text: "A hivatalos képzési blokkokon kívül elkötelezettségre lehet szükség. A résztvevők egyéni feladatokat vagy gyakorlatokat kaphatnak az ülések között, és néhány oktató előmunkát biztosíthat minden blokk előtt. Hiányzás esetén lehetőség van az elmulasztott tartalom pótlására. A program nagymértékben személyre szabott, minden résztvevő igényeihez és elérhetőségéhez igazítva."
   },
   {
-    text: "A képzést tapasztalt oktatók és gyakorlati üzleti vezetők vezetik, minden találkozó csehül zajlik. Minden blokk tartalmaz egy inspiráló előadást egy tapasztalt vezetőtől, valamint workshopokat, amelyeket élvonalbeli cseh és szlovák oktatók és trénerek vezetnek. A megerősített oktatók és az iLead Institute szakértői között van például Radek Špicar, David Vrba és mások."
+    text: "A Be Future Ready Executive program nem zárul vizsgával vagy záródolgozattal. Az MBA-val ellentétben a részvétel a program blokkjaiban való aktív részvételi elkötelezettségen alapul. A program egyénre szabott megközelítése, kis csoportos formátuma és az oktatókhoz való közvetlen hozzáférés a vezetői kompetenciák valódi fejlesztését hivatott biztosítani, ezért a tudás formális értékelése nem tervezett."
   },
   {
-    text: "A programban több személy is részt vehet ugyanabból a cégből. A csoport különböző cégekből, ágazatokból és szakterületekről származó résztvevőkből fog állni, de lehetséges több személy jelentkezése is egy vállalatból. Ez szoros együttműködést tesz lehetővé az oktatókkal és a vállalati esetekre való összpontosítást. A csoport diverzitása növeli a megosztott tapasztalatok értékét."
+    text: "Az onboarding szekció egyedülálló lehetőséget kínál a csapat megismerésére, a program részletes felfedezésére és értékes üzleti kapcsolatok építésére egy különleges networking ülés során. A találkozó kizárólag a modern vezetés víziója köré tömörült résztvevők, oktatók és szakértők számára szól. A hivatalos program mellett dedikált networking eseményt is tervezünk a jelentőségteljes kapcsolatok elősegítésére."
   },
   {
-    text: "A Future Ready Executive program felső vezetők és vezetők számára készült, akik a jövő kompetenciáit kívánják fejleszteni és piaci pozíciójukat erősíteni. Ajánljuk a B-1 típusú pozícióban lévő személyek számára. Üdvözöljük a különböző tapasztalatokkal rendelkező vezetőket és vezetőnőket, akik nemcsak reagálni szeretnének az új kihívásokra, hanem befolyásolni is a piaci trendeket. A program családi vállalkozások és tervezett utódlás számára is megfelelő, széles perspektívát nyit a résztvevők számára az úgynevezett glocal üzletre. A témák átfogóan vannak feldolgozva, hogy támogassák a specializált területek vezetőit is a kompetenciák bővítésében és a vállalatra vonatkozó stratégiai szemlélet kialakításában."
+    text: "A Be Future Ready Executive program az ICAN Institute szakértelmére épül, amely 25 éves tapasztalattal rendelkezik a közép-kelet-európai régió felső vezetőinek képzésében, kiválóságot biztosítva mind az oktatásban, mind a módszertanban. A workshopok valós eseteket, aktuális trendeket és vezető egyetemek által használt eszközöket tartalmaznak, MIT által ajánlott témákból inspirálva. Ez egy valóban egyedülálló program, amely erős alumni hálózatot épít magyarországi, cseh és szlovák vezetők között, ötvözve az akadémiai tudást globális trendekkel és helyi megoldásokkal. A résztvevők gyakorlati készségeket, stratégiai betekintéseket és értékes kapcsolatokat szereznek, amit egyetlen konferencia vagy hagyományos fejlesztési program sem tud nyújtani."
   },
   {
-    text: "Az MBA programokkal ellentétben nincs szükség formális követelmények teljesítésére korábbi végzettségek vagy képzési területek tekintetében a programba való válogatás során. A programba való teljes bekapcsolódáshoz és aktív részvételhez ajánlott az üzleti témák alapvető ismerete (képzéssel vagy gyakorlattal megszerzett). A program olyan személyek számára készült, akik már rendelkeznek tapasztalattal saját üzlet, csapat vezetésében vagy felkészülnek a felsővezető szerepre."
+    text: "A program 10 kétnapos tematikus blokkból áll: 1. Stratégia: egy új modell új szabályokkal, 2. Mesterséges intelligencia a stratégiai menedzsmentben, 3. Stratégia a gyakorlatban: folyamatok kialakítása, 4. Jövőálló vezetés: szervezeti és személyes szempontok, 5. People management: a tehetség kiválasztása, megtartása és fejlesztése, 6. Az ügyfél, a bevétel és a nyereség fókuszában, 7. Stratégiai gazdasági elemzés a növekedésért, 8. Csúcsteljesítményű szervezet felépítése: kultúra, elkötelezettség és változás, 9. Árazás és költségkezelés: hogyan növeljük a bevételt és csökkentsük a kiadásokat, 10. A vezetői kommunikáció és a sikeres tárgyalás művészete."
   },
   {
-    text: "A Future Ready Executive program résztvevői csoportját úgy tervezzük, hogy minden résztvevő a lehető legjobb lehetőséget kapja a személyes fejlődésre és az oktatóval való kapcsolatra. A kis csoport lehetővé teszi saját esetek, tapasztalatok és kihívások megosztását a csoporton belül."
+    text: "A részvételi díj a következőket tartalmazza: részvétel 10 kétnapos helyszíni képzési modulban (Budapest), beleértve a kávészüneteket és nyomtatott anyagokat, részvétel 2 különleges eseményen: onboarding (formális és informális részek) és a formális program záró ünnepsége, egyéves előfizetés az MIT Sloan Review és Forbes Hungary nyomtatott kiadásaira, egyéves online hozzáférés a Forbes.hu és MIT Sloan anyagaihoz és cikkeihez, meghívók a Forbes Hungary és az iLead Institute által szervezett kiválasztott eseményekre."
   },
   {
-    text: "Az oktatás csehül zajlik. Minden anyag, cikk, jelentés és esettanulmány az MIT-ről és más forrásokból a résztvevők számára cseh nyelvre lesz fordítva. Néhány vendégelőadó külföldi lehet, ezért az angoltudás előnyös, de nem kötelező – a tartalom mindenki számára elérhető lesz."
+    text: "A program díja 9 900 EUR. A fizetés számla alapján történik."
   },
   {
-    text: "A workshopok során prezentációk, viták, gyakorlati gyakorlatok és szimulációk zajlanak. Modern eszközöket és formátumokat használunk – például kártyák, szimulációs játékok, személyiségtesztek és mesterséges intelligencia alapú eszközök. Részét képezik cseh, szlovák és világméretű esettanulmányok is. Minden találkozó maximálisan interaktív és bevonó."
+    text: "Ugyanabból a cégből több személy is részt vehet a programban. A csoportot szándékosan különböző cégekből, iparágakból és szakterületekről származó résztvevőkből állítjuk össze, ami gazdagítja a közös tanulást. Ugyanakkor egy szervezetből több résztvevő jelenléte lehetővé teszi a szorosabb együttműködést az oktatókkal és a vállalati specifikus eseteken való mélyebb munkát."
   },
   {
-    text: "Ha többet szeretne megtudni a programról, megismerni az oktatókat és részletekről érdeklődni, hagyja nálunk e-mail címét és telefonszámát. Az iLead Institute csapatának egy tagja a lehető leghamarabb felveszi Önnel a kapcsolatot."
+    text: "Az MBA programokkal ellentétben nincsenek formális követelmények a korábbi végzettségekkel vagy tanulmányi területekkel kapcsolatban. A programban való teljes körű részvételhez és aktív közreműködéshez szükséges az alapvető üzleti témák szilárd megértése, amit oktatással vagy szakmai tapasztalattal lehet megszerezni. A program olyan személyek számára készült, akik már rendelkeznek tapasztalattal saját vállalkozásuk vagy csapataik vezetésében, valamint azok számára, akik vezető szerepre készülnek."
   },
   {
-    text: "A hivatalos blokkokon kívül is szükség lehet elkötelezettségre. Feltételezzük önálló feladatok vagy gyakorlatok kiadásának lehetőségét a blokkok között. Néhány oktató úgynevezett pre-work-öt biztosíthat a blok előtt. Hiányzás esetén lehetőség lesz a hiányzó rész pótlására. A program nagyon egyénre szabottan van beállítva a résztvevők igényeire és lehetőségeire tekintettel."
+    text: "A képzés magyarul zajlik. Minden anyag, cikk, jelentés és esettanulmány az MIT-ről és más forrásokból magyarra lesz fordítva a résztvevők számára. Néhány vendégelőadó nemzetközi lehet, ezért az angoltudás előnyös. Azonban nem kötelező, a tartalom minden résztvevő számára elérhető lesz."
   },
   {
-    text: "A program ára nem tartalmazza a szállást és az egyes találkozókra történő utazást. Ezeket a költségeket a résztvevők önállóan fizetik."
+    text: "Ha többet szeretne megtudni, megismerni az oktatókat és részletekről érdeklődni, kérjük, hagyja nálunk e-mail címét és telefonszámát. Csapatunk egy tagja a lehető leghamarabb felveszi Önnel a kapcsolatot."
   },
   {
-    text: "A Future Ready Executive programot nem zárul vizsga vagy záródolgozat. Az MBA-val ellentétben a programban való részvétel a résztvevők blokkok alatti részvételéről szóló szerződésen alapul. Az egyéni megközelítés, a kis csoport és a közvetlen kapcsolat az oktatóval hivatott biztosítani a kompetenciák valódi fejlődését, ezért nem tervezzük a tudás formális ellenőrzését."
+    text: "A Be Future Ready Executive program díja nem tartalmazza a szállást vagy az egyes ülésekre való utazást, amelyeket várhatóan Budapesten tartanak. Ezeket a költségeket a résztvevők külön fedezik."
   }
 ];
 
