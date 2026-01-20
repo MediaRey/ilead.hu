@@ -12,7 +12,7 @@ export default function SubscriptionPage() {
         <SubscriptionHeroSection/>
         <MagazineCarousel/>
         <SubscriptionOrderForm/>
-        <ChatbotSection />
+
 
     </main>
   );

@@ -22,10 +22,10 @@ export default function HeroSection() {
 
         {/* --- CONTENT LAYER --- */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16  w-full py-16">
-          <div className="flex justify-center items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-            {/* Center Column: Text content */}
-            <div className="max-w-4xl text-center">
+            {/* Left Column: Text content */}
+            <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-[1.15] tracking-tight">
                 Vezetőket és<br />
                 menedzsereket viszünk<br />
@@ -42,7 +42,7 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 mt-10 justify-center">
+              <div className="flex flex-wrap gap-4 mt-10 justify-center lg:justify-start">
                 {/* Primary Button (Orange) */}
                 <Button
                     href="/be-future-ready-executive-program"
@@ -61,6 +61,10 @@ export default function HeroSection() {
                 </Button>
               </div>
             </div>
+
+            {/* Right Column: Empty spacer to push content left on desktop
+              (The Tiger is in the background layer) */}
+            <div className="hidden lg:block"></div>
           </div>
         </div>
       </section>

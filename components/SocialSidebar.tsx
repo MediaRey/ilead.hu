@@ -14,7 +14,7 @@ export default function SocialSidebar() {
 
       {/* LinkedIn Icon */}
       <a
-        href="https://www.linkedin.com/company/i-lead-institute-%C4%8Desko"
+        href="https://www.linkedin.com/company/mit-sloan-management-review-hungary"
         target="_blank"
         rel="noopener noreferrer"
         className="text-orange hover:text-navy-black transition-colors duration-300"
