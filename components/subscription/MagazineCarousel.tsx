@@ -7,12 +7,17 @@ import Image from 'next/image';
 import ImageGallery from './ImageGallery';
 
 const magazines = [
-  '/magazines/magazine-1.webp',
-  '/magazines/magazine-2.webp',
-  '/magazines/magazine-3.webp',
-  '/magazines/magazine-4.webp',
-  '/magazines/magazine-5.webp',
-  '/magazines/magazine-6.webp',
+  '/magazines/page1.png',
+  '/magazines/page2.png',
+  '/magazines/page3.png',
+  '/magazines/page4.png',
+  '/magazines/page5.png',
+  '/magazines/page6.png',
+  '/magazines/page7.png',
+  '/magazines/page8.png',
+  '/magazines/page9.png',
+  '/magazines/page10.png',
+
 ];
 
 export default function MagazineCarousel() {

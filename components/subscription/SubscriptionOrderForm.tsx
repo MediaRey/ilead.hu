@@ -105,7 +105,7 @@ export default function SubscriptionOrderForm() {
             </h3>
 
             <p className="text-3xl font-bold text-orange mb-6">
-              Ár: 1 990 CZK / 80 EUR
+              Ár: 18.800 HUF / év
             </p>
 
             <h4 className="text-xl font-bold mb-4">Az előfizetés tartalmazza:</h4>

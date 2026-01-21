@@ -3,7 +3,7 @@
 import SubscriptionHeroSection from "@/components/subscription/SubscriptionHeroSection";
 import MagazineCarousel from "@/components/subscription/MagazineCarousel";
 import SubscriptionOrderForm from "@/components/subscription/SubscriptionOrderForm";
-import ChatbotSection from "@/components/home/ChatbotSection";
+import MagazineChatbotSection from "@/components/subscription/MagazineChatbotSection";
 
 export default function SubscriptionPage() {
 
@@ -12,8 +12,7 @@ export default function SubscriptionPage() {
         <SubscriptionHeroSection/>
         <MagazineCarousel/>
         <SubscriptionOrderForm/>
-
-
+        <MagazineChatbotSection/>
     </main>
   );
 }

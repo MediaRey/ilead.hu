@@ -17,17 +17,33 @@ export default function SubscriptionHeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto text-center">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-          Iratkozzon fel az MIT Sloan Management Review előfizetésére
-        </h1>
-        <div className="space-y-4 text-lg lg:text-xl leading-relaxed">
-          <p>
-            Szerezzen hozzáférést a menedzsment, innováció és vezetés exkluzív tartalmaihoz.
-          </p>
-          <p>
-            Szakmai cikkeket hozunk a rangos MIT Sloan-ből, amelyek segítenek személyesen és szakmailag is fejlődni.
-          </p>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Left - Magazine Image (order-2 on mobile, order-1 on desktop) */}
+          <div className="relative w-full h-[400px] lg:h-[400px] order-2 lg:order-1">
+            <Image
+              src="/magazine-preview.png"
+              alt="MIT Sloan Management Review Magazine"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+
+          {/* Right - Text Content (order-1 on mobile, order-2 on desktop) */}
+          <div className="text-center lg:text-left order-1 lg:order-2">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
+              Iratkozzon fel az MIT Sloan Management Review előfizetésére
+            </h1>
+            <div className="space-y-4 text-lg lg:text-xl leading-relaxed">
+              <p>
+                Szerezzen hozzáférést a menedzsment, innováció és vezetés exkluzív tartalmaihoz.
+              </p>
+              <p>
+                Szakmai cikkeket hozunk a rangos MIT Sloan-ből, amelyek segítenek személyesen és szakmailag is fejlődni.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
