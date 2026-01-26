@@ -6,7 +6,7 @@ export default function AboutTeamSection() {
     {
       name: "Tomasz Wiatrak",
       title: "Co-founder iLead Institute, Executive Advisor and Investor",
-      image: "/team/wiatrak.jpg",
+      image: "/team/wiatrak2.jpg",
       linkedin: "https://www.linkedin.com/in/tomaszwiatrak/",
     },
     {
@@ -48,10 +48,10 @@ export default function AboutTeamSection() {
   ];
 
   return (
-    <section className="py-20 px-4 lg:px-16 bg-white">
+    <section className="py-20 px-4 lg:px-16 bg-navy-blue">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-black">
+        <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-white">
           Ismerje meg azokat, akik az <span className="text-orange">iLead Institute</span> mögött állnak
         </h2>
 
@@ -62,7 +62,7 @@ export default function AboutTeamSection() {
             {team.slice(0, 4).map((member, index) => (
               <div key={index} className="flex flex-col items-center text-center w-full md:w-auto md:max-w-[200px]">
                 {/* Circular Photo */}
-                <div className="relative w-56 h-56 rounded-full overflow-hidden mb-6 bg-gray-200">
+                <div className="relative w-56 h-56 rounded-full overflow-hidden mb-6 bg-gray-200 border-4 border-orange shadow-2xl">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -72,12 +72,12 @@ export default function AboutTeamSection() {
                 </div>
 
                 {/* Name */}
-                <h3 className="text-xl font-bold text-black mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {member.name}
                 </h3>
 
                 {/* Title */}
-                <p className="text-sm text-gray-700 mb-3 leading-relaxed">
+                <p className="text-sm text-gray-300 mb-3 leading-relaxed">
                   {member.title}
                 </p>
 
@@ -86,7 +86,7 @@ export default function AboutTeamSection() {
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+                  className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                   <span className="text-sm font-medium">LinkedIn</span>
@@ -100,7 +100,7 @@ export default function AboutTeamSection() {
             {team.slice(4, 7).map((member, index) => (
               <div key={index + 4} className="flex flex-col items-center text-center w-full md:w-auto md:max-w-[200px]">
                 {/* Circular Photo */}
-                <div className="relative w-56 h-56 rounded-full overflow-hidden mb-6 bg-gray-200">
+                <div className="relative w-56 h-56 rounded-full overflow-hidden mb-6 bg-gray-200 border-4 border-orange shadow-2xl">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -110,12 +110,12 @@ export default function AboutTeamSection() {
                 </div>
 
                 {/* Name */}
-                <h3 className="text-xl font-bold text-black mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {member.name}
                 </h3>
 
                 {/* Title */}
-                <p className="text-sm text-gray-700 mb-3 leading-relaxed">
+                <p className="text-sm text-gray-300 mb-3 leading-relaxed">
                   {member.title}
                 </p>
 
@@ -124,7 +124,7 @@ export default function AboutTeamSection() {
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+                  className="flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors"
                 >
                   <Linkedin className="w-5 h-5" />
                   <span className="text-sm font-medium">LinkedIn</span>

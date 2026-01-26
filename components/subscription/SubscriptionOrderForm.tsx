@@ -235,7 +235,7 @@ export default function SubscriptionOrderForm() {
               <input
                 type="text"
                 name="ico"
-                placeholder="Adószám (IČO)"
+                placeholder="Adószám"
                 className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none focus:border-orange"
                 value={formData.ico}
                 onChange={handleChange}
@@ -244,7 +244,7 @@ export default function SubscriptionOrderForm() {
               <input
                 type="text"
                 name="dic"
-                placeholder="DIČ"
+                placeholder="Adóazonosító jel"
                 className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none focus:border-orange"
                 value={formData.dic}
                 onChange={handleChange}
@@ -253,7 +253,7 @@ export default function SubscriptionOrderForm() {
               <input
                 type="text"
                 name="icDph"
-                placeholder="IČ DPH"
+                placeholder="Közösségi adószám"
                 className="w-full px-4 py-3 border border-black/40 rounded-xl focus:outline-none focus:border-orange"
                 value={formData.icDph}
                 onChange={handleChange}

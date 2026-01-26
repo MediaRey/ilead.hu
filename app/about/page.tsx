@@ -9,8 +9,9 @@ export default function AboutPage() {
   return (
       <main>
         <AboutHeroSection/>
-        <AboutTeamSection/>
         <AboutMissionSection/>
+        <AboutTeamSection/>
+
         <AboutValuesSection/>
         <AboutCTASection/>
         </main>

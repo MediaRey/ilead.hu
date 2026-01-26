@@ -100,7 +100,7 @@ export const SubscriptionOrderAdminEmail = ({
 
         <div style="background-color: #e8f4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
           <p style="margin: 0; font-size: 14px; color: #0066cc;">
-            <strong>Éves előfizetés:</strong> 1 990 CZK / 80 EUR<br/>
+            <strong>Éves előfizetés:</strong>18.800 HUF / év<br/>
             <strong>Tartalmazza:</strong> 4 nyomtatott és digitális kiadás + exkluzív online tartalom
           </p>
         </div>

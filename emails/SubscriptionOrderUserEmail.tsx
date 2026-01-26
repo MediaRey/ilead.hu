@@ -48,7 +48,7 @@ export const SubscriptionOrderUserEmail = ({
 
         <div style="background-color: #e8f4ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
           <p style="margin: 0; font-size: 14px; color: #0066cc;">
-            <strong>Ár:</strong> 1 990 CZK / 80 EUR évente
+            <strong>Ár:</strong>18.800 HUF / év
           </p>
         </div>
 
