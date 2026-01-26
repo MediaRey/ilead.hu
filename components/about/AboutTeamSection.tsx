@@ -6,7 +6,7 @@ export default function AboutTeamSection() {
     {
       name: "Tomasz Wiatrak",
       title: "Co-founder iLead Institute, Executive Advisor and Investor",
-      image: "/team/wiatrak2.jpg",
+      image: "/team/iatrak.jpg",
       linkedin: "https://www.linkedin.com/in/tomaszwiatrak/",
     },
     {
