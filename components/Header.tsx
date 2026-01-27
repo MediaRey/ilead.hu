@@ -52,23 +52,17 @@ export default function Header() {
 
             {/* DESKTOP NAVIGATION */}
             <div className="hidden lg:flex items-center gap-8">
-              <Link href="/about" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                Rólunk
+              <Link href="/" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
+                Honlap
               </Link>
               <Link href="/be-future-ready-executive-program" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                Be Future Ready Executive Program
+                Executive Program
               </Link>
               <Link href="/subscription" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                Magazin előfizetés
+                Magazin
               </Link>
-              <a href="https://sloanreview.mit.edu/" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                MIT
-              </a>
-              <Link href="/#faq" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                GYIK
-              </Link>
-              <Link href="/#kontakt" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                Kapcsolat
+              <Link href="/about" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
+                Rólunk
               </Link>
             </div>
 
@@ -108,47 +102,32 @@ export default function Header() {
             <div className="pb-6 pt-4 bg-navy-blue border-t border-white/10">
               <div className="flex flex-col space-y-1 px-2">
                 <Link
-                  href="/about"
-                  onClick={closeMobileMenu}
-                  className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
+                    href="/"
+                    onClick={closeMobileMenu}
+                    className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
                 >
-                  Rólunk
+                  Honlap
                 </Link>
                 <Link
                   href="/be-future-ready-executive-program"
                   onClick={closeMobileMenu}
                   className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
                 >
-                  Be Future Ready Executive Program
+                  Executive Program
                 </Link>
                 <Link
                   href="/subscription"
                   onClick={closeMobileMenu}
                   className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
                 >
-                  Magazin előfizetés
-                </Link>
-                <a
-                  href="https://sloanreview.mit.edu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
-                >
-                  MIT
-                </a>
-                <Link
-                  href="/#faq"
-                  onClick={closeMobileMenu}
-                  className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
-                >
-                  GYIK
+                  Magazin
                 </Link>
                 <Link
-                  href="/#kontakt"
-                  onClick={closeMobileMenu}
-                  className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200"
+                    href="/about"
+                    onClick={closeMobileMenu}
+                    className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
                 >
-                  Kapcsolat
+                  Rólunk
                 </Link>
               </div>
             </div>

@@ -19,7 +19,7 @@ export default function AboutTeamSection() {
       name: "Peter Barecz",
       title: "Co-owner at Forbes Slovakia, Forbes Hungary, Forbes Czech Republic, Co-founder MIT SMR Czech Republic, Slovakia, Hungary",
       image: "/team/barecz.jpg",
-      linkedin: "https://www.linkedin.com/in/peterbarecz/",
+      linkedin: "https://www.linkedin.com/in/peter-barecz-27761935/",
     },
     {
       name: "Lencsés Gergő",

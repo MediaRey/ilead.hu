@@ -57,7 +57,7 @@ export default function HeroSection() {
                     variant="secondary"
                     className="font-semibold px-8 py-3 rounded-md transition-colors "
                 >
-                  A folyóiratról
+                  A magazinról
                 </Button>
               </div>
             </div>

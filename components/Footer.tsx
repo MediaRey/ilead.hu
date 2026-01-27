@@ -22,18 +22,23 @@ export default function Footer() {
             <h3 className="font-bold mb-4">Linkek</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-700 hover:text-orange transition-colors">
-                  Rólunk
+                <Link href="/" className="text-gray-700 hover:text-orange transition-colors">
+                  Honlap
                 </Link>
               </li>
               <li>
                 <Link href="/be-future-ready-executive-program" className="text-gray-700 hover:text-orange transition-colors">
-                  Be Future Ready Executive Program
+                  Executive Program
                 </Link>
               </li>
               <li>
                 <Link href="/subscription" className="text-gray-700 hover:text-orange transition-colors">
-                  MIT
+                  Magazin
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-gray-700 hover:text-orange transition-colors">
+                  Rólunk
                 </Link>
               </li>
             </ul>
@@ -42,7 +47,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Közösségi média</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-burgundy hover:text-orange transition-colors">
+              <a href="mailto:mark.kurbucz@forbes.hu" className="text-burgundy hover:text-orange transition-colors">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>

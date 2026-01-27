@@ -187,8 +187,8 @@ export default function ChatbotSection() {
         {/* Disclaimer */}
         <p className="text-center text-sm text-gray-500 mt-4">
           Az AI asszisztens a GYIK alapján nyújt információkat. Pontos információkért vegye fel a kapcsolatot:{' '}
-          <a href="mailto:info@ilead.cz" className="text-orange hover:underline">
-            info@ilead.cz
+          <a href="mailto:mark.kurbucz@forbes.hu" className="text-orange hover:underline">
+            mark.kurbucz@forbes.hu
           </a>
         </p>
       </div>

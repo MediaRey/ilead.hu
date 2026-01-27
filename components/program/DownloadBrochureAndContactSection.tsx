@@ -14,9 +14,51 @@ export default function DownloadBrochureAndContactSection() {
     position: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setIsLoading(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          position: formData.position,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          position: '',
+        });
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (
@@ -129,11 +171,28 @@ export default function DownloadBrochureAndContactSection() {
               onChange={handleChange}
             />
 
+            {/* Success Message */}
+            {submitStatus === 'success' && (
+              <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl">
+                <p className="font-semibold">Sikeres küldés!</p>
+                <p className="text-sm">Köszönjük érdeklődését. Hamarosan felvesszük Önnel a kapcsolatot.</p>
+              </div>
+            )}
+
+            {/* Error Message */}
+            {submitStatus === 'error' && (
+              <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-xl">
+                <p className="font-semibold">Hiba történt!</p>
+                <p className="text-sm">Kérjük, próbálja újra később, vagy vegye fel velünk a kapcsolatot közvetlenül.</p>
+              </div>
+            )}
+
             <Button
                 type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-lg"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={isLoading}
             >
-              Küldés
+              {isLoading ? 'Küldés...' : 'Küldés'}
             </Button>
           </form>
         </div>

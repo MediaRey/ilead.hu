@@ -67,7 +67,7 @@ export default function CombinedInformationSection() {
                             Szerezzen hozzáférést <strong className="text-white">exkluzív tartalmakhoz</strong> a menedzsmentről, innovációról és vezetésről. <strong className="text-white">Szakmai cikkeket</strong> hozunk a rangos MIT Sloan-tól, amelyek segítenek személyesen és szakmailag fejlődni.
                         </p>
                         <Button href="/subscription" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-4 sm:px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
-                            Regisztráljon
+                            A magazinról
                         </Button>
                     </div>
 

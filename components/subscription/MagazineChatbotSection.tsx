@@ -186,7 +186,10 @@ export default function MagazineChatbotSection() {
 
         {/* Disclaimer */}
         <p className="text-center text-sm text-gray-500 mt-4">
-          Az AI asszisztens a magazin információi alapján nyújt válaszokat. További kérdések esetén használja az előfizetési űrlapot vagy lépjen kapcsolatba velünk.
+          Az AI asszisztens a GYIK alapján nyújt információkat. Pontos információkért vegye fel a kapcsolatot:{' '}
+          <a href="mailto:mark.kurbucz@forbes.hu" className="text-orange hover:underline">
+            mark.kurbucz@forbes.hu
+          </a>
         </p>
       </div>
     </section>

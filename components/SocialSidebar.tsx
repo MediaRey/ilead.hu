@@ -5,7 +5,7 @@ export default function SocialSidebar() {
     <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
       {/* Email Icon */}
       <a
-        href="mailto:info@ilead.cz"
+        href="mailto:mark.kurbucz@forbes.hu"
         className="text-burgundy hover:text-navy-black transition-colors duration-300"
         aria-label="Email"
       >
