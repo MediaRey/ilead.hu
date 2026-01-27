@@ -11,12 +11,12 @@ export default function CTACardsSection() {
             href="/be-future-ready-executive-program"
             className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <div className="relative h-64 w-full">
+            <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/Brochure.webp"
+                src="/program-image.jpeg"
                 alt="Be Future Ready Executive Program"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-blue via-navy-blue/50 to-transparent"></div>
             </div>
@@ -33,12 +33,12 @@ export default function CTACardsSection() {
             href="/subscription"
             className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            <div className="relative h-64 w-full">
+            <div className="relative w-full aspect-[4/3]">
               <Image
                 src="/magazines/page1.png"
                 alt="MIT Sloan Management Review Magazine"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-blue via-navy-blue/50 to-transparent"></div>
             </div>

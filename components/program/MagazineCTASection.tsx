@@ -4,18 +4,18 @@ import Link from 'next/link';
 export default function MagazineCTASection() {
   return (
     <section className="py-20 px-6 lg:px-16 bg-gray-50">
-      <div className="max-w-2  xl mx-auto">
+      <div className="max-w-lg mx-auto">
         {/* Card - Magazine Subscription */}
         <Link
           href="/subscription"
           className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 block"
         >
-          <div className="relative h-64 w-full">
+          <div className="relative w-full aspect-[4/3]">
             <Image
-              src="magazines/page1.png"
+              src="/magazines/page1.png"
               alt="MIT Sloan Management Review Magazine"
               fill
-              className="object-cover"
+              className="object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-blue via-navy-blue/50 to-transparent"></div>
           </div>
