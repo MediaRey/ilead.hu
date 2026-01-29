@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Button from '../Button';
+import BrochureModal from './BrochureModal';
 
 export default function DownloadBrochureAndContactSection() {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ export default function DownloadBrochureAndContactSection() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isBrochureModalOpen, setIsBrochureModalOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -83,16 +85,16 @@ export default function DownloadBrochureAndContactSection() {
           {/* Left - Brochure Download */}
           <div className="text-black text-lg leading-relaxed space-y-6">
             <h3 className="text-3xl lg:text-4xl font-bold text-orange">
-              Ez nem minden!
+              Ez még nem minden!
             </h3>
             <p className="leading-relaxed">
-              Töltse le a prospektust, és tudjon meg többet a programról, annak fő elveiről és arról, hogy mit jelent felkészült vezetőnek lenni a jövőre.
+              Töltse le a program prospektusát, és ismerje meg a Be Future Ready Executive Program szemléletét, fókuszterületeit és vezetői megközelítését.
             </p>
             <Button
-              href="/something"
+              onClick={() => setIsBrochureModalOpen(true)}
               className="font-semibold px-8 py-3 rounded-md transition-colors inline-block"
             >
-              Töltse le a prospektust
+              Töltse le a programleírást
             </Button>
 
             {/* Brochure Images */}
@@ -197,6 +199,12 @@ export default function DownloadBrochureAndContactSection() {
           </form>
         </div>
       </div>
+
+      {/* Brochure Download Modal */}
+      <BrochureModal
+        isOpen={isBrochureModalOpen}
+        onClose={() => setIsBrochureModalOpen(false)}
+      />
     </section>
   );
 }

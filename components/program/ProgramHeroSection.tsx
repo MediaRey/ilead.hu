@@ -33,20 +33,21 @@ export default function ProgramHeroSection() {
           {/* Right - Text Content */}
           <div className="text-center lg:text-left mx-auto lg:mx-0">
             <h1 className="text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-              Be Future Ready Executive Program – <span className="text-orange">A menedzserek és vezetők fejlesztése a gyakorlatban</span>
+              Be Future Ready Executive Program<br/>
+              <span className="text-orange">Vezetők és döntéshozók fejlesztése a gyakorlatban</span>
             </h1>
 
             <div className="space-y-3 text-base leading-relaxed mb-6">
               <p>
-                Be Future Ready Executive Program egy <strong>praktikus és hatékony alternatíva a hagyományos MBA típusú akadémiai programokhoz.</strong> Az üzlet valódi kihívásaira, stratégiai készségekre és fejlett vezetői eszközökre összpontosít, amelyek azonnal alkalmazhatók a gyakorlatban.
+                A <strong>Be Future Ready Executive Program</strong> olyan tapasztalt vezetőknek szól, akik a gyorsan változó üzleti környezetben nemcsak reagálni, hanem <strong>előrelátóan dönteni és irányt mutatni</strong> szeretnének.
               </p>
 
               <p>
-                A program összekapcsolja a <strong>legújabb globális ismereteket, innovatív irányítási módszereket és modern technológiákat</strong>, hogy a menedzserek ne csak reagáljanak a változásokra, hanem előre lássák és aktívan formálják saját ágazatuk jövőjét.
+                A program a valós üzleti kihívásokra, stratégiai döntési helyzetekre és fejlett vezetői eszközökre fókuszál — mindarra, amire ma szükség van a szervezetek sikeres irányításához.
               </p>
 
               <p>
-                Be Future Ready Executive Program segít a <strong>tapasztalt menedzsereknek felgyorsítani karrierjüket, fejleszteni kulcsfontosságú kompetenciákat és erősíteni cégük versenyképességét Magyarországon.</strong>
+                Célunk, hogy a résztvevők magabiztosabban hozzanak összetett döntéseket, fejlesszék kulcskompetenciáikat, és <strong>felkészülten alakítsák saját szervezetük jövőjét</strong>.
               </p>
             </div>
 

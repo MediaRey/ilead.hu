@@ -32,21 +32,20 @@ export default function AboutHeroSection() {
           {/* Right - Text Content */}
           <div className="text-center lg:text-left mx-auto lg:mx-0">
             <h1 className="text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-              Vezetőket és menedzsereket viszünk magasabb szintre
+              Vezetőket készítünk fel a jövő kihívásaira
             </h1>
 
             <div className="space-y-3 text-base leading-relaxed mb-6">
               <p>
-                Az iLead Institute Magyarországra hozza a bevált <strong>executive education rendszert, amely 25 év nemzetközi tapasztalatán alapul a vezetők fejlesztése terén.</strong>
+                Az iLead Institute vezetőfejlesztési programjait olyan nemzetközi tapasztalatokra építi, amelyek már bizonyítottak a régióban. Szakmai partnerünk, a lengyel <strong>ICAN Institute</strong> több mint <strong>25 éve foglalkozik felsővezetők fejlesztésével Közép- és Kelet-Európában</strong>, nagyvállalati és vállalkozói környezetben egyaránt.
               </p>
 
               <p>
-                Összekapcsoljuk a menedzsment világ legújabb gyakorlati ismereteit a bevált stratégiákkal, amelyek segítik a vállalkozókat és menedzsereket a <strong>hosszú távú siker elérésében.</strong>
+                Programjaink célja, hogy a résztvevők átgondoltabban, strukturáltabban és magabiztosabban hozzanak vezetői döntéseket komplex, gyorsan változó helyzetekben.
               </p>
 
               <p>
-                Programjaink olyan kulcsfontosságú területekre összpontosítanak, mint a stratégia, vezetés, irányítás és értékesítés. Fejlesztési programokat valósítunk meg a vállalatok minden szintjén dolgozó menedzserek számára, inspiráló eseményeket szervezünk, és <strong className="text-orange">olyan vezetői közösséget építünk, akik hisznek a tudás átalakító erejében.</strong>
-              </p>
+                A vezetés, a stratégia és a szervezeti működés kulcskérdéseire fókuszálunk. Képzéseink és eseményeink gyakorlati tapasztalatokra épülnek, és <strong>olyan vezetői közösséget építünk, ahol a folyamatos fejlődés a működés természetes része</strong>.              </p>
             </div>
           </div>
         </div>

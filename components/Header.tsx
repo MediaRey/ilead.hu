@@ -53,7 +53,7 @@ export default function Header() {
             {/* DESKTOP NAVIGATION */}
             <div className="hidden lg:flex items-center gap-8">
               <Link href="/" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
-                Honlap
+                Főoldal
               </Link>
               <Link href="/be-future-ready-executive-program" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
                 Executive Program
@@ -106,7 +106,7 @@ export default function Header() {
                     onClick={closeMobileMenu}
                     className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
                 >
-                  Honlap
+                  Főoldal
                 </Link>
                 <Link
                   href="/be-future-ready-executive-program"

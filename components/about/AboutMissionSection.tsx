@@ -9,7 +9,7 @@ export default function AboutMissionSection() {
           A mi <span className="text-orange">küldetésünk</span>
         </h2>
         <p className="text-xl mb-16 text-gray-700">
-          Felkészítjük a menedzsereket a jövő kihívásaira.
+          Segítünk eligazodni a vezetői döntések egyre összetettebb világában.
         </p>
 
         {/* Three Columns */}
@@ -20,7 +20,7 @@ export default function AboutMissionSection() {
               <GraduationCap className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed text-gray-700">
-              Hozzuk a legújabb globális ismereteket a vezetés, stratégiai irányítás és innováció területén.
+              Nemzetközi tapasztalatokra épülő tudást hozunk a vezetés, a stratégia és az innováció területéről.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ export default function AboutMissionSection() {
               <CheckCircle className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed text-gray-700">
-              Segítjük a menedzsereket kulcsfontosságú kompetenciák fejlesztésében és csapataik hatékony vezetésében, még bizonytalan időkben is.
+              <em>A vezetői kompetenciák fejlesztésére és a csapatok következetes irányítására fókuszálunk összetett, változó környezetben.</em>
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export default function AboutMissionSection() {
               <BookOpen className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed text-gray-700">
-              Igazítjuk az oktatást a magyar üzleti környezet sajátosságaihoz.
+              A képzéseket a magyar üzleti környezet valós kihívásaihoz igazítjuk.
             </p>
           </div>
         </div>

@@ -34,17 +34,22 @@ export default function CombinedInformationSection() {
                     {/* Text Content (Right) */}
                     <div>
                         <h2 className="text-4xl font-bold mb-6">
-                            Be Future Ready<br />
-                            Executive Program
+                            Be Future Ready Executive Program
                         </h2>
                         <p className="text-lg mb-4 text-gray-200">
-                            A modern vezetés kulcsa – <strong className="text-white">gyakorlati és rugalmas MBA alternatíva</strong>, amely összeköti a <strong className="text-white">tudományos ismereteket az üzleti gyakorlattal</strong>.
+                            <strong className="text-white">A modern vezetés kulcsa:</strong>egy gyakorlatorientált, felsővezetőknek szóló alternatívája a klasszikus MBA-knek.
+                        </p>
+                        <p className="mb-4 text-gray-300">
+                            A <strong className="text-white">Be Future Ready Executive Program</strong> azoknak a vezetőknek szól, akik nemcsak követni, hanem értelmezni és alakítani szeretnék a gyorsan változó üzleti környezetet.
+                        </p>
+                        <p className="mb-4 text-gray-300">
+                            A program az <strong className="text-white">Massachusetts Institute of Technology (MIT) vezetés- és szervezeti gondolkodására épül</strong>, miközben a <strong className="text-white">MIT Sloan Management Review</strong> szakmai háttere segít abban, hogy a résztvevők valós döntési helyzeteken és aktuális menedzsmentkérdéseken keresztül kapjanak azonnal alkalmazható vezetői eszközöket.
                         </p>
                         <p className="mb-6 text-gray-300">
-                            Célunk a menedzserek képességeinek fejlesztése úgy, hogy ne csak reagáljanak a változásokra, hanem előre lássák és stratégiailag irányítsák azokat. A program része az MIT által ajánlott témák, a <strong className="text-white">legújabb menedzsment trendek</strong> és gyakorlati eszközök, amelyek támogatják a vezetőket a csapatok hatékony irányításában. A program <strong className="text-white">nemzetközi perspektívát</strong> nyújt a vezetésről, és a résztvevőket a jövő vezetőinek inspiráló közösségében köti össze.
+                            Célunk, hogy a résztvevők <strong className="text-white">magabiztosabban hozzanak stratégiai döntéseket, felkészülten reagáljanak a bizonytalanságra</strong> — és egy olyan <strong className="text-white">nemzetközi szemléletű, inspiráló vezetői közösség</strong> részévé váljanak, amely túlmutat magán a programon.
                         </p>
                         <Button href="/be-future-ready-executive-program" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold  px-4 sm:px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
-                            Legyen része a Future Ready Executives
+                            Érdekel a program
                         </Button>
                     </div>
                 </div>
@@ -60,11 +65,16 @@ export default function CombinedInformationSection() {
                     {/* Text Content (Left) */}
                     <div>
                         <h2 className="text-4xl font-bold mb-6">
-                            MIT Sloan<br />
-                            Management Review előfizetés
+                            MIT Sloan Management Review
                         </h2>
                         <p className="text-lg mb-4 text-gray-200">
-                            Szerezzen hozzáférést <strong className="text-white">exkluzív tartalmakhoz</strong> a menedzsmentről, innovációról és vezetésről. <strong className="text-white">Szakmai cikkeket</strong> hozunk a rangos MIT Sloan-tól, amelyek segítenek személyesen és szakmailag fejlődni.
+                            A <strong className="text-white">MIT Sloan Management Review</strong> a világ egyik legelismertebb üzleti magazinja, amely a <strong className="text-white">MIT tudományos gondolkodását</strong> kapcsolja össze a vezetői gyakorlat valós kérdéseivel.
+                        </p>
+                        <p className="mb-4 text-gray-300">
+                            A magazin a technológia, az innováció és a vezetés metszéspontjában vizsgálja, hogyan formálják át az új megoldások a szervezeteket és a döntéshozatalt.
+                        </p>
+                        <p className="mb-6 text-gray-300">
+                            Előfizetőink olyan elemzésekhez, esettanulmányokhoz és gondolatébresztő írásokhoz férnek hozzá, amelyek segítenek <strong className="text-white">tágabb összefüggésekben gondolkodni</strong> és felkészülten reagálni a változásokra.
                         </p>
                         <Button href="/subscription" className="bg-[#ea8d32] hover:bg-[#d67a25] text-white font-semibold px-4 sm:px-8 py-3 rounded-md transition-colors border border-[#ea8d32]">
                             A magazinról

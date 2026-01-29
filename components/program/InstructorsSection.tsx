@@ -105,10 +105,10 @@ export default function InstructorsSection() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h2 className="text-4xl font-bold text-center mb-4 text-black">
-          Mesterek a gyakorlatban – a program oktatói
+          A gyakorlat mesterei – a program előadói
         </h2>
         <p className="text-center text-lg mb-12 text-gray-700 max-w-4xl mx-auto">
-          Akadémiai ismeretek kombinálása közvetlen vállalkozói tapasztalattal. Oktatóink mentorai a hatékony vezetéshez vezető úton, felkészülve a jövő kihívásaira.
+          Olyan gyakorló vezetők és döntéshozók, akik nem csak elméleti modelleket, hanem saját tapasztalataikat is behozzák a közös gondolkodásba.
         </p>
 
         {/* Instructors Grid - Simple row-based grid layout */}

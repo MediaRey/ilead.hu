@@ -5,23 +5,23 @@ export default function TargetAudienceSection() {
   const audiences = [
     {
       icon: TrendingUp,
-      title: "Felső vezetők és vállalati képviselők",
-      description: "Olyan vezetők számára, akik stratégiailag szeretnék irányítani az üzletet és előre látni a változásokat.",
+      title: "Felsővezetők és vállalati döntéshozók",
+      description: "Olyan vezetőknek, akik stratégiai szinten gondolkodnak, és <strong>előrelátóan szeretnék irányítani</strong> szervezetük jövőjét.",
     },
     {
       icon: BarChart3,
-      title: "Menedzserek, akik felső vezetővé akarnak válni",
-      description: "Azok számára, akik felső vezetői pozícióra készülnek, vagy gyorsan szeretnék elérni eredményeiket.",
+      title: "Ambiciózus vezetők szintlépés előtt",
+      description: "Azoknak, akik <strong>felsővezetői szerepre készülnek</strong>, és felgyorsítanák szakmai fejlődésüket valós üzleti helyzeteken keresztül.",
     },
     {
       icon: Users,
       title: "Tulajdonosok és vállalkozók",
-      description: "Olyan vezetők számára, akik vállalkozásukat új szintre szeretnék emelni és versenyképességet szeretnének szerezni.",
+      description: "Vállalkozások alapítónak és vezetőinek, akik <strong>skálázni, erősíteni és hosszú távon versenyképessé</strong> szeretnék tenni cégüket.",
     },
     {
       icon: Briefcase,
-      title: "Modern cégek vezető alkalmazottai",
-      description: "Olyan menedzserek számára, akik gyakorlati és rugalmas képzést keresnek, amely a dinamikus piachoz igazodik.",
+      title: "Kulcspozícióban dolgozó vezetők",
+      description: "Olyan menedzsereknek, akik <strong>gyakorlatközpontú, rugalmas fejlődési formát</strong> keresnek a dinamikusan változó üzleti környezetben.",
     },
   ];
 
@@ -51,9 +51,7 @@ export default function TargetAudienceSection() {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-700 text-base leading-relaxed">
-                {audience.description}
-              </p>
+              <p className="text-gray-700 text-base leading-relaxed" dangerouslySetInnerHTML={{ __html: audience.description }} />
             </div>
           ))}
         </div>

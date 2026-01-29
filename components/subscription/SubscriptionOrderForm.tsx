@@ -93,7 +93,7 @@ export default function SubscriptionOrderForm() {
           Érdekli az előfizetés?
         </h2>
         <p className="text-center text-lg mb-16 text-gray-700">
-          Hagyja itt adatait, és munkatársunk hamarosan felveszi Önnel a kapcsolatot további információkkal vagy a megrendelés megerősítésével.
+          Adja meg itt az adatait, és munkatársunk hamarosan felveszi Önnel a kapcsolatot további információkkal vagy a megrendelés megerősítésével.
         </p>
 
         {/* Main content */}
@@ -101,35 +101,35 @@ export default function SubscriptionOrderForm() {
           {/* Left - Subscription Details */}
           <div className="text-black text-lg leading-relaxed">
             <h3 className="text-2xl font-bold mb-4">
-              Éves előfizetés – minden, amire szüksége van a jobb döntéshozatalhoz
+              Éves előfizetés – támogatás a jobb vezetői döntésekhez
             </h3>
 
             <p className="text-3xl font-bold text-orange mb-6">
-              Ár: 18.800 HUF / év
+              Ár: 18.800 Ft / év
             </p>
 
-            <h4 className="text-xl font-bold mb-4">Az előfizetés tartalmazza:</h4>
+            <h4 className="text-xl font-bold mb-4">Az előfizetés tartalma:</h4>
 
             <ul className="space-y-3">
               <li className="flex items-start">
                 <span className="text-orange mr-3 mt-1">→</span>
-                <span>4 kiadás évente (nyomtatott és digitális formában)</span>
+                <span><strong>Évi 4 lapszám</strong> nyomtatott formában</span>
               </li>
               <li className="flex items-start">
                 <span className="text-orange mr-3 mt-1">→</span>
-                <span>Hozzáférés exkluzív cikkekhez, tanulmányokhoz és esettanulmányokhoz</span>
+                <span><strong>Hozzáférés exkluzív cikkekhez, elemzésekhez és esettanulmányokhoz</strong></span>
               </li>
               <li className="flex items-start">
                 <span className="text-orange mr-3 mt-1">→</span>
-                <span>Szakértői nézőpontok az üzleti, technológiai és menedzsment aktuális trendjeiről</span>
+                <span><strong>Szakértői nézőpontok</strong> az üzleti, technológiai és menedzsmenttrendekről</span>
               </li>
               <li className="flex items-start">
                 <span className="text-orange mr-3 mt-1">→</span>
-                <span>Gyakorlati know-how világszínvonalú vezetőktől</span>
+                <span><strong>Gyakorlati vezetői know-how</strong> nemzetközi és hazai döntéshozóktól</span>
               </li>
               <li className="flex items-start">
                 <span className="text-orange mr-3 mt-1">→</span>
-                <span>Inspiráció a stratégiai döntéshozatalhoz és személyes fejlődéshez</span>
+                <span><strong>Inspiráció és gondolkodási keret</strong> stratégiai döntésekhez és személyes fejlődéshez</span>
               </li>
             </ul>
           </div>

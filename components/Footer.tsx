@@ -23,7 +23,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-gray-700 hover:text-orange transition-colors">
-                  Honlap
+                  Főoldal
                 </Link>
               </li>
               <li>

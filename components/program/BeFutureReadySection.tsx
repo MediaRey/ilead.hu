@@ -19,33 +19,36 @@ export default function BeFutureReadySection() {
 
             {/* Right - Text Content (3/5) */}
             <div className="lg:col-span-3 py-20">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-tight">
-                <span className="text-orange">Be Future Ready Executive Program</span> a leghatékonyabb és legpraktikusabb alternatívát kínálja a hagyományos MBA-hoz
+              <h2 className="text-3xl lg:text-4xl font-bold  leading-tight">
+                A <span className="text-orange">Be Future Ready Executive Program</span> nem klasszikus MBA képzés
               </h2>
+              <p className=" text-lg lg:text-xl py-4">
+                Egy <strong>rugalmasabb, gyakorlatközpontú</strong> megközelítést kínál azoknak a vezetőknek, akik a tanultakat azonnal szeretnék beépíteni mindennapi döntéseikbe.
+              </p>
 
               <ul className="space-y-4 text-base lg:text-lg">
                 <li className="flex items-start">
                   <span className="text-orange mr-3 mt-1">•</span>
                   <div>
-                    <strong>Több rugalmasság –</strong> alkalmazkodás a tapasztalt menedzserek igényeihez.
+                    <strong>Rugalmasság a vezetői valósághoz igazítva</strong> – a program felépítése alkalmazkodik az aktív vezetők időbeosztásához és kihívásaihoz.
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange mr-3 mt-1">•</span>
                   <div>
-                    <strong>Gyors alkalmazás a gyakorlatban –</strong> nincs szükség felesleges elméletre, csak releváns tudás.
+                    <strong>Azonnal használható tudás</strong> – fókuszban a releváns vezetői kérdések, stratégiai döntési helyzetek és valós esettanulmányok.
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange mr-3 mt-1">•</span>
                   <div>
-                    <strong>Modern oktatási módszerek –</strong> interaktív workshopok, szimulációk és valós esettanulmányok.
+                    <strong>Interaktív tanulási forma</strong> – workshopok, szimulációk és közös gondolkodás, nem frontális oktatás.
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="text-orange mr-3 mt-1">•</span>
                   <div>
-                    <strong>Exkluzív networking –</strong> szakértők közössége, tapasztalatcsere és értékes kapcsolatok kialakítása.
+                    <strong>Értékes szakmai kapcsolatok</strong> – nyitott, előretekintő vezetői közösség, ahol a tapasztalatcsere valódi hozzáadott értéket jelent.
                   </div>
                 </li>
               </ul>

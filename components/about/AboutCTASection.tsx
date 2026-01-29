@@ -6,19 +6,24 @@ export default function AboutCTASection() {
       <div className="max-w-5xl mx-auto text-center">
         {/* Main Heading */}
         <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-          Be Future Ready – Executive Program presented by iLead Institute
+          Be Future Ready Executive Program
         </h2>
+
+        {/* Subtitle */}
+        <p className="text-xl mb-6">
+          Gyakorlatias vezetőképzés a komplex üzleti kihívások legyőzéséhez
+        </p>
 
         {/* Description */}
         <div className="space-y-4 text-lg leading-relaxed mb-8">
           <p>
-            Hatékony irányítás és vezetés a stratégia, emberek, ügyfelek és pénzügyi eredmények területén a legújabb módszerek és eszközök felhasználásával.
+            A program a stratégia, az emberek irányítása és az üzleti teljesítmény metszéspontjára fókuszál. Olyan vezetői eszközöket és gondolkodásmódot ad, amelyek bizonytalan, gyorsan változó környezetben is használhatók.
           </p>
           <p className="font-semibold">
             Szeretne többet megtudni a programról?
           </p>
           <p>
-            Hagyja nálunk az elérhetőségeit, mi válaszolunk Önnek – hívjon minket, vagy írjon nekünk, és örömmel válaszolunk minden kérdésére.
+            Vegye fel velünk a kapcsolatot, és válaszolunk minden kérdésére.
           </p>
         </div>
 

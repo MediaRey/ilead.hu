@@ -9,26 +9,25 @@ export default function MITPartnershipSection() {
           {/* Left text content */}
           <div>
             <h2 className="text-4xl font-bold mb-8">
-              MIT partnerségünk – <span className="text-burgundy">Globális szintű oktatás</span>
+              Nemzetközi gondolkodás, globális kitekintés
             </h2>
 
             <div className="space-y-6 text-lg leading-relaxed text-gray-800">
               <p>
-                Együttműködünk a világ egyik legrangosabb egyetemével – az MIT-vel,
-                hogy biztosítsuk, hogy oktatási programjaink megfelelnek a{' '}
-                <strong>legmagasabb nemzetközi standardoknak.</strong>
+                Az iLead Institute a világ egyik legelismertebb üzleti tudásplatformjához,
+                a <strong>MIT Sloan Management Review-hoz</strong> kapcsolódva hozza el a legfrissebb nemzetközi
+                vezetői és menedzsmentgondolkodást a hazai közönség számára.
               </p>
 
               <p>
-                Kiadói vagyunk a rangos menedzsment magazin magyar kiadásának,{' '}
-                <span className="text-orange font-semibold">MIT Sloan Management Review</span>,
-                amely összeköti a menedzsereket a kutatás és a gyakorlat legújabb eredményeivel
-                a világ élvonalában a vezetés területén.
+                A rangos magazin magyar kiadójaként olyan tartalmakat és szemléletet képviselünk,
+                amelyek a <strong>kutatás és a vezetői gyakorlat</strong> metszéspontjában születnek, és világszerte
+                formálják a döntéshozók gondolkodását.
               </p>
 
               <p>
-                Az MIT bevált tapasztalataiból és legújabb megközelítéseiből merítünk, ami biztosítja,
-                hogy oktatási programjaink mindig <strong>világszínvonalúak.</strong>
+                Oktatási és fejlesztési programjaink ebben a nemzetközi kontextusban értelmezhetők:
+                a <strong>globális trendekre nyitott</strong>, előretekintő vezetői megközelítésre épülnek.
               </p>
             </div>
 

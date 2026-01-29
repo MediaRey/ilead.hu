@@ -6,27 +6,27 @@ export default function BenefitsSection() {
   const benefits = [
     {
       icon: Lightbulb,
-      title: "A tudomány és a gyakorlat összekapcsolása",
+      title: "Tudás, ami működik a gyakorlatban",
       details: [
-        "Együttműködünk rangos intézményekkel, mint az MIT, és hozzuk a legújabb menedzsment trendeket és stratégiákat.",
-        "Minden ismeret azonnal alkalmazható a gyakorlatban.",
+        "A program a <strong>MIT gondolkodásából inspirálódva</strong> és a legfrissebb nemzetközi menedzsmenttrendek mentén épül fel.",
+        "A megszerzett tudás nem elméleti: <strong>azonnal alkalmazható</strong> a mindennapi vezetői döntésekben.",
       ],
     },
     {
       icon: Network,
-      title: "Kivételes networking és üzleti kapcsolatok",
+      title: "Valódi kapcsolatok, valódi értékkel",
       details: [
-        "Legyen része a vezetők és top menedzserek exkluzív közösségének.",
-        "Onboarding ülés és networking már a program első napjától.",
-        "Rendszeres alumni találkozók, stratégiai megbeszélések és inspiráló események.",
+        "Csatlakozzon felsővezetők és döntéshozók <strong>gondosan válogatott közösségéhez</strong>.",
+        "Strukturált onboarding és networking már a program elejétől.",
+        "Alumni találkozók, stratégiai beszélgetések és inspiráló szakmai események.",
       ],
     },
     {
       icon: Star,
-      title: "Tanuljon a legjobbaktól",
+      title: "Tanulás a legjobbaktól",
       details: [
-        "A programot tapasztalt vezetők és szakértők vezetik, akik valós tapasztalattal rendelkeznek az elméletből, de bizonyított stratégiákkal.",
-        "Konkrét eszközök és stratégiák, amelyek azonnal segítenek javítani a csapat és a vállalat irányítását.",
+        "A programot <strong>tapasztalt üzleti vezetők és elismert szakértők</strong> vezetik.",
+        "Nem elméleti modellek, hanem <strong>valós vezetői döntések és kipróbált stratégiák</strong> állnak a fókuszban.",
       ],
     },
   ];
@@ -37,11 +37,11 @@ export default function BenefitsSection() {
 
           {/* Title and subtitle */}
           <h2 className="text-4xl font-bold text-center mb-4 text-black">
-            Többet szeretne, mint csak képzést?
+            Többet szeretne, mint egy képzést?
           </h2>
           <p className="text-center text-lg mb-12 text-gray-700">
-            Csatlakozzon a Be Future Ready Executive Programhoz és legyen része<br />
-            a vezetők exkluzív közösségének!
+            Csatlakozzon a <strong>Be Future Ready Executive Programhoz</strong>, és legyen része egy <br />
+            gondolkodó, előretekintő vezetői közösségnek.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -68,7 +68,7 @@ export default function BenefitsSection() {
                         <li key={detailIndex} className="flex items-start">
                           {/* Orange arrow for list marker */}
                           <span className="text-orange mr-2 flex-shrink-0 mt-1">→</span>
-                          <span>{detail}</span>
+                          <span dangerouslySetInnerHTML={{ __html: detail }} />
                         </li>
                     ))}
                   </ul>

@@ -10,31 +10,31 @@ const testimonials = [
     quote: "A tanulás nem házi feladat, hanem egy izgalmas kaland. Fenntartja a kíváncsiságot, ami a 21. század egyik legfontosabb szuperkompetenciája. Tartós versenyelőnyt jelenthet: aki nemcsak reagál a változásra, hanem élvezettel tanul benne, az kevésbé sodródik, és tudatosabban alakítja a saját világát.",
     name: "Pistyur Veronika",
     position: "Bridge Budapest ügyvezető alapító, Oktogon Ventures partner",
-    image: "/pistyur.jpg"
+    image: "/testimonials/pistyur.jpg"
   },
   {
     quote: "A digitális technológiai forradalom új sebességre gyorsította a világunk változását. Ebben a környezetben az alkalmazkodóképesség vált a legnagyobb versenyelőnnyé, amihez gyors ciklusú, ugyanakkor folyamatos tanulásra van szükség.",
     name: "Vinnai Balázs",
     position: "IVSZ elnök, Finshape elnök, sorozatvállalkozó",
-    image: "/vinnai.jpg"
+    image: "/testimonials/vinnai.jpg"
   },
   {
     quote: "Az AI korszakában reális veszély, hogy azt is elfelejtjük használni, amit már tudunk. Az élethosszig tartó tanulás segít megőrizni a kíváncsiságot, a gondolati önállóságot és a rendszerszintű gondolkodást – miközben azt is megtanuljuk, mi az, amit már nyugodtan elengedhetünk.",
     name: "Lénárt Viktor",
     position: "ZEL Group ügyvezető alapító, a Grow Group korábbi ügyvezetője",
-    image: "/lenart.jpg"
+    image: "/testimonials/lenart.jpg"
   },
   {
     quote: "Önmagunk és a világ felfedezése talán az egyik legizgalmasabb dolog az életben. Ha a kíváncsiságunkat és a figyelmünket a megfelelő irányba tereljük, az nemcsak a karrierünkben segít, hanem abban is, hogy az életünket méltóbban és gazdagabban éljük.",
     name: "Lencsés Gergő",
     position: "iLead Institute - Head of Faculty, a GE gázturbina operációjának korábbi globális vezetője",
-    image: "/lencses.jpg"
+    image: "/testimonials/lencses.jpg"
   },
   {
     quote: "A fejlődés – és az ehhez szükséges önfejlesztés, kísérletezés, olvasás, tanácsok elfogadása és utánajárás – elengedhetetlen ahhoz, hogy ne csak a csúcson maradjunk, hanem egyáltalán a felszínen bármely gyorsan fejlődő tudományos vagy üzleti területen.",
     name: "Gauder Milán",
     position: "Mastercard korábbi globális alelnöke, sorozatvállalkozó, MIT SMR főszerkesztő",
-    image: "/gauder.jpeg"
+    image: "/testimonials/gauder.jpeg"
   },
 ];
 
@@ -79,10 +79,10 @@ export default function TestimonialsSection() {
       <div className="max-w-5xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl font-extrabold text-center mb-4 text-white">
-          Miért érdemes <span className={accentColor}>folyamatosan tanulni?</span>
+          Miért fontos <span className={accentColor}>az élethosszig tartó tanulás?</span>
         </h2>
         <p className="text-center mb-12 text-gray-300">
-          Válaszolnak a magyar vállalatok és intézmények vezető vezetői.
+          Az előadóink válaszolnak:
         </p>
 
         {/* Carousel container */}

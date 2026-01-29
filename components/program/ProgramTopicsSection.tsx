@@ -115,7 +115,7 @@ export default function ProgramTopicsSection() {
             <span className="text-gray-900">10 stratégiai terület</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Fedezze fel átfogó programunkat - kattintson a számokra a részletekért
+            Fedezze fel átfogó programunkat – vigye az egeret a számokra a részletekért
           </p>
         </div>
 

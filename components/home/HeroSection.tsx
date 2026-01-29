@@ -27,18 +27,23 @@ export default function HeroSection() {
             {/* Left Column: Text content */}
             <div className="max-w-2xl text-center lg:text-left mx-auto lg:mx-0">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 leading-[1.15] tracking-tight">
-                Vezetőket és<br />
-                menedzsereket viszünk<br />
-                magasabb szintre
+                Vezetőket<br />
+                készítünk fel<br />
+                a jövő kihívásaira
               </h1>
 
               <div className="space-y-6 text-lg text-gray-200 leading-relaxed">
                 <p>
-                  <strong className="text-white">Az iLead Institute a vezetői készségek és stratégiai menedzsment kiválósági központja.</strong> Összekapcsoljuk a tudományos ismereteket a gyakorlattal, és segítjük a vállalatokat valódi, mérhető eredmények elérésében.
+                  Az <strong className="text-white">iLead Institute</strong> a Forbes tulajdonosi köréhez tartozó <strong className="text-white">vezetőképző központ</strong>, amely a <strong className="text-white">stratégiai gondolkodást</strong>, a <strong className="text-white">gyakorlati menedzsmentet</strong> és a <strong className="text-white">legfrissebb nemzetközi tudást</strong> kapcsolja össze.
                 </p>
 
                 <p>
-                  Fejlesztési programunk, a <strong className="text-white">Be Future Ready Executive</strong> nem csupán képzésről szól – konkrét és gyakorlati eszközöket kínál a modern vezetők számára, akik mindig egy lépéssel előrébb akarnak járni.
+                  Programjaink célja, hogy a vezetők <strong className="text-white">ne csak megértsék a változásokat, hanem felkészülten, magabiztosan tudjanak dönteni</strong> egy egyre összetettebb üzleti környezetben.
+                </p>
+
+                <p>
+                  A <strong className="text-white">Be Future Ready Executive Program</strong> nem egy hagyományos vezetőképzés. Konkrét, azonnal alkalmazható eszközöket és gondolkodási modelleket ad felsővezetők és vállalkozók számára, akik egy lépéssel előrébb szeretnének járni – a technológiai, gazdasági és szervezeti változások közepette.
+
                 </p>
               </div>
 

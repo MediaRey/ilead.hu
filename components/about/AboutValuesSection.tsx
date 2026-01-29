@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 export default function AboutValuesSection() {
   const values = [
-    "A legmagasabb szintű oktatást kínáljuk, amely tükrözi az aktuális trendeket és bevált gyakorlatokat.",
-    "Minden megszerzett tudás azonnal alkalmazható a valós üzleti környezetben.",
-    "Integráljuk a legújabb kutatásokat és modern oktatási módszereket, hogy maximális értéket nyújtsunk.",
-    "Összekapcsoljuk a menedzsereket, akik inspirálják egymást, megosztják tapasztalataikat és közösen növekednek.",
-    "Együttműködésünk az átláthatóságon, professzionalizmusán és kölcsönös bizalmon alapul.",
+    "<strong>Nem elméletet tanítunk, hanem működő vezetői megközelítéseket</strong>, amelyek a mai üzleti környezetben már bizonyítottak.",
+    "<strong>A megszerzett tudás azonnal alkalmazható</strong> a vezetői döntéshozatalban, csapatirányításban és stratégiai helyzetekben.",
+    "<strong>A legfrissebb kutatási eredményeket és nemzetközi gyakorlatokat integráljuk</strong>, mindig a gyakorlati hasznosság szempontjából.",
+    "<strong>Vezetői közösséget építünk</strong>, ahol a tapasztalatcsere és az egymástól tanulás a fejlődés része.",
+    "<strong>Partnerségeinket és működésünket a szakmai hitelesség, az átláthatóság és a bizalom határozza meg.</strong>",
   ];
 
   return (
@@ -34,9 +34,7 @@ export default function AboutValuesSection() {
               {values.map((value, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <span className="text-black text-lg sm:text-2xl font-bold flex-shrink-0 mt-1">—</span>
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {value}
-                  </p>
+                  <p className="text-lg text-gray-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: value }} />
                 </div>
               ))}
             </div>

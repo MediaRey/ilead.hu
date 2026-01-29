@@ -33,14 +33,14 @@ export default function SubscriptionHeroSection() {
           {/* Right - Text Content (order-1 on mobile, order-2 on desktop) */}
           <div className="text-center lg:text-left order-1 lg:order-2">
             <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-              Iratkozzon fel az MIT Sloan Management Review előfizetésére
+              Fizessen elő az MIT Sloan Management Review magyar kiadására
             </h1>
             <div className="space-y-4 text-lg lg:text-xl leading-relaxed">
               <p>
-                Szerezzen hozzáférést a menedzsment, innováció és vezetés exkluzív tartalmaihoz.
+                Szerezzen hozzáférést a vezetés, innováció és menedzsment legfontosabb kérdéseit feldolgozó, exkluzív tartalmakhoz.
               </p>
               <p>
-                Szakmai cikkeket hozunk a rangos MIT Sloan-ből, amelyek segítenek személyesen és szakmailag is fejlődni.
+                Az MIT Sloan Management Review magyar kiadása a világ egyik vezető egyetemének kutatásait és gondolkodását hozza közelebb a hazai döntéshozókhoz – közérthetően, üzleti kontextusba helyezve.
               </p>
             </div>
           </div>
