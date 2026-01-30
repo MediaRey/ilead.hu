@@ -35,8 +35,9 @@ const KEYWORD_MAPPINGS: Record<string, string[]> = {
   'meddig': ['időtartam', 'időtartama', 'tart', 'hónap', 'hosszú', 'meddig', 'mennyi ideig'],
 
   // Price related
-  'ár': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'czk'],
-  'mennyibe': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'czk'],
+  'ár': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'díja', 'eur', '9 900', '9900', 'számla'],
+  'mennyibe': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'díja', 'eur', '9 900', '9900', 'számla'],
+  'díj': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'díja', 'eur', '9 900', '9900', 'számla'],
 
   // Location related
   'hol': ['prága', 'prágában', 'helyszín', 'személyesen', 'online', 'hol'],
@@ -111,10 +112,10 @@ function calculateKeywordScore(query: string, text: string): number {
 // Configuration
 const CONFIG = {
   SIMILARITY_THRESHOLD: 0.40,
-  TOP_K_RESULTS: 6,
-  MIN_RESULTS: 2,
-  SEMANTIC_WEIGHT: 0.6,        // Weight for embedding similarity
-  KEYWORD_WEIGHT: 0.4,         // Weight for keyword matching
+  TOP_K_RESULTS: 8,
+  MIN_RESULTS: 3,
+  SEMANTIC_WEIGHT: 0.55,        // Weight for embedding similarity
+  KEYWORD_WEIGHT: 0.45,         // Weight for keyword matching
   DEBUG: process.env.NODE_ENV === 'development'
 };
 
@@ -138,11 +139,14 @@ export async function POST(req: NextRequest) {
     }
 
     // 1. Generate embedding for user's question
+    // Add program context to improve semantic search for vague questions like "Mennyibe kerül?" or "Hol zajlik?"
+    const contextualizedMessage = `${message} Be Future Ready Executive programról`;
+
     const embeddingModel = genAI.getGenerativeModel({
       model: 'text-embedding-004'
     });
 
-    const queryEmbedding = await embeddingModel.embedContent(message);
+    const queryEmbedding = await embeddingModel.embedContent(contextualizedMessage);
 
     // 2. Calculate hybrid scores (semantic + keyword)
     const scoredResults = faqEmbeddings.map((item: EmbeddingItem, index: number) => {
