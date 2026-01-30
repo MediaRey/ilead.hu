@@ -100,7 +100,7 @@ export default function DownloadBrochureAndContactSection() {
             {/* Brochure Images */}
             <div className="relative w-full h-64 mt-8">
               <Image
-                src="/Brochure.webp"
+                src="/brochure-preview.png"
                 alt="Be Future Ready Executive Program brožury"
                 fill
                 className="object-contain"
