@@ -30,7 +30,7 @@ export default function AboutMissionSection() {
               <CheckCircle className="w-10 h-10 md:w-12 md:h-12 text-white" strokeWidth={1.5} />
             </div>
             <p className="text-lg leading-relaxed text-gray-700">
-              <em>A vezetői kompetenciák fejlesztésére és a csapatok következetes irányítására fókuszálunk összetett, változó környezetben.</em>
+              A vezetői kompetenciák fejlesztésére és a csapatok következetes irányítására fókuszálunk összetett, változó környezetben.
             </p>
           </div>
 
