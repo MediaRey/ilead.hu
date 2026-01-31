@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Send, MessageCircle, Sparkles } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -127,7 +128,16 @@ export default function MagazineChatbotSection() {
                       : 'bg-white text-gray-900 border border-gray-200'
                   }`}
                 >
-                  <p className="whitespace-pre-wrap leading-relaxed">{msg.content}</p>
+                  <ReactMarkdown
+                      components={{
+                        p: ({ children }) => <p className="mb-2 last:mb-0 leading-relaxed">{children}</p>,
+                        strong: ({ children }) => <span className="font-bold text-burgundy-900">{children}</span>,
+                        ul: ({ children }) => <ul className="list-disc ml-4 mb-2 space-y-1">{children}</ul>,
+                        li: ({ children }) => <li className="text-sm">{children}</li>,
+                      }}
+                  >
+                    {msg.content}
+                  </ReactMarkdown>
                   {msg.sources && msg.sources.length > 0 && (
                     <div className="mt-3 pt-3 border-t border-gray-200">
                       <div className="flex items-start gap-2">

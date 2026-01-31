@@ -1,283 +1,112 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextRequest, NextResponse } from 'next/server';
-import faqEmbeddings from '@/data/faq-embeddings.json';
 
-// Type definitions
-interface EmbeddingItem {
-  text: string;
-  embedding: number[];
-}
+const informationBlocks = [
+  {
+    text: "A Be Future Ready Executive program időtartama 10 hónap. A program egy ünnepélyes indítással és inspiráló onboarding üléssel kezdődik. Az időbeosztás tartalmaz nyári szünetet és karácsonyi szünetet is. A program befejezésekor formális diplomaátadó ünnepséget tartanak az oktatók, szakértők és az iLead Institute kezdeményezés társrésztvevőinek jelenlétében. A program lezárását követően networking alkalmakat és további follow-up eseményeket is tervezünk."
+  },
+  {
+    text: "Az ülések havonta egyszer kerülnek megrendezésre kétnapos képzési blokkok formájában, pénteken és szombaton, szombaton korábbi kezdéssel és befejezéssel."
+  },
+  {
+    text: "A Be Future Ready Executive program indítását 2026 áprilisára tervezzük, az onboarding üléssel kezdve."
+  },
+  {
+    text: "Minden ülés személyesen kerül megrendezésre Budapesten. Ezen felül az egyes képzési blokkok között online kapcsolat is elérhető az oktatókkal és az iLead Institute szakértői csapatával."
+  },
+  {
+    text: "A program elvégzése után a résztvevők az iLead Institute által kiállított tanúsítványt kapnak a formális diplomaátadó ünnepség során."
+  },
+  {
+    text: "A képzést vezető szintű üzleti vezetők és gyakorlati szakemberek vezetik, minden ülés magyarul zajlik. Az inspiráló keynote előadásokat és workshopokat egyaránt kiemelkedő üzleti személyiségek tartják, akik közül sokan kiterjedt nemzetközi felsővezetői tapasztalattal rendelkeznek, és magasan sikeres vállalkozók. Az iLead Institute oktatói és szakértői Magyarországon többek között Pistyur Veronika, Lakatos Péter, Kapitány István és mások."
+  },
+  {
+    text: "A Be Future Ready Executive program felső vezetők és felsővezetők számára készült (C és C-1 szint), akik kiterjedt vezetői tapasztalattal rendelkeznek, és szeretnék jövőbiztossá tenni készségeiket és erősíteni piaci hatásukat. Üdvözöljük a különböző háttérrel rendelkező vezetőket, akik nemcsak az új kihívásokkal való megbirkózásra vágynak, hanem piaci trendeket formálni és innovációt vezetni szeretnének. A program családi vállalkozások és utódlástervezés számára is rendkívül releváns, átfogó, glocal üzleti perspektívát kínálva a résztvevők számára. A gondosan összeállított tartalom támogatja a funkciók közötti vezetőket, segítve még a szakembereket is kompetenciáik bővítésében, stratégiai gondolkodásuk fejlesztésében és szervezeteik magabiztos és látásmód vezérlésében."
+  },
+  {
+    text: "A Be Future Ready Executive program kis, fókuszált csoporttal működik a maximális személyes fejlődés és a csúcs oktatókhoz való közvetlen hozzáférés biztosítása érdekében. A formátum ösztönzi a valós esetek, tapasztalatok és kihívások megosztását, jelentős tanulást és együttműködést elősegítve a csoporton belül."
+  },
+  {
+    text: "A workshopok során a résztvevők interaktív gyakorlatokban, vitákban, szimulációkban és gyakorlati tevékenységekben vesznek részt modern eszközök és formátumok használatával, beleértve a kártyákat, szimulációs játékokat, személyiségvizsgálatokat és AI-alapú tevékenységeket. A program magyarországi, a közép-kelet-európai régió és a világ minden tájáról származó esettanulmányokat tartalmaz, amelyeket mélyreható megbeszéléseken és gyakorlati gyakorlatokon keresztül vizsgálnak meg. Ez a formátum lehetővé teszi a résztvevők számára, hogy valós kihívásokat és betekintéseket osszanak meg, erősítsék stratégiai gondolkodásukat, gyakorlati készségeket építsenek és értékes szakmai kapcsolatokat alakítsanak ki, minden ülést rendkívül vonzóvá, interaktívvá és közvetlenül relevánsá téve vezetői gyakorlatukhoz."
+  },
+  {
+    text: "A hivatalos képzési blokkokon kívül elkötelezettségre lehet szükség. A résztvevők egyéni feladatokat vagy gyakorlatokat kaphatnak az ülések között, és néhány oktató előmunkát biztosíthat minden blokk előtt. Hiányzás esetén lehetőség van az elmulasztott tartalom pótlására. A program nagymértékben személyre szabott, minden résztvevő igényeihez és elérhetőségéhez igazítva."
+  },
+  {
+    text: "A Be Future Ready Executive program nem zárul vizsgával vagy záródolgozattal. Az MBA-val ellentétben a részvétel a program blokkjaiban való aktív részvételi elkötelezettségen alapul. A program egyénre szabott megközelítése, kis csoportos formátuma és az oktatókhoz való közvetlen hozzáférés a vezetői kompetenciák valódi fejlesztését hivatott biztosítani, ezért a tudás formális értékelése nem tervezett."
+  },
+  {
+    text: "Az onboarding szekció egyedülálló lehetőséget kínál a csapat megismerésére, a program részletes felfedezésére és értékes üzleti kapcsolatok építésére egy különleges networking ülés során. A találkozó kizárólag a modern vezetés víziója köré tömörült résztvevők, oktatók és szakértők számára szól. A hivatalos program mellett dedikált networking eseményt is tervezünk a jelentőségteljes kapcsolatok elősegítésére."
+  },
+  {
+    text: "A Be Future Ready Executive program az ICAN Institute szakértelmére épül, amely 25 éves tapasztalattal rendelkezik a közép-kelet-európai régió felső vezetőinek képzésében, kiválóságot biztosítva mind az oktatásban, mind a módszertanban. A workshopok valós eseteket, aktuális trendeket és vezető egyetemek által használt eszközöket tartalmaznak, MIT által ajánlott témákból inspirálva. Ez egy valóban egyedülálló program, amely erős alumni hálózatot épít magyarországi, cseh és szlovák vezetők között, ötvözve az akadémiai tudást globális trendekkel és helyi megoldásokkal. A résztvevők gyakorlati készségeket, stratégiai betekintéseket és értékes kapcsolatokat szereznek, amit egyetlen konferencia vagy hagyományos fejlesztési program sem tud nyújtani."
+  },
+  {
+    text: "A program 10 kétnapos tematikus blokkból áll: 1. Stratégia: egy új modell új szabályokkal, 2. Mesterséges intelligencia a stratégiai menedzsmentben, 3. Stratégia a gyakorlatban: folyamatok kialakítása, 4. Jövőálló vezetés: szervezeti és személyes szempontok, 5. People management: a tehetség kiválasztása, megtartása és fejlesztése, 6. Az ügyfél, a bevétel és a nyereség fókuszában, 7. Stratégiai gazdasági elemzés a növekedésért, 8. Csúcsteljesítményű szervezet felépítése: kultúra, elkötelezettség és változás, 9. Árazás és költségkezelés: hogyan növeljük a bevételt és csökkentsük a kiadásokat, 10. A vezetői kommunikáció és a sikeres tárgyalás művészete."
+  },
+  {
+    text: "A részvételi díj a következőket tartalmazza: részvétel 10 kétnapos helyszíni képzési modulban (Budapest), beleértve a kávészüneteket és nyomtatott anyagokat, részvétel 2 különleges eseményen: onboarding (formális és informális részek) és a formális program záró ünnepsége, egyéves előfizetés az MIT Sloan Review és Forbes Hungary nyomtatott kiadásaira, egyéves online hozzáférés a Forbes.hu és MIT Sloan anyagaihoz és cikkeihez, meghívók a Forbes Hungary és az iLead Institute által szervezett kiválasztott eseményekre."
+  },
+  {
+    text: "A program díja 9 900 EUR. A fizetés számla alapján történik."
+  },
+  {
+    text: "Ugyanabból a cégből több személy is részt vehet a programban. A csoportot szándékosan különböző cégekből, iparágakból és szakterületekről származó résztvevőkből állítjuk össze, ami gazdagítja a közös tanulást. Ugyanakkor egy szervezetből több résztvevő jelenléte lehetővé teszi a szorosabb együttműködést az oktatókkal és a vállalati specifikus eseteken való mélyebb munkát."
+  },
+  {
+    text: "Az MBA programokkal ellentétben nincsenek formális követelmények a korábbi végzettségekkel vagy tanulmányi területekkel kapcsolatban. A programban való teljes körű részvételhez és aktív közreműködéshez szükséges az alapvető üzleti témák szilárd megértése, amit oktatással vagy szakmai tapasztalattal lehet megszerezni. A program olyan személyek számára készült, akik már rendelkeznek tapasztalattal saját vállalkozásuk vagy csapataik vezetésében, valamint azok számára, akik vezető szerepre készülnek."
+  },
+  {
+    text: "A képzés magyarul zajlik. Minden anyag, cikk, jelentés és esettanulmány az MIT-ről és más forrásokból magyarra lesz fordítva a résztvevők számára. Néhány vendégelőadó nemzetközi lehet, ezért az angoltudás előnyös. Azonban nem kötelező, a tartalom minden résztvevő számára elérhető lesz."
+  },
+  {
+    text: "Ha többet szeretne megtudni, megismerni az oktatókat és részletekről érdeklődni, kérjük, hagyja nálunk e-mail címét és telefonszámát. Csapatunk egy tagja a lehető leghamarabb felveszi Önnel a kapcsolatot."
+  },
+  {
+    text: "A Be Future Ready Executive program díja nem tartalmazza a szállást vagy az egyes ülésekre való utazást, amelyeket várhatóan Budapesten tartanak. Ezeket a költségeket a résztvevők külön fedezik."
+  }
+];
+const KNOWLEDGE_BASE = informationBlocks.map(block => block.text).join('\n\n');
 
-// Initialize Gemini AI
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
-
-// Cosine similarity function
-function cosineSimilarity(a: number[], b: number[]): number {
-  if (a.length !== b.length) {
-    throw new Error('Vectors must have the same length');
-  }
-
-  const dotProduct = a.reduce((sum, val, i) => sum + val * b[i], 0);
-  const magnitudeA = Math.sqrt(a.reduce((sum, val) => sum + val * val, 0));
-  const magnitudeB = Math.sqrt(b.reduce((sum, val) => sum + val * val, 0));
-
-  if (magnitudeA === 0 || magnitudeB === 0) {
-    return 0;
-  }
-
-  return dotProduct / (magnitudeA * magnitudeB);
-}
-
-// Keyword matching with Hungarian synonyms and related terms
-const KEYWORD_MAPPINGS: Record<string, string[]> = {
-  // Duration related
-  'időtartam': ['időtartam', 'időtartama', 'tart', 'hónap', 'hosszú', 'meddig', 'mennyi ideig', 'hossza'],
-  'meddig': ['időtartam', 'időtartama', 'tart', 'hónap', 'hosszú', 'meddig', 'mennyi ideig'],
-
-  // Price related
-  'ár': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'díja', 'eur', '9 900', '9900', 'számla'],
-  'mennyibe': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'díja', 'eur', '9 900', '9900', 'számla'],
-  'díj': ['ár', 'ára', 'költség', 'fizet', 'mennyibe', 'kerül', 'díj', 'díja', 'eur', '9 900', '9900', 'számla'],
-
-  // Location related
-  'hol': ['prága', 'prágában', 'helyszín', 'személyesen', 'online', 'hol'],
-  'helyszín': ['prága', 'prágában', 'helyszín', 'személyesen', 'online'],
-
-  // Start date related
-  'mikor': ['mikor', 'kezd', 'április', '2026', 'indulás', 'kezdődik', 'indul'],
-  'kezd': ['mikor', 'kezd', 'április', '2026', 'indulás', 'kezdődik', 'indul', 'kezdete'],
-
-  // Language related
-  'nyelv': ['nyelv', 'csehül', 'angol', 'magyarul', 'nyelven', 'fordít'],
-
-  // Certificate related
-  'tanúsítvány': ['tanúsítvány', 'oklevél', 'bizonyítvány', 'igazolás', 'certifikát'],
-  'oklevél': ['tanúsítvány', 'oklevél', 'bizonyítvány', 'igazolás', 'certifikát'],
-
-  // Content/topics related
-  'téma': ['téma', 'blokk', 'modul', 'tartalom', 'tananyag', 'tematikus'],
-  'mit': ['téma', 'blokk', 'tartalom', 'tanul', 'tanít'],
-
-  // Target audience
-  'kinek': ['vezető', 'vezetők', 'kinek', 'számára', 'célcsoport', 'ajánlott'],
-  'ki': ['vezető', 'vezetők', 'kinek', 'számára', 'részt', 'vehet'],
-
-  // Requirements
-  'követelmény': ['követelmény', 'feltétel', 'szükség', 'kell', 'vizsga', 'mba'],
-  'feltétel': ['követelmény', 'feltétel', 'szükség', 'kell'],
-
-  // Format
-  'hogyan': ['workshop', 'prezentáció', 'gyakorlat', 'szimuláció', 'interaktív'],
-  'formátum': ['workshop', 'prezentáció', 'gyakorlat', 'online', 'személyesen'],
-
-  // Contact
-  'kapcsolat': ['kapcsolat', 'email', 'telefon', 'érdeklődni', 'info'],
-  'jelentkez': ['jelentkez', 'regisztrál', 'kapcsolat', 'email'],
-};
-
-// Calculate keyword match score
-function calculateKeywordScore(query: string, text: string): number {
-  const queryLower = query.toLowerCase();
-  const textLower = text.toLowerCase();
-
-  let score = 0;
-  const matchedTerms = new Set<string>();
-
-  // Check each keyword mapping
-  for (const [trigger, relatedTerms] of Object.entries(KEYWORD_MAPPINGS)) {
-    // If query contains trigger word
-    if (queryLower.includes(trigger)) {
-      // Check if text contains any related terms
-      for (const term of relatedTerms) {
-        if (textLower.includes(term) && !matchedTerms.has(term)) {
-          score += 0.15; // Boost for each matched related term
-          matchedTerms.add(term);
-        }
-      }
-    }
-  }
-
-  // Direct word overlap bonus
-  const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
-  for (const word of queryWords) {
-    if (textLower.includes(word)) {
-      score += 0.05;
-    }
-  }
-
-  // Cap the keyword score
-  return Math.min(score, 0.5);
-}
-
-// Configuration
-const CONFIG = {
-  SIMILARITY_THRESHOLD: 0.40,
-  TOP_K_RESULTS: 8,
-  MIN_RESULTS: 3,
-  SEMANTIC_WEIGHT: 0.55,        // Weight for embedding similarity
-  KEYWORD_WEIGHT: 0.45,         // Weight for keyword matching
-  DEBUG: process.env.NODE_ENV === 'development'
-};
 
 export async function POST(req: NextRequest) {
   try {
     const { message } = await req.json();
-
-    if (!message || typeof message !== 'string') {
-      return NextResponse.json(
-          { error: 'Az üzenet kötelező' },
-          { status: 400 }
-      );
-    }
-
-    if (!process.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY === 'your_api_key_here') {
-      console.error('GEMINI_API_KEY not configured');
-      return NextResponse.json(
-          { error: 'A szerver nincs megfelelően konfigurálva. Kérjük, lépjen kapcsolatba az adminisztrátorral.' },
-          { status: 500 }
-      );
-    }
-
-    // 1. Generate embedding for user's question
-    // Add program context to improve semantic search for vague questions like "Mennyibe kerül?" or "Hol zajlik?"
-    const contextualizedMessage = `${message} Be Future Ready Executive programról`;
-
-    const embeddingModel = genAI.getGenerativeModel({
-      model: 'text-embedding-004'
+    
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-2.5-flash',
     });
 
-    const queryEmbedding = await embeddingModel.embedContent(contextualizedMessage);
+    const systemPrompt = `
+      TEVÉKENYSÉG: Te az iLead Institute profi AI tanácsadója vagy.
+      KONTEXTUS: A "Be Future Ready Executive" programról adsz felvilágosítást.
+      
+      ADATOK:
+      ---
+      ${KNOWLEDGE_BASE}
+      ---
 
-    // 2. Calculate hybrid scores (semantic + keyword)
-    const scoredResults = faqEmbeddings.map((item: EmbeddingItem, index: number) => {
-      const semanticScore = cosineSimilarity(
-          queryEmbedding.embedding.values,
-          item.embedding
-      );
-      const keywordScore = calculateKeywordScore(message, item.text);
+      SZIGORÚ SZABÁLYOK:
+      1. CSAK a fenti adatok alapján válaszolj.
+      2. HA A KÉRDÉSRE NINCS PONTOS VÁLASZ az adatokban, vagy nem vagy biztos benne, AKKOR KIZÁRÓLAG az alábbi szöveget válaszold, semmi mást:
+         "Sajnos erre a kérdésre nem találok információt. Kérem, lépjen kapcsolatba velünk az mark.kurbucz@forbes.hu címen vagy hagyja el elérhetőségét."
+      3. Ne próbálj meg válaszokat kitalálni vagy külső forrásokból meríteni.
+      4. Stílus: Üzleti, elegáns, magyar nyelvű.
+      5. Formátum: Markdown (félkövér kiemelések, listák).
 
-      // Hybrid score: weighted combination
-      const hybridScore = (semanticScore * CONFIG.SEMANTIC_WEIGHT) +
-          (keywordScore * CONFIG.KEYWORD_WEIGHT);
+      FELHASZNÁLÓ KÉRDÉSE: "${message}"
+      
+      VÁLASZ:
+    `;
 
-      return {
-        text: item.text,
-        semanticScore,
-        keywordScore,
-        hybridScore,
-        index
-      };
-    });
-
-    // Sort by hybrid score
-    const sortedResults = scoredResults.sort((a, b) => b.hybridScore - a.hybridScore);
-
-    // Filter and limit results
-    let topResults = sortedResults.filter(r => r.hybridScore >= CONFIG.SIMILARITY_THRESHOLD);
-
-    if (topResults.length < CONFIG.MIN_RESULTS) {
-      topResults = sortedResults.slice(0, CONFIG.MIN_RESULTS);
-    }
-
-    topResults = topResults.slice(0, CONFIG.TOP_K_RESULTS);
-
-    // Debug logging
-    if (CONFIG.DEBUG) {
-      console.log('\n--- RAG Debug (Hybrid Search) ---');
-      console.log('Question:', message);
-      console.log('Top matches:');
-      topResults.forEach((r, i) => {
-        console.log(`  ${i + 1}. [hybrid: ${r.hybridScore.toFixed(3)} | semantic: ${r.semanticScore.toFixed(3)} | keyword: ${r.keywordScore.toFixed(3)}]`);
-        console.log(`     ${r.text.substring(0, 80)}...`);
-      });
-      console.log('---------------------------------\n');
-    }
-
-    // 3. Build structured context
-    const contextBlocks = topResults
-        .map((r, i) => `[${i + 1}] ${r.text}`)
-        .join('\n\n');
-
-    // 4. Generate response with improved prompt
-    const chatModel = genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash-lite'
-    });
-
-    const systemPrompt = `Te az iLead Institute AI asszisztense vagy. A Be Future Ready Executive programról adsz információkat.
-
-SZEREPED:
-- Barátságos, professzionális asszisztens
-- Pontos, tömör válaszokat adsz
-- Magyarul válaszolsz
-
-TUDÁSBÁZIS:
-${contextBlocks}
-
-SZABÁLYOK:
-1. CSAK a fenti tudásbázis alapján válaszolj
-2. Ha a kérdésre nincs információ a tudásbázisban, mondd: "Sajnos erre a kérdésre nem találok információt. Kérem, lépjen kapcsolatba velünk az info@ilead.cz címen vagy hagyja el elérhetőségét."
-3. Válaszolj közvetlenül, ne hivatkozz a "tudásbázisra" vagy "információkra"
-4. Legyél tömör: 1-4 mondat elegendő
-5. Ha több releváns információ is van, foglald össze őket logikusan
-
-KÉRDÉS: ${message}
-
-VÁLASZ:`;
-
-    const result = await chatModel.generateContent({
-      contents: [{ role: 'user', parts: [{ text: systemPrompt }] }],
-      generationConfig: {
-        temperature: 0.3,
-        topP: 0.8,
-        topK: 40,
-        maxOutputTokens: 500,
-      }
-    });
-
+    const result = await model.generateContent(systemPrompt);
     const response = result.response.text();
 
-    return NextResponse.json({
-      response,
-      ...(CONFIG.DEBUG && {
-        debug: {
-          topMatches: topResults.map(r => ({
-            hybridScore: r.hybridScore.toFixed(3),
-            semanticScore: r.semanticScore.toFixed(3),
-            keywordScore: r.keywordScore.toFixed(3),
-            preview: r.text.substring(0, 60) + '...'
-          }))
-        }
-      })
-    });
+    return NextResponse.json({ response });
 
-  } catch (error: unknown) {
-    console.error('Chat API error:', error);
-
-    if (error && typeof error === 'object' && 'status' in error && error.status === 429) {
-      return NextResponse.json(
-          { error: 'Túl sok kérés. Kérjük, próbálja meg egy kis idő múlva.' },
-          { status: 429 }
-      );
-    }
-
-    return NextResponse.json(
-        { error: 'Elnézést, hiba történt. Kérjük, próbálja újra.' },
-        { status: 500 }
-    );
+  } catch (error) {
+    console.error('Gemini error:', error);
+    return NextResponse.json({ error: 'Szerverhiba történt' }, { status: 500 });
   }
-}
-
-// Health check endpoint
-export async function GET() {
-  const isConfigured = process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'your_api_key_here';
-
-  return NextResponse.json({
-    status: 'ok',
-    configured: isConfigured,
-    embeddingsLoaded: faqEmbeddings.length,
-    searchType: 'hybrid (semantic + keyword)',
-    message: isConfigured
-        ? `Chat API ready with ${faqEmbeddings.length} knowledge blocks`
-        : 'GEMINI_API_KEY not configured'
-  });
 }
