@@ -83,7 +83,7 @@ export async function POST(req: NextRequest) {
       SZIGORÚ SZABÁLYOK:
       1. CSAK a fenti adatok alapján válaszolj.
       2. HA A KÉRDÉSRE NINCS PONTOS VÁLASZ az adatokban, vagy nem vagy biztos benne, AKKOR KIZÁRÓLAG az alábbi szöveget válaszold, semmi mást:
-         "Sajnos erre a kérdésre nem találok információt. Kérem, lépjen kapcsolatba velünk az mark.kurbucz@forbes.hu címen vagy hagyja el elérhetőségét."
+         "Sajnos erre a kérdésre nem találok információt. Kérem, töltse ki a weboldalon alább található űrlapot, vagy írjon nekünk az mark.kurbucz@forbes.hu e-mail címre."
       3. Ne próbálj meg válaszokat kitalálni.
       4. Stílus: Üzleti, professzionális, segítőkész.
       5. Nyelv: Magyar.

@@ -16,7 +16,7 @@ export default function AboutValuesSection() {
           {/* Left - Tiger Image */}
           <div className="relative w-full h-[200px] lg:h-[600px]">
             <Image
-              src="/values-image.png"
+              src="/values-image3.png"
               alt="iLead Institute Values - Polygonal Tiger"
               fill
               className="object-contain"
