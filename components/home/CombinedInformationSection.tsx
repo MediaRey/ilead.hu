@@ -37,7 +37,7 @@ export default function CombinedInformationSection() {
                             Be Future Ready Executive Program
                         </h2>
                         <p className="text-lg mb-4 text-gray-200">
-                            <strong className="text-white">A modern vezetés kulcsa:</strong>egy gyakorlatorientált, felsővezetőknek szóló alternatívája a klasszikus MBA-knek.
+                            <strong className="text-white">A modern vezetés kulcsa:</strong> egy gyakorlatorientált, felsővezetőknek szóló alternatívája a klasszikus MBA-knek.
                         </p>
                         <p className="mb-4 text-gray-300">
                             A <strong className="text-white">Be Future Ready Executive Program</strong> azoknak a vezetőknek szól, akik nemcsak követni, hanem értelmezni és alakítani szeretnék a gyorsan változó üzleti környezetet.
