@@ -138,7 +138,7 @@ export default function ProgramTopicsSection() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/hero-bg.jpg"
+                      src="/tiger_bp.jpeg"
                       alt="Program background"
                       fill
                       className="object-cover"

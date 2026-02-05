@@ -13,7 +13,7 @@ export default function CTACardsSection() {
           >
             <div className="relative w-full aspect-[4/3]">
               <Image
-                src="/program-image.jpeg"
+                src="/program-image.png"
                 alt="Be Future Ready Executive Program"
                 fill
                 className="object-cover object-top"
