@@ -97,8 +97,20 @@ export default function InstructorsSection() {
       linkedin: "https://www.linkedin.com/in/dr-varga-eszter/",
       bio: "Pénzügyi szakember és felsővezető, a PannonHitel Zrt. cégcsoport alapító tulajdonosa és vezérigazgatója. Karrierjét a Lombard Lízingnél kezdte, majd a Raiffeisen Banknál a nagyvállalati hitelezés igazgatójaként, később az FHB Kereskedelmi Bank vezérigazgató-helyetteseként szerzett meghatározó vezetői tapasztalatot. Saját vállalkozásait társaival a pénzügyi és szolgáltató szektorban építette fel, több sikeres exitet megvalósítva. Vezetőként és coachként a tudatos, felelős üzleti működés és a vezetői fejlődés elkötelezett támogatója.",
     },
+    {
+      name: "Csanak Gabriella",
+      title: "A Microsoft Magyarország korábbi marketing- és operációs igazgatója",
+      image: "/instructors/csanak.png",
+      linkedin: "https://www.linkedin.com/in/gabriella-csanak-9526622b/",
+      bio: "Több mint 25 év nemzetközi tapasztalattal rendelkező felsővezető, aki technológiai, pénzügyi és FMCG vállalatoknál töltött be vezető szerepeket. A Microsoft Magyarországnál a marketing és operációs területek vezetőjeként komplex, több országot érintő programok megvalósításáért felelt. Korábban a Citibanknál, a Raiffeisen Banknál és a T-Systemsnél szerzett jelentős tapasztalatot, elsősorban a digitalizáció és üzletfejlesztés területén.",
+    },
   ];
 
+  const sortedInstructors = [...instructors].sort((a, b) => {
+    const lastNameA = a.name.split(' ').at(-1)!;
+    const lastNameB = b.name.split(' ').at(-1)!;
+    return lastNameA.localeCompare(lastNameB, 'hu');
+  });
 
   return (
     <section className="py-20 bg-white px-6 lg:px-16">
@@ -113,7 +125,7 @@ export default function InstructorsSection() {
 
         {/* Instructors Grid - Simple row-based grid layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {instructors.slice(0, showAll ? instructors.length : 6).map((instructor, index) => (
+          {sortedInstructors.slice(0, showAll ? sortedInstructors.length : 6).map((instructor, index) => (
             <div
               key={instructor.name}
               className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow"
@@ -171,7 +183,7 @@ export default function InstructorsSection() {
         </div>
 
         {/* Show All / Show Less Button */}
-        {instructors.length > 6 && (
+        {sortedInstructors.length > 6 && (
           <div className="flex justify-center mt-12">
             <button
               onClick={handleToggleShowAll}
