@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import SemesterAnnouncementBanner from '@/components/home/SemesterAnnouncementBanner';
 import HeroSection from '@/components/home/HeroSection';
 import MediaPartners from '@/components/home/MediaPartners';
 import BenefitsSection from '@/components/home/BenefitsSection';
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      <SemesterAnnouncementBanner />
       <HeroSection />
       <MediaPartners />
       <CombinedInformationSection/>

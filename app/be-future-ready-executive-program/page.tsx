@@ -4,6 +4,7 @@ import ProgramTopicsSection from '@/components/program/ProgramTopicsSection';
 import BeFutureReadySection from '@/components/program/BeFutureReadySection';
 import TargetAudienceSection from '@/components/program/TargetAudienceSection';
 import InstructorsSection from '@/components/program/InstructorsSection';
+import SemesterResultsSection from '@/components/program/SemesterResultsSection';
 import MagazineCTASection from '@/components/program/MagazineCTASection';
 import DownloadBrochureAndContactSection from '@/components/program/DownloadBrochureAndContactSection';
 import ChatbotSection from "@/components/home/ChatbotSection";
@@ -72,6 +73,7 @@ export default function FutureReadyPage() {
       <BeFutureReadySection />
       <TargetAudienceSection />
       <InstructorsSection />
+      <SemesterResultsSection />
       <ChatbotSection />
       <DownloadBrochureAndContactSection />
       <MagazineCTASection />
