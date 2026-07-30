@@ -84,16 +84,16 @@ export default function SemesterResultsSection() {
         {/* Apply for next semester CTA */}
         <div className="bg-navy-blue rounded-2xl px-6 py-12 lg:px-16 text-center">
           <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-            Jelentkezzen a következő évfolyamra!
+            Tudjon meg többet a következő évfolyamról!
           </h3>
           <p className="text-white/90 text-lg max-w-3xl mx-auto mb-8">
-            A program következő évfolyama 2026 novemberében indul. Csatlakozzon Ön is egy inspiráló, előretekintő vezetői közösséghez!
+            A következő évfolyam 2026 novemberében indul. Ismerje meg a programot, amely új szemléletet, azonnal alkalmazható tudást és egy meghatározó vezetői közösséget ad. Adja meg elérhetőségeit, és kollégánk hamarosan felveszi Önnel a kapcsolatot.
           </p>
           <Button
             href="#contact-form"
             className="font-semibold px-10 py-4 rounded-md transition-colors text-lg"
           >
-            Jelentkezem
+            Érdekel a program
           </Button>
         </div>
       </div>

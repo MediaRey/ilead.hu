@@ -25,11 +25,11 @@ A gallery of 18 photos from the first semester. When the page loads, 8 photos ar
 
 Call to action to apply:
 
-"Jelentkezzen a következő évfolyamra!"
+"Tudjon meg többet a következő évfolyamról!"
 
-"A program következő évfolyama 2026 novemberében indul. Csatlakozzon Ön is egy inspiráló, előretekintő vezetői közösséghez!"
+"A következő évfolyam 2026 novemberében indul. Ismerje meg a programot, amely új szemléletet, azonnal alkalmazható tudást és egy meghatározó vezetői közösséget ad. Adja meg elérhetőségeit, és kollégánk hamarosan felveszi Önnel a kapcsolatot."
 
-The "Jelentkezem" button takes the visitor to the existing contact form on the same page, the same form already used for inquiries.
+The "Érdekel a program" button takes the visitor to the existing contact form on the same page, the same form already used for inquiries.
 
 [Screenshot placeholder: the new section on the program page, gallery collapsed]
 
