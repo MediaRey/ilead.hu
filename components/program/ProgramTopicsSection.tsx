@@ -34,14 +34,14 @@ const topics: Topic[] = [
   {
     id: 2,
     number: '2',
-    title: 'A stratégiai irányítás operacionalizálása és megvalósítása',
-    Icon: Settings
+    title: 'Mesterséges intelligencia a stratégiai vezetésben',
+    Icon: Bot
   },
   {
     id: 3,
     number: '3',
-    title: 'Mesterséges intelligencia a stratégiai vezetésben',
-    Icon: Bot
+    title: 'A stratégiai irányítás operacionalizálása és megvalósítása',
+    Icon: Settings
   },
   {
     id: 4,
@@ -138,7 +138,7 @@ export default function ProgramTopicsSection() {
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <Image
-                      src="/tiger_bp.jpg"
+                      src="/program/topics-tiger.jpg"
                       alt="Program background"
                       fill
                       className="object-cover"

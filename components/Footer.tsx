@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-block">
               <Image
-                src="/ilead-icon-reverse.png"
+                src="/brand/ilead-icon-reverse.png"
                 alt="iLead Institute"
                 width={200}
                 height={65}
@@ -29,6 +29,11 @@ export default function Footer() {
               <li>
                 <Link href="/be-future-ready-executive-program" className="text-gray-700 hover:text-orange transition-colors">
                   Executive Program
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-masterclass" className="text-gray-700 hover:text-orange transition-colors">
+                  AI Masterclass
                 </Link>
               </li>
               <li>

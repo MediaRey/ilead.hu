@@ -5,11 +5,11 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Button from '../Button';
 
-const PHOTO_COUNT = 18;
+const PHOTO_COUNT = 26;
 const INITIAL_VISIBLE = 8;
 
 const gallery = Array.from({ length: PHOTO_COUNT }, (_, i) => ({
-  src: `/semester-1/semester-1-${i + 1}.jpg`,
+  src: `/program/semester-1/semester-1-${i + 1}.jpg`,
   alt: `Be Future Ready Executive Program - 1. évfolyam, ${i + 1}. kép`,
 }));
 
@@ -87,7 +87,7 @@ export default function SemesterResultsSection() {
             Tudjon meg többet a következő évfolyamról!
           </h3>
           <p className="text-white/90 text-lg max-w-3xl mx-auto mb-8">
-            A következő évfolyam 2026 novemberében indul. Ismerje meg a programot, amely új szemléletet, azonnal alkalmazható tudást és egy meghatározó vezetői közösséget ad. Adja meg elérhetőségeit, és kollégánk hamarosan felveszi Önnel a kapcsolatot.
+            A következő évfolyam 2027 márciusában indul. Ismerje meg a programot, amely új szemléletet, azonnal alkalmazható tudást és egy meghatározó vezetői közösséget ad. Adja meg elérhetőségeit, és kollégánk hamarosan felveszi Önnel a kapcsolatot.
           </p>
           <Button
             href="#contact-form"

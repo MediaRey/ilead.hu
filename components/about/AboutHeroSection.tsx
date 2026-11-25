@@ -6,7 +6,7 @@ export default function AboutHeroSection() {
       {/* --- BACKGROUND IMAGE FOR MOBILE ONLY --- */}
       <div className="absolute inset-0 z-0 lg:hidden">
         <Image
-          src="/about-hero-image.png"
+          src="/about/hero.png"
           alt="iLead Institute - Polygonal Tiger"
           fill
           priority
@@ -21,7 +21,7 @@ export default function AboutHeroSection() {
           {/* Left - Tiger Image (DESKTOP ONLY) */}
           <div className="hidden lg:block relative w-full h-[500px] -mb-16">
             <Image
-              src="/about-hero-image.png"
+              src="/about/hero.png"
               alt="iLead Institute - Polygonal Tiger"
               fill
               className="object-contain object-bottom"

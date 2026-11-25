@@ -4,7 +4,7 @@ import SubscriptionHeroSection from "@/components/subscription/SubscriptionHeroS
 import MagazineCarousel from "@/components/subscription/MagazineCarousel";
 import SubscriptionOrderForm from "@/components/subscription/SubscriptionOrderForm";
 import MagazineChatbotSection from "@/components/subscription/MagazineChatbotSection";
-import ProgramCTASection from "@/components/subscription/ProgramCTASection";
+import OfferingsSection from "@/components/OfferingsSection";
 
 export default function SubscriptionPage() {
 
@@ -14,7 +14,7 @@ export default function SubscriptionPage() {
         <MagazineCarousel/>
         <MagazineChatbotSection/>
         <SubscriptionOrderForm/>
-        <ProgramCTASection/>
+        <OfferingsSection current="magazine" />
     </main>
   );
 }

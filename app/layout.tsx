@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     description: 'Vezetőket és menedzsereket viszünk magasabb szintre. MIT partnerség, szakértői képzések, executive programok.',
     images: [
       {
-        url: '/ilead-icon.png',
+        url: '/brand/ilead-icon.png',
         width: 800,
         height: 600,
         alt: 'iLead Institute Logo',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'iLead Institute - A vezetésfejlesztés kiválósági központja',
     description: 'Vezetőket és menedzsereket viszünk magasabb szintre. MIT partnerség, szakértői képzések.',
-    images: ['/ilead-icon.png'],
+    images: ['/brand/ilead-icon.png'],
   },
   alternates: {
     canonical: siteUrl,

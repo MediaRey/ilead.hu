@@ -4,8 +4,27 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Button from '../Button';
 import BrochureModal from './BrochureModal';
+import type { ProgramKey } from '@/data/programs';
 
-export default function DownloadBrochureAndContactSection() {
+interface DownloadBrochureAndContactSectionProps {
+  program?: ProgramKey;
+  title?: string;
+  heading?: string;
+  description?: string;
+  buttonLabel?: string;
+  previewSrc?: string;
+  previewAlt?: string;
+}
+
+export default function DownloadBrochureAndContactSection({
+  program = 'bfr',
+  title = 'Tudjon meg többet a Be Future Ready Executive Programról!',
+  heading = 'Ez még nem minden!',
+  description = 'Töltse le a program prospektusát, és ismerje meg a Be Future Ready Executive Program szemléletét, fókuszterületeit és vezetői megközelítését.',
+  buttonLabel = 'Töltse le a programleírást',
+  previewSrc = '/program/brochure-preview.png',
+  previewAlt = 'Be Future Ready Executive Program brožury',
+}: DownloadBrochureAndContactSectionProps) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -37,6 +56,7 @@ export default function DownloadBrochureAndContactSection() {
           phone: formData.phone,
           company: formData.company,
           position: formData.position,
+          program,
         }),
       });
 
@@ -77,7 +97,7 @@ export default function DownloadBrochureAndContactSection() {
       <div className="max-w-7xl mx-auto">
         {/* Title */}
         <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-black">
-          Tudjon meg többet a Be Future Ready Executive Programról!
+          {title}
         </h2>
 
         {/* Main content */}
@@ -85,23 +105,23 @@ export default function DownloadBrochureAndContactSection() {
           {/* Left - Brochure Download */}
           <div className="text-black text-lg leading-relaxed space-y-6">
             <h3 className="text-3xl lg:text-4xl font-bold text-orange">
-              Ez még nem minden!
+              {heading}
             </h3>
             <p className="leading-relaxed">
-              Töltse le a program prospektusát, és ismerje meg a Be Future Ready Executive Program szemléletét, fókuszterületeit és vezetői megközelítését.
+              {description}
             </p>
             <Button
               onClick={() => setIsBrochureModalOpen(true)}
               className="font-semibold px-8 py-3 rounded-md transition-colors inline-block"
             >
-              Töltse le a programleírást
+              {buttonLabel}
             </Button>
 
             {/* Brochure Images */}
             <div className="relative w-full h-64 mt-8">
               <Image
-                src="/brochure-preview.png"
-                alt="Be Future Ready Executive Program brožury"
+                src={previewSrc}
+                alt={previewAlt}
                 fill
                 className="object-contain"
               />
@@ -204,6 +224,7 @@ export default function DownloadBrochureAndContactSection() {
       <BrochureModal
         isOpen={isBrochureModalOpen}
         onClose={() => setIsBrochureModalOpen(false)}
+        program={program}
       />
     </section>
   );

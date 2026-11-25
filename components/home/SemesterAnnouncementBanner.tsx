@@ -9,7 +9,7 @@ export default function SemesterAnnouncementBanner() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2 text-center text-sm lg:text-base font-medium">
         <span>
-          Sikeresen elindult az első évfolyam 17 vezető részvételével. A jelentkezés már nyitva a 2026 novemberében induló következő évfolyamra.
+          Sikeresen elindult az első évfolyam 17 vezető részvételével. A jelentkezés nyitva a 2027 márciusában induló következő évfolyamra.
         </span>
         <ArrowRight className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
       </div>

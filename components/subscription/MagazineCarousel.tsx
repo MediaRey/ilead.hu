@@ -7,16 +7,16 @@ import Image from 'next/image';
 import ImageGallery from './ImageGallery';
 
 const magazines = [
-  '/magazines/page1.png',
-  '/magazines/page2.png',
-  '/magazines/page3.png',
-  '/magazines/page4.png',
-  '/magazines/page5.png',
-  '/magazines/page6.png',
-  '/magazines/page7.png',
-  '/magazines/page8.png',
-  '/magazines/page9.png',
-  '/magazines/page10.png',
+  '/magazine/pages/page1.png',
+  '/magazine/pages/page2.png',
+  '/magazine/pages/page3.png',
+  '/magazine/pages/page4.png',
+  '/magazine/pages/page5.png',
+  '/magazine/pages/page6.png',
+  '/magazine/pages/page7.png',
+  '/magazine/pages/page8.png',
+  '/magazine/pages/page9.png',
+  '/magazine/pages/page10.png',
 
 ];
 

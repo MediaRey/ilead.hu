@@ -10,7 +10,7 @@ export default function BeFutureReadySection() {
             {/* Left - Tiger Image (2/5) */}
             <div className="relative w-full h-[400px] lg:h-[500px] lg:col-span-2 -mb-0 lg:-mb-0">
               <Image
-                src="/tiger.png"
+                src="/program/be-future-ready-tiger.png"
                 alt="Be Future Ready Executive Program - Tiger"
                 fill
                 className="object-contain object-bottom"

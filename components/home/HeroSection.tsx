@@ -9,7 +9,7 @@ export default function HeroSection() {
         {/* --- BACKGROUND IMAGE LAYER --- */}
         <div className="absolute inset-0 z-0">
           <Image
-              src="/tiger_bp_rgb.jpg"
+              src="/home/hero-tiger.jpg"
               alt="Background"
               fill
               priority

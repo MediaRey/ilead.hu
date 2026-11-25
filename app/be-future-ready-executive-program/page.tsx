@@ -5,13 +5,13 @@ import BeFutureReadySection from '@/components/program/BeFutureReadySection';
 import TargetAudienceSection from '@/components/program/TargetAudienceSection';
 import InstructorsSection from '@/components/program/InstructorsSection';
 import SemesterResultsSection from '@/components/program/SemesterResultsSection';
-import MagazineCTASection from '@/components/program/MagazineCTASection';
+import OfferingsSection from '@/components/OfferingsSection';
 import DownloadBrochureAndContactSection from '@/components/program/DownloadBrochureAndContactSection';
 import ChatbotSection from "@/components/home/ChatbotSection";
 
 export const metadata: Metadata = {
   title: 'Be Future Ready Executive Program',
-  description: 'Csatlakozz a Be Future Ready Executive Programhoz. 10 hónapos gyakorlati vezetői képzés MIT alapokon. Stratégia, AI, innováció, people management. Tapasztalt oktatók, valós esettanulmányok. Indulás: 2026 április.',
+  description: 'Csatlakozz a Be Future Ready Executive Programhoz. 10 hónapos gyakorlati vezetői képzés MIT alapokon. Stratégia, AI, innováció, people management. Tapasztalt oktatók, valós esettanulmányok. Indulás: 2027 március.',
   keywords: ['Be Future Ready Executive', 'executive program', 'vezetői képzés', 'MIT Sloan', 'stratégiai menedzsment', 'AI vezetés', 'innováció', 'people management', 'C-level képzés', 'ICAN Institute'],
   openGraph: {
     title: 'Be Future Ready Executive Program - iLead Institute',
@@ -51,7 +51,7 @@ export default function FutureReadyPage() {
           "addressCountry": "HU"
         }
       },
-      "startDate": "2026-04",
+      "startDate": "2027-03",
       "duration": "P10M",
       "inLanguage": "hu"
     },
@@ -76,7 +76,7 @@ export default function FutureReadyPage() {
       <SemesterResultsSection />
       <ChatbotSection />
       <DownloadBrochureAndContactSection />
-      <MagazineCTASection />
+      <OfferingsSection current="program" />
     </main>
   );
 }

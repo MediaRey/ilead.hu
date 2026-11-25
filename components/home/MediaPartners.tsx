@@ -15,7 +15,7 @@ export default function MediaPartners() {
             {/* Logo Forbes */}
             <div className="relative h-12 w-32 md:h-16 md:w-48 transition-all duration-300">
               <Image
-                  src="/forbes-logo.png"
+                  src="/brand/forbes-logo.png"
                   alt="Forbes"
                   fill
                   className="object-contain"
@@ -25,7 +25,7 @@ export default function MediaPartners() {
             {/* Logo MIT Sloan */}
             <div className="relative h-12 w-32 md:h-16 md:w-48 transition-all duration-300">
               <Image
-                  src="/mitsloan_logo.png"
+                  src="/brand/mitsloan-logo.png"
                   alt="MIT Sloan Management Review"
                   fill
                   className="object-contain"

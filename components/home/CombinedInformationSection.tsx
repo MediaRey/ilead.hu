@@ -23,7 +23,7 @@ export default function CombinedInformationSection() {
                     <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
                         {/* Replace '/mit-building.jpg' with your actual image file path */}
                         <Image
-                            src="/mit-building.webp"
+                            src="/home/mit-building.webp"
                             alt="Budova MIT"
                             fill
                             className="object-cover"
@@ -83,9 +83,9 @@ export default function CombinedInformationSection() {
 
                     {/* Image Container (Right) */}
                     <div className="relative h-96 rounded-lg overflow-hidden shadow-2xl">
-                        {/* Replace '/magazine-cover.png' with your actual image file path */}
+                        {/* Replace '/home/magazine-cover.png' with your actual image file path */}
                         <Image
-                            src="/magazine-cover.png"
+                            src="/home/magazine-cover.png"
                             alt="Magazín MIT Sloan Management Review"
                             fill
                             className="object-cover"

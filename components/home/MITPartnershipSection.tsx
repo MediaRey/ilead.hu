@@ -43,7 +43,7 @@ export default function MITPartnershipSection() {
           {/* Right magazine covers image */}
           <div className="flex justify-center items-center">
             <Image
-              src="/Magazin.png"
+              src="/home/mit-magazine.png"
               alt="MIT Sloan Management Review magazines"
               width={700}
               height={500}

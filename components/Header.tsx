@@ -41,7 +41,7 @@ export default function Header() {
             {/* LOGO SECTION */}
             <Link href="/" className="flex-shrink-0">
               <Image
-                  src="/ilead-icon.png"
+                  src="/brand/ilead-icon.png"
                   alt="iLead Institute"
                   width={200}
                   height={65}
@@ -57,6 +57,9 @@ export default function Header() {
               </Link>
               <Link href="/be-future-ready-executive-program" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
                 Executive Program
+              </Link>
+              <Link href="/ai-masterclass" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
+                AI Masterclass
               </Link>
               <Link href="/subscription" className="text-white font-bold hover:text-[#ea8d32] transition-all duration-200 whitespace-nowrap">
                 Magazin
@@ -114,6 +117,13 @@ export default function Header() {
                   className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
                 >
                   Executive Program
+                </Link>
+                <Link
+                  href="/ai-masterclass"
+                  onClick={closeMobileMenu}
+                  className="text-white font-semibold text-base py-3 px-4 hover:bg-white/10 hover:text-[#ea8d32] transition-all duration-200 border-b border-white/5"
+                >
+                  AI Masterclass
                 </Link>
                 <Link
                   href="/subscription"
