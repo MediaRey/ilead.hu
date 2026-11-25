@@ -10,7 +10,9 @@ module.exports = {
         'navy-blue': '#0E2738',
         'orange': '#E9892D',
         'burgundy': '#A00230',
-        'navy-black': '#181520'
+        'navy-black': '#181520',
+        // Red dot of the "Be Future Ready." / "My Winning Strategy with AI." titles
+        'brand-red': '#E4204C'
       },
     },
   },

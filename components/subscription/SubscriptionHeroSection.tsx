@@ -6,7 +6,7 @@ export default function SubscriptionHeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/bg-line-about.png"
+          src="/magazine/bg-line.png"
           alt="Background"
           fill
           className="object-cover"
@@ -22,7 +22,7 @@ export default function SubscriptionHeroSection() {
           {/* Left - Magazine Image (order-2 on mobile, order-1 on desktop) */}
           <div className="relative w-full h-[400px] lg:h-[400px] order-2 lg:order-1">
             <Image
-              src="/magazine-preview.png"
+              src="/magazine/preview.png"
               alt="MIT Sloan Management Review Magazine"
               fill
               className="object-contain"

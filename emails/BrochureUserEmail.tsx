@@ -1,12 +1,17 @@
+import { programs, type ProgramKey } from '@/data/programs';
+
 interface BrochureUserEmailProps {
   firstName: string;
   lastName: string;
+  program?: ProgramKey;
 }
 
 export const BrochureUserEmail = ({
   firstName,
   lastName,
+  program = 'bfr',
 }: BrochureUserEmailProps): string => {
+  const { name: programName, docLabel, docLabelAccusative, summaryTitle, summaryItems } = programs[program];
   return `
     <!DOCTYPE html>
     <html>
@@ -24,22 +29,19 @@ export const BrochureUserEmail = ({
         </p>
 
         <p style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
-          Köszönjük, hogy letöltötte a <strong>Be Future Ready Executive Program</strong> brosúráját.
+          Köszönjük, hogy letöltötte a <strong>${programName}</strong> ${docLabelAccusative}.
         </p>
 
         <p style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
-          Reméljük, hogy a brosúra hasznos információkat tartalmaz az Ön számára.
+          Reméljük, hogy a ${docLabel} hasznos információkat tartalmaz az Ön számára.
           Amennyiben bármilyen kérdése merül fel a programmal kapcsolatban,
           munkatársunk szívesen áll rendelkezésére.
         </p>
 
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
           <p style="font-size: 14px; margin: 0; line-height: 1.6;">
-            <strong>A Be Future Ready Executive Program</strong><br />
-            • 10 hónapos gyakorlati vezetői képzés MIT alapokon<br />
-            • Stratégiai menedzsment, AI, innováció<br />
-            • People management és leadership<br />
-            • Tapasztalt oktatók és valós esettanulmányok
+            <strong>${summaryTitle}</strong><br />
+            ${summaryItems.map((item) => `• ${item}`).join('<br />\n            ')}
           </p>
         </div>
 

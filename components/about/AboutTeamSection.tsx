@@ -41,9 +41,15 @@ export default function AboutTeamSection() {
     },
     {
       name: "Kurbucz Márk",
-      title: "Project and Sales Manager for iLead Institute and MIT Sloan Management Review",
+      title: "Head of Business for iLead Institute and MIT Sloan Management Review",
       image: "/team/kurbucz.jpg",
       linkedin: "https://www.linkedin.com/in/m%C3%A1rk-kurbucz",
+    },
+    {
+      name: "Baldauf Gáspár",
+      title: "Sales and Operations Manager for iLead Institute and MIT Sloan Management Review",
+      image: "/team/gaspar.jpg",
+      linkedin: "https://www.linkedin.com/in/g%C3%A1sp%C3%A1r-baldauf-5b1028217/",
     },
   ];
 
@@ -95,9 +101,9 @@ export default function AboutTeamSection() {
             ))}
           </div>
 
-          {/* Second Row - 3 people */}
+          {/* Second Row - 4 people */}
           <div className="flex flex-wrap justify-center gap-20">
-            {team.slice(4, 7).map((member, index) => (
+            {team.slice(4, 8).map((member, index) => (
               <div key={index + 4} className="flex flex-col items-center text-center w-full md:w-auto md:max-w-[200px]">
                 {/* Circular Photo */}
                 <div className="relative w-56 h-56 rounded-full overflow-hidden mb-6 bg-gray-200 border-4 border-orange shadow-2xl">

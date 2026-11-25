@@ -7,7 +7,7 @@ export default function ProgramHeroSection() {
       {/* --- BACKGROUND IMAGE FOR MOBILE ONLY --- */}
       <div className="absolute inset-0 z-0 lg:hidden">
         <Image
-          src="/program-hero.png"
+          src="/program/hero.png"
           alt="Be Future Ready Executive Program - Polygonal Lion"
           fill
           priority
@@ -22,7 +22,7 @@ export default function ProgramHeroSection() {
           {/* Left - Lion Image (DESKTOP ONLY) */}
           <div className="hidden lg:block relative w-full h-[500px] -mb-16">
             <Image
-              src="/program-hero.png"
+              src="/program/hero.png"
               alt="Be Future Ready Executive Program - Polygonal Lion"
               fill
               className="object-contain object-bottom"

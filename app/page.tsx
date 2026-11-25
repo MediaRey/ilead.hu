@@ -6,7 +6,7 @@ import BenefitsSection from '@/components/home/BenefitsSection';
 import MITPartnershipSection from '@/components/home/MITPartnershipSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import CombinedInformationSection from "@/components/home/CombinedInformationSection";
-import CTACardsSection from '@/components/home/CTACardsSection';
+import OfferingsSection from '@/components/OfferingsSection';
 import SocialSidebar from '@/components/SocialSidebar';
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function Home() {
       <BenefitsSection />
       <MITPartnershipSection />
       <TestimonialsSection />
-      <CTACardsSection />
+      <OfferingsSection current="home" />
       <SocialSidebar />
     </main>
   );

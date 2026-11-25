@@ -1,12 +1,17 @@
+import { programs, type ProgramKey } from '@/data/programs';
+
 interface ContactFormUserEmailProps {
   firstName: string;
   lastName: string;
+  program?: ProgramKey;
 }
 
 export const ContactFormUserEmail = ({
   firstName,
   lastName,
+  program = 'bfr',
 }: ContactFormUserEmailProps): string => {
+  const { name: programName } = programs[program];
   return `
     <!DOCTYPE html>
     <html>
@@ -24,7 +29,7 @@ export const ContactFormUserEmail = ({
         </p>
 
         <p style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">
-          Köszönjük, hogy kapcsolatba lépett velünk a <strong>Be Future Ready Executive Program</strong> kapcsán.
+          Köszönjük, hogy kapcsolatba lépett velünk a <strong>${programName}</strong> kapcsán.
         </p>
 
         <p style="font-size: 16px; margin-bottom: 20px; line-height: 1.6;">

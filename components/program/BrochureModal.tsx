@@ -3,13 +3,16 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import Button from '../Button';
+import { programs, type ProgramKey } from '@/data/programs';
 
 interface BrochureModalProps {
   isOpen: boolean;
   onClose: () => void;
+  program?: ProgramKey;
 }
 
-export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
+export default function BrochureModal({ isOpen, onClose, program = 'bfr' }: BrochureModalProps) {
+  const { download } = programs[program];
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -38,7 +41,7 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, program }),
       });
 
       if (response.ok) {
@@ -46,8 +49,8 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
 
         // Download brochure file
         const link = document.createElement('a');
-        link.href = '/Brochure.pdf';
-        link.download = 'Be-Future-Ready-Program-Brochure.pdf';
+        link.href = download.href;
+        link.download = download.filename;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -91,10 +94,10 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
 
         {/* Title */}
         <h3 className="text-2xl font-bold text-navy-blue mb-4">
-          Töltse le a programleírást
+          {download.modalTitle}
         </h3>
         <p className="text-gray-600 mb-6">
-          Hagyja meg nekünk az e-mail címét, és megkapja a Future Ready programról szóló brosúrát
+          {download.modalText}
         </p>
 
         {/* Form */}
@@ -149,7 +152,7 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
           {submitStatus === 'success' && (
             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl">
               <p className="font-semibold">Sikeres küldés!</p>
-              <p className="text-sm">A brosúra letöltése folyamatban van...</p>
+              <p className="text-sm">{download.successText}</p>
             </div>
           )}
 
@@ -166,7 +169,7 @@ export default function BrochureModal({ isOpen, onClose }: BrochureModalProps) {
             className="w-full bg-orange hover:bg-orange/90 text-white py-3 rounded-xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isLoading}
           >
-            {isLoading ? 'Küldés...' : 'Szeretném megkapni a brosúrát'}
+            {isLoading ? 'Küldés...' : download.modalButton}
           </Button>
         </form>
       </div>

@@ -1,8 +1,11 @@
+import { programs, type ProgramKey } from '@/data/programs';
+
 interface BrochureAdminEmailProps {
   firstName: string;
   lastName: string;
   email: string;
   company: string;
+  program?: ProgramKey;
 }
 
 export const BrochureAdminEmail = ({
@@ -10,7 +13,9 @@ export const BrochureAdminEmail = ({
   lastName,
   email,
   company,
+  program = 'bfr',
 }: BrochureAdminEmailProps): string => {
+  const { name: programName, docLabel, docLabelAccusative } = programs[program];
   return `
     <!DOCTYPE html>
     <html>
@@ -20,11 +25,11 @@ export const BrochureAdminEmail = ({
       </head>
       <body style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto;">
         <h1 style="color: #A00230; font-size: 24px; margin-bottom: 20px;">
-          Új brosúra letöltés
+          Új ${docLabel} letöltés
         </h1>
 
         <p style="font-size: 16px; margin-bottom: 20px;">
-          Valaki letöltötte a Be Future Ready Executive Program brosúráját.
+          Valaki letöltötte a ${programName} ${docLabelAccusative}.
         </p>
 
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
@@ -44,7 +49,7 @@ export const BrochureAdminEmail = ({
         </div>
 
         <p style="font-size: 14px; color: #666;">
-          Ez az érdeklődő letöltötte a program brosúráját. Érdemes lehet felvenni vele a kapcsolatot.
+          Ez az érdeklődő letöltötte a program ${docLabelAccusative}. Érdemes lehet felvenni vele a kapcsolatot.
         </p>
       </body>
     </html>
